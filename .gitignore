@@ -37,3 +37,4 @@ coverage/
 # !.yarn/versions
 
 .pnpm-store
+*.dist.*

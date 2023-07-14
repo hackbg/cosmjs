@@ -46,7 +46,7 @@
     "@cosmjs/encoding": "workspace:^",
     "@cosmjs/proto-signing": "workspace:^",
     "@cosmjs/stargate": "workspace:^",
-    "@hackbg/ubik": "workspace:*",
+    "@hackbg/ubik": "link:toolbox/ubik",
     "@rollup/plugin-typescript": "^11.1.2",
     "eslint": "^7.5",
     "prettier": "^2.8.8",
