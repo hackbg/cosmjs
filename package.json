@@ -46,9 +46,11 @@
     "@cosmjs/encoding": "workspace:^",
     "@cosmjs/proto-signing": "workspace:^",
     "@cosmjs/stargate": "workspace:^",
+    "@hackbg/ubik": "workspace:*",
+    "@rollup/plugin-typescript": "^11.1.2",
     "eslint": "^7.5",
     "prettier": "^2.8.8",
-    "typescript": "~4.9",
-    "@hackbg/ubik": "latest"
+    "rollup": "3.26.2",
+    "typescript": "~4.9"
   }
 }

@@ -1,3 +1,7 @@
 packages:
+  - 'toolbox/allo'
+  - 'toolbox/hide'
+  - 'toolbox/logs'
+  - 'toolbox/ubik'
   - 'packages/*'
   - '!packages/ledger-amino'
