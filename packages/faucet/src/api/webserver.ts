@@ -1,5 +1,5 @@
 import Koa from "koa";
-import cors = require("@koa/cors");
+import cors from "@koa/cors";
 import bodyParser from "koa-bodyparser";
 
 import { isValidAddress } from "../addresses";
