@@ -7,7 +7,7 @@ if (process.env.SES_ENABLED) {
 }
 
 require("source-map-support").install();
-const defaultSpecReporterConfig = require("../../jasmine-spec-reporter.config.json");
+const defaultSpecReporterConfig = require("./jasmine-spec-reporter.config.json");
 
 // setup Jasmine
 const Jasmine = require("jasmine");
