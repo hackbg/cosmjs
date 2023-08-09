@@ -1,16 +1,33 @@
 {
-  "name": "@hackbg/cosmos",
+  "name": "@hackbg/cosmjs-esm",
   "description": "Cosmos/CosmWasm SDKs as a monolithic ESM package",
+  "version": "0.32.0",
+  "license": "AGPL-3.0",
   "contributors": [
+    "Adam Avramov <adam@hack.bg>",
     "Confio OÜ <hello@confio.tech>",
     "IOV SAS <admin@iov.one>",
     "Simon Warta <webmaster128@users.noreply.github.com>",
     "Will Clark <willclarktech@users.noreply.github.com>"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hackbg/cosmjs-esm"
+  },
+  "files": [
+    "build/",
+    "*.md",
+    "!*.spec.*",
+    "!**/testdata/"
+  ],
   "scripts": {
     "build": "rm -rf ./build && tsc",
-    "build:workers": "rm -rf ./build && tsc && tsc -p tsconfig.workers.json",
     "build-or-skip": "[ -n \"$SKIP_BUILD\" ] || yarn build",
+    "build:workers": "rm -rf ./build && tsc && tsc -p tsconfig.workers.json",
     "coverage": "nyc --reporter=text --reporter=lcov yarn test --quiet",
     "docs": "typedoc --options typedoc.js",
     "format": "prettier --write --loglevel warn \"./src/**/*.ts\"",
@@ -44,7 +61,6 @@
     "xstream": "^11.14.0"
   },
   "devDependencies": {
-    "@cosmjs/crypto": "workspace:^",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/base64-js": "^1.2.5",
     "@types/bn.js": "^5",
