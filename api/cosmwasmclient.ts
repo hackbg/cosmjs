@@ -20,7 +20,7 @@ import {
   setupTxExtension,
   TimeoutError,
   TxExtension,
-} from "../lib/stargate";
+} from "./index";
 import {
   HttpEndpoint,
   Tendermint34Client,

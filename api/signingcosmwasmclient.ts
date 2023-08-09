@@ -30,7 +30,7 @@ import {
   MsgWithdrawDelegatorRewardEncodeObject,
   SignerData,
   StdFee,
-} from "../lib/stargate";
+} from "./index";
 import {
   HttpEndpoint,
   Tendermint34Client,
