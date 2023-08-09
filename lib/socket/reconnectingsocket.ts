@@ -1,4 +1,4 @@
-import { ValueAndUpdates } from "@cosmjs/stream";
+import { ValueAndUpdates } from "../stream";
 import { Listener, Producer, Stream } from "xstream";
 
 import { ConnectionStatus, QueueingStreamingSocket } from "./queueingstreamingsocket";

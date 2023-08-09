@@ -1,4 +1,4 @@
-import { Slip10RawIndex } from "@cosmjs/crypto";
+import { Slip10RawIndex } from "../crypto";
 
 import { makeCosmoshubPath } from "./paths";
 

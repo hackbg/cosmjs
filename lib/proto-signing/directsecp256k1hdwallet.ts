@@ -1,4 +1,4 @@
-import { encodeSecp256k1Signature, makeCosmoshubPath, rawSecp256k1PubkeyToRawAddress } from "@cosmjs/amino";
+import { encodeSecp256k1Signature, makeCosmoshubPath, rawSecp256k1PubkeyToRawAddress } from "../amino";
 import {
   Bip39,
   EnglishMnemonic,
@@ -11,9 +11,9 @@ import {
   Slip10,
   Slip10Curve,
   stringToPath,
-} from "@cosmjs/crypto";
-import { fromBase64, fromUtf8, toBase64, toBech32, toUtf8 } from "@cosmjs/encoding";
-import { assert, isNonNullObject } from "@cosmjs/utils";
+} from "../crypto";
+import { fromBase64, fromUtf8, toBase64, toBech32, toUtf8 } from "../encoding";
+import { assert, isNonNullObject } from "../utils";
 import { SignDoc } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 
 import { AccountData, DirectSignResponse, OfflineDirectSigner } from "./signer";
