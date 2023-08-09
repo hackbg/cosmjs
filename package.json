@@ -26,21 +26,21 @@
   ],
   "scripts": {
     "build": "rm -rf ./build && tsc",
-    "build-or-skip": "[ -n \"$SKIP_BUILD\" ] || yarn build",
+    "build-or-skip": "[ -n \"$SKIP_BUILD\" ] || pnpm build",
     "build:workers": "rm -rf ./build && tsc && tsc -p tsconfig.workers.json",
-    "coverage": "nyc --reporter=text --reporter=lcov yarn test --quiet",
+    "coverage": "nyc --reporter=text --reporter=lcov pnpm test --quiet",
     "docs": "typedoc --options typedoc.js",
     "format": "prettier --write --loglevel warn \"./src/**/*.ts\"",
     "format-text": "prettier --write \"./*.md\"",
     "lint": "eslint --max-warnings 0 \"./**/*.ts\" \"./*.js\"",
     "lint-fix": "eslint --fix --max-warnings 0 \"./**/*.ts\" \"./*.js\"",
-    "pack-web": "yarn build-or-skip && webpack --mode development --config webpack.web.config.js",
-    "test": "yarn build-or-skip && yarn test-node",
-    "test-chrome": "yarn pack-web && karma start --single-run --browsers ChromeHeadless",
-    "test-edge": "yarn pack-web && karma start --single-run --browsers Edge",
-    "test-firefox": "yarn pack-web && karma start --single-run --browsers Firefox",
-    "test-node": "yarn node jasmine-testrunner.js",
-    "test-safari": "yarn pack-web && karma start --single-run --browsers Safari"
+    "pack-web": "pnpm build-or-skip && webpack --mode development --config webpack.web.config.js",
+    "test": "pnpm build-or-skip && pnpm test-node",
+    "test-chrome": "pnpm pack-web && karma start --single-run --browsers ChromeHeadless",
+    "test-edge": "pnpm pack-web && karma start --single-run --browsers Edge",
+    "test-firefox": "pnpm pack-web && karma start --single-run --browsers Firefox",
+    "test-node": "pnpm node jasmine-testrunner.js",
+    "test-safari": "pnpm pack-web && karma start --single-run --browsers Safari"
   },
   "dependencies": {
     "@confio/ics23": "^0.6.8",
@@ -52,8 +52,8 @@
     "cosmjs-types": "^0.8.0",
     "elliptic": "^6.5.4",
     "isomorphic-ws": "^4.0.1",
-    "libsodium-wrappers-sumo": "^0.7.11"
-    "long": "^4.0.0"
+    "libsodium-wrappers-sumo": "^0.7.11",
+    "long": "^4.0.0",
     "pako": "^2.0.2",
     "protobufjs": "~6.11.3",
     "readonly-date": "^1.0.0",
@@ -101,8 +101,8 @@
     "ses": "^0.11.0",
     "source-map-support": "^0.5.19",
     "ts-node": "^8",
-    "typedoc": "^0.23",
-    "typescript": "~4.9",
+    "typedoc": "^0.24.8",
+    "typescript": "~5.1",
     "webpack": "^5.76.0",
     "webpack-cli": "^4.6.0"
   }
