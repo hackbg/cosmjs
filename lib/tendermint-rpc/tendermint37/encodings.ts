@@ -1,4 +1,4 @@
-import { toUtf8 } from "../encoding";
+import { toUtf8 } from "../../encoding";
 
 import { ReadonlyDateWithNanoseconds } from "../dates";
 import { BlockId, Version } from "./responses";

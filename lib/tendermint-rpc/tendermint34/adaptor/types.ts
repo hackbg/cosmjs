@@ -1,4 +1,4 @@
-import { JsonRpcRequest, JsonRpcSuccessResponse } from "../json-rpc";
+import { JsonRpcRequest, JsonRpcSuccessResponse } from "../../../json-rpc";
 
 import { SubscriptionEvent } from "../../rpcclients";
 import * as requests from "../requests";

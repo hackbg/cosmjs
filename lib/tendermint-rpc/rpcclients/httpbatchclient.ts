@@ -3,7 +3,7 @@ import {
   JsonRpcRequest,
   JsonRpcSuccessResponse,
   parseJsonRpcResponse,
-} from "../json-rpc";
+} from "../../json-rpc";
 
 import { http } from "./http";
 import { HttpEndpoint } from "./httpclient";

@@ -1,4 +1,4 @@
-import { Sha256, sha256 } from "../crypto";
+import { Sha256, sha256 } from "../../crypto";
 
 import {
   encodeBlockId,

@@ -28,6 +28,7 @@
     "build": "rm -rf ./build && tsc",
     "build-or-skip": "[ -n \"$SKIP_BUILD\" ] || pnpm build",
     "build:workers": "rm -rf ./build && tsc && tsc -p tsconfig.workers.json",
+    "check": "tsc --noEmit",
     "coverage": "nyc --reporter=text --reporter=lcov pnpm test --quiet",
     "docs": "typedoc --options typedoc.js",
     "format": "prettier --write --loglevel warn \"./src/**/*.ts\"",
