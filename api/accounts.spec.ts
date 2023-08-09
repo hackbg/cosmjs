@@ -1,4 +1,4 @@
-import { fromBase64 } from "@cosmjs/encoding";
+import { fromBase64 } from "../lib/encoding";
 import { Any } from "cosmjs-types/google/protobuf/any";
 
 import { accountFromAny } from "./accounts";

@@ -1,7 +1,7 @@
-import { Sha256, sha256 } from "@cosmjs/crypto";
-import { fromBech32, toAscii, toBech32, toUtf8 } from "@cosmjs/encoding";
-import { Uint64 } from "@cosmjs/math";
-import { assert } from "@cosmjs/utils";
+import { Sha256, sha256 } from "../lib/crypto";
+import { fromBech32, toAscii, toBech32, toUtf8 } from "../lib/encoding";
+import { Uint64 } from "../lib/math";
+import { assert } from "../lib/utils";
 
 /**
  * The "Basic Address" Hash from

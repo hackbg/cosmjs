@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoSignResponse, Secp256k1HdWallet, Secp256k1HdWalletOptions, StdSignDoc } from "@cosmjs/amino";
-import { Bip39, EnglishMnemonic, Random } from "@cosmjs/crypto";
-import { fromBase64, toBech32 } from "@cosmjs/encoding";
+import { AminoSignResponse, Secp256k1HdWallet, Secp256k1HdWalletOptions, StdSignDoc } from "../lib/amino";
+import { Bip39, EnglishMnemonic, Random } from "../lib/crypto";
+import { fromBase64, toBech32 } from "../lib/encoding";
 import {
   DirectSecp256k1HdWallet,
   DirectSecp256k1HdWalletOptions,
   DirectSignResponse,
   makeAuthInfoBytes,
-} from "@cosmjs/proto-signing";
+} from "../lib/proto-signing";
 import {
   AuthExtension,
   BankExtension,
@@ -17,8 +17,8 @@ import {
   QueryClient,
   setupAuthExtension,
   setupBankExtension,
-} from "@cosmjs/stargate";
-import { Tendermint34Client } from "@cosmjs/tendermint-rpc";
+} from "../lib/stargate";
+import { Tendermint34Client } from "../lib/tendermint-rpc";
 import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
 import { AuthInfo, SignDoc, TxBody } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 
@@ -243,16 +243,16 @@ export class ModifyingDirectSecp256k1HdWallet extends DirectSecp256k1HdWallet {
   }
 }
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoSignResponse, Secp256k1HdWallet, Secp256k1HdWalletOptions, StdSignDoc } from "@cosmjs/amino";
-import { Bip39, EnglishMnemonic, Random } from "@cosmjs/crypto";
-import { toBech32 } from "@cosmjs/encoding";
+import { AminoSignResponse, Secp256k1HdWallet, Secp256k1HdWalletOptions, StdSignDoc } from "../lib/amino";
+import { Bip39, EnglishMnemonic, Random } from "../lib/crypto";
+import { toBech32 } from "../lib/encoding";
 import {
   coins,
   DirectSecp256k1HdWallet,
   DirectSecp256k1HdWalletOptions,
   DirectSignResponse,
   makeAuthInfoBytes,
-} from "@cosmjs/proto-signing";
+} from "../lib/proto-signing";
 import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
 import { AuthInfo, SignDoc, TxBody } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 

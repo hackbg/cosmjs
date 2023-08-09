@@ -35,8 +35,7 @@ export {
 } from "./signingcosmwasmclient";
 
 // Re-exported because this is part of the CosmWasmClient/SigningCosmWasmClient APIs
-export { Attribute, DeliverTxResponse, Event, IndexedTx } from "@cosmjs/stargate";
-export { HttpEndpoint } from "@cosmjs/tendermint-rpc";
+export { HttpEndpoint } from "../lib/tendermint-rpc";
 
 export { Account, accountFromAny, AccountParser } from "./accounts";
 export { AminoConverter, AminoConverters, AminoTypes } from "./aminotypes";
@@ -176,8 +175,7 @@ export {
   StargateClientOptions,
   TimeoutError,
 } from "./stargateclient";
-export { StdFee } from "@cosmjs/amino";
-export { Coin, coin, coins, makeCosmoshubPath, parseCoins } from "@cosmjs/proto-signing";
+export { StdFee } from "../lib/amino";
+export { Coin, coin, coins, makeCosmoshubPath, parseCoins } from "../lib/proto-signing";
 
 // Re-exported because this is part of the StargateClient/SigningStargateClient APIs
-export { HttpEndpoint } from "@cosmjs/tendermint-rpc";

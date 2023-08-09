@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { coins } from "@cosmjs/proto-signing";
+import { coins } from "../../../lib/proto-signing";
 import {
   MsgFundCommunityPool,
   MsgSetWithdrawAddress,

@@ -1,6 +1,6 @@
-import { encodeSecp256k1Pubkey, makeSignDoc as makeSignDocAmino, StdFee } from "@cosmjs/amino";
-import { fromBase64 } from "@cosmjs/encoding";
-import { Int53, Uint53 } from "@cosmjs/math";
+import { encodeSecp256k1Pubkey, makeSignDoc as makeSignDocAmino, StdFee } from "../lib/amino";
+import { fromBase64 } from "../lib/encoding";
+import { Int53, Uint53 } from "../lib/math";
 import {
   EncodeObject,
   encodePubkey,
@@ -11,14 +11,14 @@ import {
   OfflineSigner,
   Registry,
   TxBodyEncodeObject,
-} from "@cosmjs/proto-signing";
+} from "../lib/proto-signing";
 import {
   HttpEndpoint,
   Tendermint34Client,
   Tendermint37Client,
   TendermintClient,
-} from "@cosmjs/tendermint-rpc";
-import { assert, assertDefined } from "@cosmjs/utils";
+} from "../lib/tendermint-rpc";
+import { assert, assertDefined } from "../lib/utils";
 import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
 import { MsgWithdrawDelegatorReward } from "cosmjs-types/cosmos/distribution/v1beta1/tx";
 import { MsgDelegate, MsgUndelegate } from "cosmjs-types/cosmos/staking/v1beta1/tx";

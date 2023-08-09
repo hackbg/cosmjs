@@ -1,4 +1,4 @@
-import { EncodeObject, GeneratedType } from "@cosmjs/proto-signing";
+import { EncodeObject, GeneratedType } from "../../../lib/proto-signing";
 import {
   MsgDeposit as V1MsgDeposit,
   MsgSubmitProposal as V1MsgSubmitProposal,
