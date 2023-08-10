@@ -1,5 +1,6 @@
 {
   "name": "@hackbg/cosmjs-esm",
+  "type": "module",
   "description": "Cosmos/CosmWasm SDKs as a monolithic ESM package",
   "version": "0.31.0",
   "license": "AGPL-3.0",
@@ -40,7 +41,7 @@
     "test-chrome": "pnpm pack-web && karma start --single-run --browsers ChromeHeadless",
     "test-edge": "pnpm pack-web && karma start --single-run --browsers Edge",
     "test-firefox": "pnpm pack-web && karma start --single-run --browsers Firefox",
-    "test-node": "pnpm node jasmine-testrunner.js",
+    "test-node": "pnpm node jasmine-testrunner.cjs",
     "test-safari": "pnpm pack-web && karma start --single-run --browsers Safari"
   },
   "dependencies": {
