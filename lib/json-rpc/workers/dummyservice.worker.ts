@@ -1,4 +1,4 @@
-/// <reference lib="webworker" />
+/// the following is disabled: <reference lib="webworker" />
 
 // for testing only
 
