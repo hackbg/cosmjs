@@ -2,7 +2,7 @@
 import { Tendermint34Client } from "../../../lib/tendermint-rpc";
 
 import { QueryClient } from "../../queryclient";
-import { pendingWithoutSimapp, simapp } from "../../testutils.spec";
+import { pendingWithoutSimapp, simapp } from "../../testutils-stargate.spec";
 import { setupSlashingExtension, SlashingExtension } from "./queries";
 
 async function makeClientWithSlashing(

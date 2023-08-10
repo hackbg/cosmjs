@@ -46,7 +46,7 @@ import {
   pendingWithoutSimapp,
   simapp,
   validator,
-} from "./testutils.spec";
+} from "./testutils-stargate.spec";
 
 describe("SigningStargateClient", () => {
   describe("constructor", () => {

@@ -21,7 +21,7 @@ import {
   simapp,
   simapp44Enabled,
   unused,
-} from "../testutils.spec";
+} from "../testutils-stargate.spec";
 import { QueryClient } from "./queryclient";
 
 async function makeClient(rpcUrl: string): Promise<[QueryClient, Tendermint34Client]> {

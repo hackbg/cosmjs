@@ -15,7 +15,7 @@ import {
   pendingWithoutSimapp46OrHigher,
   simapp,
   simappEnabled,
-} from "../../testutils.spec";
+} from "../../testutils-stargate.spec";
 import { AuthzExtension, setupAuthzExtension } from "./queries";
 
 async function makeClientWithAuthz(

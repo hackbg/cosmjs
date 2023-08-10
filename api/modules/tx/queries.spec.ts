@@ -16,7 +16,7 @@ import {
   simapp44Enabled,
   simappEnabled,
   validator,
-} from "../../testutils.spec";
+} from "../../testutils-stargate.spec";
 import { setupTxExtension, TxExtension } from "./queries";
 
 async function makeClientWithTx(rpcUrl: string): Promise<[QueryClient & TxExtension, Tendermint34Client]> {

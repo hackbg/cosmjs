@@ -12,7 +12,7 @@ import {
   pendingWithoutSimapp,
   pendingWithoutSimapp46OrHigher,
   simapp,
-} from "../../testutils.spec";
+} from "../../testutils-stargate.spec";
 
 describe("vesting messages", () => {
   describe("MsgCreateVestingAccount", () => {

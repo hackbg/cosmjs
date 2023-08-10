@@ -14,7 +14,7 @@ import {
   simapp,
   simappEnabled,
   validator,
-} from "../../testutils.spec";
+} from "../../testutils-stargate.spec";
 import { MsgDelegateEncodeObject } from "../";
 import { DistributionExtension, setupDistributionExtension } from "./queries";
 

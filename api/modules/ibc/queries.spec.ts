@@ -2,7 +2,7 @@ import { Tendermint34Client } from "../../../lib/tendermint-rpc";
 import Long from "long";
 
 import { QueryClient } from "../../queryclient";
-import { simapp } from "../../testutils.spec";
+import { simapp } from "../../testutils-stargate.spec";
 import * as ibcTest from "./ibctestdata.spec";
 import { IbcExtension, setupIbcExtension } from "./queries";
 

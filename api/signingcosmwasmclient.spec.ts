@@ -12,7 +12,7 @@ import {
   createStakingAminoConverters,
   MsgDelegateEncodeObject,
   MsgSendEncodeObject,
-} from "../lib/stargate";
+} from "./index";
 import { assert, sleep } from "../lib/utils";
 import { DeepPartial } from "cosmjs-types";
 import { MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
@@ -49,7 +49,7 @@ import {
   unused,
   validator,
   wasmd,
-} from "./testutils.spec";
+} from "./testutils-cosmwasm.spec";
 
 describe("SigningCosmWasmClient", () => {
   describe("connectWithSigner", () => {

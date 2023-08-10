@@ -25,7 +25,7 @@ import {
   simapp,
   simapp44Enabled,
   simappEnabled,
-} from "./testutils.spec";
+} from "./testutils-stargate.spec";
 
 interface TestTxSend {
   readonly sender: string;

@@ -10,7 +10,7 @@ import {
   logs,
   SigningStargateClient,
   StdFee,
-} from "../../../lib/stargate";
+} from "../../index";
 import { assert, assertDefined } from "../../../lib/utils";
 import { MsgExecuteContract, MsgInstantiateContract, MsgStoreCode } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { AbsoluteTxPosition, ContractCodeHistoryOperationType } from "cosmjs-types/cosmwasm/wasm/v1/types";
@@ -28,7 +28,7 @@ import {
   pendingWithoutWasmd,
   wasmd,
   wasmdEnabled,
-} from "../../testutils.spec";
+} from "../../testutils-cosmwasm.spec";
 import {
   MsgExecuteContractEncodeObject,
   MsgInstantiateContractEncodeObject,

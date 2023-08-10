@@ -15,7 +15,7 @@ import {
   simapp,
   simappEnabled,
   validator,
-} from "../../testutils.spec";
+} from "../../testutils-stargate.spec";
 import { MsgDelegateEncodeObject, MsgSubmitProposalEncodeObject, MsgVoteEncodeObject } from "../";
 import { MsgVoteWeightedEncodeObject } from "./messages";
 

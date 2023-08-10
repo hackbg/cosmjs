@@ -1,6 +1,7 @@
 {
   "exclude": [
-    "**/*.spec.ts"
+    "node_modules/**/*",
+    "**/*.d.ts"
   ],
   "compilerOptions": {
     "baseUrl": ".",

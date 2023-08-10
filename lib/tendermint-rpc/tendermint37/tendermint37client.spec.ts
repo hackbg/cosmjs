@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { toAscii, toHex } from "../encoding";
-import { firstEvent, toListPromise } from "../stream";
-import { assert, sleep } from "../utils";
+import { toAscii, toHex } from "../../encoding";
+import { firstEvent, toListPromise } from "../../stream";
+import { assert, sleep } from "../../utils";
 import { ReadonlyDate } from "readonly-date";
 import { Stream } from "xstream";
 

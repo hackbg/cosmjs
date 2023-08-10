@@ -12,7 +12,7 @@ import {
   faucet,
   pendingWithoutSimapp,
   simapp,
-} from "../../testutils.spec";
+} from "../../testutils-stargate.spec";
 import { MsgCreateValidatorEncodeObject, MsgEditValidatorEncodeObject } from "./messages";
 
 function changePrefix(address: string, newPrefix: string): string {

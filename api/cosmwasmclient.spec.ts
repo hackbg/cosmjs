@@ -10,7 +10,7 @@ import {
   Registry,
   TxBodyEncodeObject,
 } from "../lib/proto-signing";
-import { assertIsDeliverTxSuccess, coins, logs, MsgSendEncodeObject, StdFee } from "../lib/stargate";
+import { assertIsDeliverTxSuccess, coins, logs, MsgSendEncodeObject, StdFee } from "./index";
 import { assert, sleep } from "../lib/utils";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 import { ReadonlyDate } from "readonly-date";
@@ -30,7 +30,7 @@ import {
   unused,
   wasmd,
   wasmdEnabled,
-} from "./testutils.spec";
+} from "./testutils-cosmwasm.spec";
 
 interface HackatomInstance {
   readonly instantiateMsg: {

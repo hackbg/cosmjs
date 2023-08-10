@@ -16,7 +16,7 @@ import {
   isDeliverTxFailure,
   isDeliverTxSuccess,
   isMsgSendEncodeObject,
-} from "../lib/stargate";
+} from "./index";
 import { assert, sleep } from "../lib/utils";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 
@@ -28,7 +28,7 @@ import {
   pendingWithoutWasmd,
   wasmd,
   wasmdEnabled,
-} from "./testutils.spec";
+} from "./testutils-cosmwasm.spec";
 
 interface TestTxSend {
   readonly sender: string;

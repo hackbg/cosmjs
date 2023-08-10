@@ -7,7 +7,7 @@ import { Any } from "cosmjs-types/google/protobuf/any";
 import Long from "long";
 
 import { QueryClient } from "../../queryclient";
-import { nonExistentAddress, pendingWithoutSimapp, simapp, unused, validator } from "../../testutils.spec";
+import { nonExistentAddress, pendingWithoutSimapp, simapp, unused, validator } from "../../testutils-stargate.spec";
 import { AuthExtension, setupAuthExtension } from "./queries";
 
 async function makeClientWithAuth(
@@ -45,6 +45,7 @@ describe("AuthExtension", () => {
       expect(account.typeUrl).toEqual("/cosmos.auth.v1beta1.BaseAccount");
       expect(BaseAccount.decode(account.value)).toEqual({
         address: validator.delegatorAddress,
+        //@ts-ignore
         pubKey: Any.fromPartial(encodePubkey(validator.pubkey)),
         accountNumber: Long.UZERO,
         sequence: Long.fromNumber(validator.sequence, true),

@@ -7,7 +7,7 @@ import {
   pendingWithoutSimapp,
   simapp,
   unused,
-} from "../../testutils.spec";
+} from "../../testutils-stargate.spec";
 import { BankExtension, setupBankExtension } from "./queries";
 
 async function makeClientWithBank(
@@ -25,11 +25,13 @@ describe("BankExtension", () => {
 
       const response1 = await client.bank.balance(unused.address, simapp.denomFee);
       expect(response1).toEqual({
+        //@ts-ignore
         amount: unused.balanceFee,
         denom: simapp.denomFee,
       });
       const response2 = await client.bank.balance(unused.address, simapp.denomStaking);
       expect(response2).toEqual({
+        //@ts-ignore
         amount: unused.balanceStaking,
         denom: simapp.denomStaking,
       });

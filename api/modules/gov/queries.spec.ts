@@ -25,7 +25,7 @@ import {
   simapp44Enabled,
   simappEnabled,
   validator,
-} from "../../testutils.spec";
+} from "../../testutils-stargate.spec";
 import { MsgDelegateEncodeObject, MsgSubmitProposalEncodeObject, MsgVoteEncodeObject } from "../";
 import { GovExtension, setupGovExtension } from "./queries";
 
