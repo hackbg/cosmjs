@@ -1,7 +1,7 @@
 {
   "name": "@hackbg/cosmjs-esm",
   "description": "Cosmos/CosmWasm SDKs as a monolithic ESM package",
-  "version": "0.32.0",
+  "version": "0.31.0",
   "license": "AGPL-3.0",
   "contributors": [
     "Adam Avramov <adam@hack.bg>",
