@@ -1,4 +1,4 @@
-import { fromBech32, fromHex, toBase64 } from "../encoding";
+import { fromBech32, fromHex, toBase64 } from "../encoding/index";
 
 import { pubkeyToAddress, pubkeyToRawAddress } from "./addresses";
 import { decodeBech32Pubkey } from "./encoding";

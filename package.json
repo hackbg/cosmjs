@@ -63,9 +63,9 @@
     "xstream": "^11.14.0"
   },
   "devDependencies": {
+    "@hackbg/ganesha": "^4.2.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/base64-js": "^1.2.5",
-    "@types/bn.js": "^5",
     "@types/bn.js": "^5",
     "@types/elliptic": "^6.4.14",
     "@types/eslint-plugin-prettier": "^3",

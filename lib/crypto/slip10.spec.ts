@@ -1,4 +1,4 @@
-import { fromHex } from "../encoding";
+import { fromHex } from "../encoding/index";
 
 import {
   HdPath,

@@ -1,4 +1,4 @@
-import { fromUtf8, toUtf8 } from "../../../lib/encoding";
+import { fromUtf8, toUtf8 } from "../../../lib/encoding/index";
 import { createPagination, createProtobufRpcClient, QueryClient } from "../../index";
 import {
   QueryAllContractStateResponse,

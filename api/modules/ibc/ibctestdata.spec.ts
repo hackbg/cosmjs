@@ -1,4 +1,4 @@
-import { fromBase64 } from "../../../lib/encoding";
+import { fromBase64 } from "../../../lib/encoding/index";
 import {
   Channel,
   Counterparty as ChannelCounterparty,

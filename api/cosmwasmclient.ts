@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromUtf8, toHex } from "../lib/encoding";
-import { Uint53 } from "../lib/math";
+import { fromUtf8, toHex } from "../lib/encoding/index";
+import { Uint53 } from "../lib/math/index";
 import {
   Account,
   accountFromAny,
@@ -27,8 +27,8 @@ import {
   Tendermint37Client,
   TendermintClient,
   toRfc3339WithNanoseconds,
-} from "../lib/tendermint-rpc";
-import { assert, sleep } from "../lib/utils";
+} from "../lib/tendermint-rpc/index";
+import { assert, sleep } from "../lib/utils/index";
 import { TxMsgData } from "cosmjs-types/cosmos/base/abci/v1beta1/abci";
 import {
   CodeInfoResponse,

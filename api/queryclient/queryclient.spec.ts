@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { coin } from "../../lib/amino";
-import { toAscii } from "../../lib/encoding";
-import { DirectSecp256k1HdWallet } from "../../lib/proto-signing";
-import { Tendermint34Client } from "../../lib/tendermint-rpc";
-import { assert } from "../../lib/utils";
+import { coin } from "../../lib/amino/index";
+import { toAscii } from "../../lib/encoding/index";
+import { DirectSecp256k1HdWallet } from "../../lib/proto-signing/index";
+import { Tendermint34Client } from "../../lib/tendermint-rpc/index";
+import { assert } from "../../lib/utils/index";
 import { Metadata } from "cosmjs-types/cosmos/bank/v1beta1/bank";
 import {
   QueryAllBalancesRequest,

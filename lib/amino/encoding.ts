@@ -1,6 +1,6 @@
-import { fromBase64, fromBech32, fromHex, toBase64, toBech32, toHex } from "../encoding";
-import { Uint53 } from "../math";
-import { arrayContentStartsWith } from "../utils";
+import { fromBase64, fromBech32, fromHex, toBase64, toBech32, toHex } from "../encoding/index";
+import { Uint53 } from "../math/index";
+import { arrayContentStartsWith } from "../utils/index";
 
 import {
   Ed25519Pubkey,

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { coins } from "../amino";
-import { Secp256k1, Secp256k1Signature, sha256 } from "../crypto";
-import { fromBase64, fromHex } from "../encoding";
+import { coins } from "../amino/index";
+import { Secp256k1, Secp256k1Signature, sha256 } from "../crypto/index";
+import { fromBase64, fromHex } from "../encoding/index";
 
 import { DirectSecp256k1Wallet } from "./directsecp256k1wallet";
 import { makeAuthInfoBytes, makeSignBytes, makeSignDoc } from "./signing";

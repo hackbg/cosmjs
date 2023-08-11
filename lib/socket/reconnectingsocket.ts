@@ -1,4 +1,4 @@
-import { ValueAndUpdates } from "../stream";
+import { ValueAndUpdates } from "../stream/index";
 import { Listener, Producer, Stream } from "xstream";
 
 import { ConnectionStatus, QueueingStreamingSocket } from "./queueingstreamingsocket";

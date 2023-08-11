@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64 } from "../../../lib/encoding";
-import { coin } from "../../../lib/proto-signing";
+import { fromBase64 } from "../../../lib/encoding/index";
+import { coin } from "../../../lib/proto-signing/index";
 import { PubKey as CosmosCryptoSecp256k1Pubkey } from "cosmjs-types/cosmos/crypto/secp256k1/keys";
 import {
   MsgBeginRedelegate,

@@ -1,4 +1,4 @@
-import { fromHex, toHex } from "../encoding";
+import { fromHex, toHex } from "../encoding/index";
 
 import { Sha256, sha256 } from "./sha";
 import shaVectors from "./testdata/sha.json";

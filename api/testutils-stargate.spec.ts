@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoSignResponse, Secp256k1HdWallet, Secp256k1HdWalletOptions, StdSignDoc } from "../lib/amino";
-import { Bip39, EnglishMnemonic, Random } from "../lib/crypto";
-import { toBech32 } from "../lib/encoding";
+import { AminoSignResponse, Secp256k1HdWallet, Secp256k1HdWalletOptions, StdSignDoc } from "../lib/amino/index";
+import { Bip39, EnglishMnemonic, Random } from "../lib/crypto/index";
+import { toBech32 } from "../lib/encoding/index";
 import {
   coins,
   DirectSecp256k1HdWallet,
   DirectSecp256k1HdWalletOptions,
   DirectSignResponse,
   makeAuthInfoBytes,
-} from "../lib/proto-signing";
+} from "../lib/proto-signing/index";
 import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
 import { AuthInfo, SignDoc, TxBody } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 

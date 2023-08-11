@@ -4,9 +4,10 @@ import {
   makeCosmoshubPath,
   pubkeyToAddress,
   Secp256k1HdWallet,
-} from "../lib/amino";
-import { coins } from "../lib/proto-signing";
-import { assert } from "../lib/utils";
+} from "../lib/amino/index";
+import { coins } from "../lib/proto-signing/index";
+import { assert } from "../lib/utils/index";
+
 import { MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
 
 import { MsgSendEncodeObject } from "./modules";

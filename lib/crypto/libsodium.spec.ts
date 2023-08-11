@@ -1,5 +1,5 @@
 /* eslint-disable no-bitwise */
-import { fromHex, toAscii } from "../encoding";
+import { fromHex, toAscii } from "../encoding/index";
 
 import { Argon2id, Argon2idOptions, Ed25519, Ed25519Keypair, Xchacha20poly1305Ietf } from "./libsodium";
 

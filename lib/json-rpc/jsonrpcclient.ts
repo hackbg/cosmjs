@@ -1,4 +1,4 @@
-import { firstEvent } from "../stream";
+import { firstEvent } from "../stream/index";
 import { Stream } from "xstream";
 
 import { isJsonRpcErrorResponse, JsonRpcRequest, JsonRpcResponse, JsonRpcSuccessResponse } from "./types";

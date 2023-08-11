@@ -10,9 +10,9 @@ import {
   Slip10,
   Slip10Curve,
   stringToPath,
-} from "../crypto";
-import { fromBase64, fromUtf8, toBase64, toBech32, toUtf8 } from "../encoding";
-import { assert, isNonNullObject } from "../utils";
+} from "../crypto/index";
+import { fromBase64, fromUtf8, toBase64, toBech32, toUtf8 } from "../encoding/index";
+import { assert, isNonNullObject } from "../utils/index";
 
 import { rawSecp256k1PubkeyToRawAddress } from "./addresses";
 import { makeCosmoshubPath } from "./paths";

@@ -1,4 +1,4 @@
-import { fromBase64, fromHex } from "../encoding";
+import { fromBase64, fromHex } from "../encoding/index";
 import { MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
 import { PubKey } from "cosmjs-types/cosmos/crypto/secp256k1/keys";
 import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";

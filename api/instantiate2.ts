@@ -1,7 +1,7 @@
-import { Sha256, sha256 } from "../lib/crypto";
-import { fromBech32, toAscii, toBech32, toUtf8 } from "../lib/encoding";
-import { Uint64 } from "../lib/math";
-import { assert } from "../lib/utils";
+import { Sha256, sha256 } from "../lib/crypto/index";
+import { fromBech32, toAscii, toBech32, toUtf8 } from "../lib/encoding/index";
+import { Uint64 } from "../lib/math/index";
+import { assert } from "../lib/utils/index";
 
 /**
  * The "Basic Address" Hash from

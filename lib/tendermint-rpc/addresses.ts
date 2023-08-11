@@ -1,5 +1,5 @@
-import { ripemd160, sha256 } from "../crypto";
-import { toHex } from "../encoding";
+import { ripemd160, sha256 } from "../crypto/index";
+import { toHex } from "../encoding/index";
 
 export function rawEd25519PubkeyToRawAddress(pubkeyData: Uint8Array): Uint8Array {
   if (pubkeyData.length !== 32) {

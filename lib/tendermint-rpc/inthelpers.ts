@@ -1,4 +1,4 @@
-import { Int53 } from "../math";
+import { Int53 } from "../math/index";
 
 import { assertString } from "./tendermint34/encodings";
 

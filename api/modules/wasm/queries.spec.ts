@@ -1,6 +1,6 @@
-import { sha256 } from "../../../lib/crypto";
-import { fromAscii, fromHex, toAscii, toHex, toUtf8 } from "../../../lib/encoding";
-import { DirectSecp256k1HdWallet, OfflineDirectSigner, Registry } from "../../../lib/proto-signing";
+import { sha256 } from "../../../lib/crypto/index";
+import { fromAscii, fromHex, toAscii, toHex, toUtf8 } from "../../../lib/encoding/index";
+import { DirectSecp256k1HdWallet, OfflineDirectSigner, Registry } from "../../../lib/proto-signing/index";
 import {
   assertIsDeliverTxSuccess,
   Coin,

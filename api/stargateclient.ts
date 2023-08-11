@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { addCoins } from "../lib/amino";
-import { toHex } from "../lib/encoding";
-import { Uint53 } from "../lib/math";
+import { addCoins } from "../lib/amino/index";
+import { toHex } from "../lib/encoding/index";
+import { Uint53 } from "../lib/math/index";
 import {
   HttpEndpoint,
   Tendermint34Client,
   Tendermint37Client,
   TendermintClient,
   toRfc3339WithNanoseconds,
-} from "../lib/tendermint-rpc";
-import { assert, sleep } from "../lib/utils";
+} from "../lib/tendermint-rpc/index";
+import { assert, sleep } from "../lib/utils/index";
 import { MsgData, TxMsgData } from "cosmjs-types/cosmos/base/abci/v1beta1/abci";
 import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
 import { QueryDelegatorDelegationsResponse } from "cosmjs-types/cosmos/staking/v1beta1/query";

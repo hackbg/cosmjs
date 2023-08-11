@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64, toBase64, toUtf8 } from "../../../lib/encoding";
+import { fromBase64, toBase64, toUtf8 } from "../../../lib/encoding/index";
 import { AminoTypes, coins } from "../../index";
 import {
   MsgClearAdmin,

@@ -1,4 +1,4 @@
-import { fromHex } from "../encoding";
+import { fromHex } from "../encoding/index";
 
 import { Hmac } from "./hmac";
 import { Sha256, Sha512 } from "./sha";

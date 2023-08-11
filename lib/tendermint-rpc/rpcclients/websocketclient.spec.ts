@@ -1,5 +1,5 @@
-import { Uint53 } from "../../math";
-import { toListPromise } from "../../stream";
+import { Uint53 } from "../../math/index";
+import { toListPromise } from "../../stream/index";
 import { Stream } from "xstream";
 
 import { createJsonRpcRequest } from "../jsonrpc";

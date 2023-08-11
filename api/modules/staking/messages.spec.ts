@@ -1,7 +1,7 @@
-import { coin, Secp256k1HdWallet } from "../../../lib/amino";
-import { Random } from "../../../lib/crypto";
-import { fromBech32, toBase64, toBech32 } from "../../../lib/encoding";
-import { DirectSecp256k1HdWallet, encodePubkey } from "../../../lib/proto-signing";
+import { coin, Secp256k1HdWallet } from "../../../lib/amino/index";
+import { Random } from "../../../lib/crypto/index";
+import { fromBech32, toBase64, toBech32 } from "../../../lib/encoding/index";
+import { DirectSecp256k1HdWallet, encodePubkey } from "../../../lib/proto-signing/index";
 
 import { calculateFee } from "../../fee";
 import { SigningStargateClient } from "../../signingstargateclient";

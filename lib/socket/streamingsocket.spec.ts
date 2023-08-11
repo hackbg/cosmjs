@@ -1,4 +1,4 @@
-import { toListPromise } from "../stream";
+import { toListPromise } from "../stream/index";
 
 import { StreamingSocket } from "./streamingsocket";
 

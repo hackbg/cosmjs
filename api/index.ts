@@ -35,7 +35,7 @@ export {
 } from "./signingcosmwasmclient";
 
 // Re-exported because this is part of the CosmWasmClient/SigningCosmWasmClient APIs
-export { HttpEndpoint } from "../lib/tendermint-rpc";
+export { HttpEndpoint } from "../lib/tendermint-rpc/index";
 
 export { Account, accountFromAny, AccountParser } from "./accounts";
 export { AminoConverter, AminoConverters, AminoTypes } from "./aminotypes";

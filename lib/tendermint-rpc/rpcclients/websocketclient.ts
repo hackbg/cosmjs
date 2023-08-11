@@ -5,9 +5,9 @@ import {
   JsonRpcResponse,
   JsonRpcSuccessResponse,
   parseJsonRpcResponse,
-} from "../../json-rpc";
-import { ConnectionStatus, ReconnectingSocket, SocketWrapperMessageEvent } from "../../socket";
-import { firstEvent } from "../../stream";
+} from "../../json-rpc/index";
+import { ConnectionStatus, ReconnectingSocket, SocketWrapperMessageEvent } from "../../socket/index";
+import { firstEvent } from "../../stream/index";
 import { Listener, Producer, Stream, Subscription } from "xstream";
 
 import { hasProtocol, RpcStreamingClient, SubscriptionEvent } from "./rpcclient";

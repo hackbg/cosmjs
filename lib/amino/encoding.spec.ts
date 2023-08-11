@@ -1,5 +1,5 @@
-import { Random } from "../crypto";
-import { fromBase64, fromBech32, fromHex } from "../encoding";
+import { Random } from "../crypto/index";
+import { fromBase64, fromBech32, fromHex } from "../encoding/index";
 
 import {
   decodeAminoPubkey,

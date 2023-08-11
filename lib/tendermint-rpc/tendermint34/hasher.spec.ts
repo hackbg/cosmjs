@@ -1,4 +1,4 @@
-import { fromBase64, fromHex } from "../../encoding";
+import { fromBase64, fromHex } from "../../encoding/index";
 import { ReadonlyDate } from "readonly-date";
 
 import { ReadonlyDateWithNanoseconds } from "../dates";

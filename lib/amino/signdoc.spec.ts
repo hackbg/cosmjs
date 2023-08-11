@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Random } from "../crypto";
-import { toBech32 } from "../encoding";
+import { Random } from "../crypto/index";
+import { toBech32 } from "../encoding/index";
 
 import { AminoMsg, escapeCharacters, makeSignDoc, sortedJsonStringify } from "./signdoc";
 

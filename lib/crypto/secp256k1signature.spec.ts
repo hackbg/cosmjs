@@ -1,4 +1,4 @@
-import { fromHex } from "../encoding";
+import { fromHex } from "../encoding/index";
 
 import { ExtendedSecp256k1Signature, Secp256k1Signature } from "./secp256k1signature";
 
