@@ -1,7 +1,8 @@
 /* eslint-disable no-bitwise */
 import { fromHex, toAscii } from "../encoding/index";
 
-import { Argon2id, Argon2idOptions, Ed25519, Ed25519Keypair, Xchacha20poly1305Ietf } from "./libsodium";
+import type { Argon2idOptions } from "./libsodium";
+import { Argon2id, Ed25519, Ed25519Keypair, Xchacha20poly1305Ietf } from "./libsodium";
 
 describe("Libsodium", () => {
   describe("Argon2id", () => {

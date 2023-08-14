@@ -1,4 +1,4 @@
-import { HashFunction } from "./hash";
+import type { HashFunction } from "./hash";
 
 export class Hmac<H extends HashFunction> implements HashFunction {
   public readonly blockSize: number;

@@ -1,4 +1,4 @@
-export interface HashFunction {
+export class HashFunction {
   readonly blockSize: number;
   readonly update: (_: Uint8Array) => HashFunction;
   readonly digest: () => Uint8Array;

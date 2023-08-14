@@ -6,11 +6,13 @@ import {
   pathToString,
   Random,
   Secp256k1,
-  Secp256k1Keypair,
   sha256,
   Slip10,
   Slip10Curve,
   stringToPath,
+} from "../crypto/index";
+import type {
+  Secp256k1Keypair,
 } from "../crypto/index";
 import { fromBase64, fromUtf8, toBase64, toBech32, toUtf8 } from "../encoding/index";
 import { assert, isNonNullObject } from "../utils/index";
