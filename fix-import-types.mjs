@@ -7,6 +7,17 @@ import * as astring from 'astring'
 import { readdirSync, readFileSync, statSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 
+class Upsertable extends Map {
+  getDefault (key, def) {
+    if (this.has(key)) {
+      return this.get(key)
+    } else {
+      this.set(key, def)
+      return def
+    }
+  }
+}
+
 class Directory extends Map {
   constructor (path) {
     super()
@@ -30,6 +41,10 @@ class Directory extends Map {
     return this
   }
   patch () {
+    for (const [path, entry] of this.entries()) {
+      console.log(resolve(this.path, path), entry)
+      console.log()
+    }
     return this
   }
 }
@@ -37,10 +52,10 @@ class Directory extends Map {
 class File {
   constructor (path) {
     this.path = path
-    this.imports = new Map()
-    this.importTypes = new Map()
-    this.exports = new Map()
-    this.exportTypes = new Map()
+    this.imports = new Upsertable()
+    this.importTypes = new Upsertable()
+    this.exports = new Upsertable()
+    this.exportTypes = new Upsertable()
   }
   load () {
     const source = readFileSync(this.path)
@@ -49,25 +64,35 @@ class File {
     for (const declaration of parsed.program.body) {
       //console.log(declaration)
       if (declaration.type === 'ImportDeclaration') {
-        console.log(`  imported (${declaration.importKind}) from ${declaration.source.extra.raw}:`)
-        for (const specifier of declaration.specifiers) {
-          if (specifier.type === 'ImportSpecifier') {
-            console.log(`    ${specifier.local.name}`)
-          } else if (specifier.type === 'ImportDefaultSpecifier') {
-            console.log(`    ${specifier.local.name} (default)`)
-          }
-        }
+        //console.log(`  imported (${declaration.importKind}) from ${declaration.source.extra.raw}:`)
+        this.addImport(declaration)
       }
-      if (declaration.type === 'ExportDeclaration') {
-        console.log(`${this.path}:`)
-        console.log(`  exported (${declaration.exportKind}) from ${declaration.source.extra.raw}:`)
-        for (const specifier of declaration.specifiers) {
-          console.log(`    ${specifier.exported.name}`)
-        }
+      if (declaration.type === 'ExportNamedDeclaration') {
+        //console.log(`  exported (${declaration.exportKind}) from ${declaration.source.extra.raw}:`)
+        this.addExport(declaration)
       }
     }
-    console.log()
     return this
+  }
+  addImport (declaration) {
+    const imports = this.imports.getDefault(declaration.source.extra.raw, new Map())
+    for (const specifier of declaration.specifiers) {
+      if (specifier.type === 'ImportSpecifier') {
+        //console.log(`    ${specifier.local.name}`)
+        imports.set(specifier.local.name, specifier.imported.name)
+      } else if (specifier.type === 'ImportDefaultSpecifier') {
+        //console.log(`    ${specifier.local.name} (default)`)
+        imports.set(specifier.local.name, 'default')
+      }
+    }
+  }
+  addExport (declaration) {
+    console.log(declaration)
+    const exports = this.exports.getDefault(declaration.source.extra.raw, new Map())
+    for (const specifier of declaration.specifiers) {
+      console.log(`    ${specifier.exported.name}`)
+      exports.set(specifier.exported.name, specifier.local.name)
+    }
   }
   patch () {
     return this
@@ -75,4 +100,5 @@ class File {
 }
 
 new Directory('./api').load().patch()
-new Directory('./lib').load().patch()
+
+//new Directory('./lib').load().patch()
