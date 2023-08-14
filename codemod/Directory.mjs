@@ -5,7 +5,6 @@ import assert from 'node:assert'
 import { File } from './File.mjs'
 
 export class Directory extends Map {
-
   constructor (path = '.') {
     super()
     if (!statSync(path).isDirectory()) {
@@ -13,7 +12,6 @@ export class Directory extends Map {
     }
     this.path = path
   }
-
   /** Recursively load the contents of this directory,
     * (or of specific subdirectories), as well as all 
     * subdirectories, and all modules contained within. */
@@ -31,7 +29,6 @@ export class Directory extends Map {
     }
     return this
   }
-
   /** Replace `import` with `import type` where necessary,
     * for all contained files. By default, resolves from
     * this directory. */ 
@@ -41,7 +38,6 @@ export class Directory extends Map {
     }
     return this
   }
-
   /** Return the `File` that corresponds to importing `target` from `source`,
     * from the files underneath this `Directory`. */
   resolve (source, target) {
@@ -52,24 +48,31 @@ export class Directory extends Map {
       return resolveModuleImport(this, source, target)
     }
   }
-
 }
 
 /** Resolve relative path imports, i.e. those
   * that do not cross package boundaries. */
 function resolveRelativeImport (root, source, target) {
+  // split resolved target path into fragments
   const path = join(dirname(source.path), target)
   const fragments = path.split(sep)
   const visited = []
   let result = root
+  console.log(source.path)
   while (fragments[0]) {
     // descend:
     let fragment = fragments.shift()
-    result = result.get(fragment)
-    // try with TS extension:
-    if (!result && fragments.length === 0) {
-      result = result.get(`${fragment}.ts`)
-      if (!result) {
+    if (fragments.length > 0) {
+      console.log(`  ${fragment}/`)
+      result = result.get(fragment)
+    } else {
+      // add TS extension to last fragment
+      if (result.has(`${fragment}.ts`)) {
+        console.log(`  ${fragment}.ts`)
+        result = result.get(`${fragment}.ts`)
+      } else if (result.has(`${fragment}`)) {
+        result = result.get(`${fragment}`)
+      } else {
         throw new Error(`${fragment} not found in ${visited.join(sep)}`)
       }
     }
@@ -88,12 +91,11 @@ function resolveRelativeImport (root, source, target) {
       throw new Error(`${defaultFile} found in ${visited.join(sep)} but was not a File`)
     }
   }
-  assert(fragments.length === 0, `${source} must not have subdirs`)
   return result
 }
 
 /** Resolve imports across package boundaries. */
 function resolveModuleImport (root, source, target) {
-  console.warn(`${source} -> ${target}: not supported yet`)
+  console.warn(`${source.path} -> ${target}: not supported yet`)
   return null
 }
