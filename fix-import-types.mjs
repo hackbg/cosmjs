@@ -5,7 +5,8 @@ import * as acornWalk from 'acorn-walk'
 import * as astring from 'astring'
 
 import { readdirSync, readFileSync, statSync } from 'node:fs'
-import { dirname, resolve } from 'node:path'
+import { dirname, resolve, join, sep } from 'node:path'
+import assert from 'node:assert'
 
 class Upsertable extends Map {
   getDefault (key, def) {
@@ -19,16 +20,16 @@ class Upsertable extends Map {
 }
 
 class Directory extends Map {
-  constructor (path) {
+  constructor (path = '.') {
     super()
     if (!statSync(path).isDirectory()) {
       throw new Error(`${path} must be directory`)
     }
     this.path = path
   }
-  load () {
-    for (const name of readdirSync(this.path)) {
-      const path = resolve(this.path, name)
+  load (paths = readdirSync(this.path)) {
+    for (const name of paths) {
+      const path = join(this.path, name)
       const stat = statSync(path)
       if (stat.isFile() && name.endsWith('.ts')) {
         this.set(name, new File(path).load())
@@ -40,12 +41,32 @@ class Directory extends Map {
     }
     return this
   }
-  patch () {
+  patch (root = this) {
     for (const [path, entry] of this.entries()) {
-      console.log(resolve(this.path, path), entry)
-      console.log()
+      entry.patch(root)
     }
     return this
+  }
+  resolve (source, target) {
+    if (target.startsWith('.')) {
+      assert(statSync(source).isFile(), `${source} must be a file`)
+      let path = join(dirname(source), target)
+      const fragments = path.split(sep)
+      let result = this
+      console.log(fragments)
+      while (fragments[0]) {
+        result = result.get(fragments.shift())
+      }
+      if (result instanceof Directory) {
+        result = result.get('index.ts')
+      }
+      console.log(result)
+      assert(fragments.length === 0, `${source} must not have subdirs`)
+      return result
+    } else {
+      console.warn(`${source} -> ${target}: not supported yet`)
+      return null
+    }
   }
 }
 
@@ -75,8 +96,10 @@ class File {
     return this
   }
   addImport (declaration) {
-    const imports = ((declaration.importKind === 'type') ? this.importTypes : this.imports)
-      .getDefault(declaration.source.extra.raw, new Map())
+    const imports = ((declaration.importKind === 'type')
+      ? this.importTypes
+      : this.imports
+    ).getDefault(declaration.source.value, new Map())
     for (const specifier of declaration.specifiers) {
       if (specifier.type === 'ImportSpecifier') {
         imports.set(specifier.local.name, specifier.imported.name)
@@ -103,11 +126,16 @@ class File {
       exports.add(specifier.exported.name)
     }
   }
-  patch () {
+  patch (root) {
+    for (const [source, specifiers] of this.imports.entries()) {
+      const resolved = root.resolve(this.path, source)
+    }
+    for (const [source, specifiers] of this.importTypes.entries()) {
+    }
     return this
   }
 }
 
-new Directory('./api').load().patch()
-
-new Directory('./lib').load().patch()
+new Directory()
+  .load(['api', 'lib'])
+  .patch()
