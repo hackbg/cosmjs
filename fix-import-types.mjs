@@ -54,8 +54,8 @@ class File {
     this.path = path
     this.imports = new Upsertable()
     this.importTypes = new Upsertable()
-    this.exports = new Upsertable()
-    this.exportTypes = new Upsertable()
+    this.exports = new Set()
+    this.exportTypes = new Set()
   }
   load () {
     const source = readFileSync(this.path)
@@ -75,23 +75,32 @@ class File {
     return this
   }
   addImport (declaration) {
-    const imports = this.imports.getDefault(declaration.source.extra.raw, new Map())
+    const imports = ((declaration.importKind === 'type') ? this.importTypes : this.imports)
+      .getDefault(declaration.source.extra.raw, new Map())
     for (const specifier of declaration.specifiers) {
       if (specifier.type === 'ImportSpecifier') {
-        //console.log(`    ${specifier.local.name}`)
         imports.set(specifier.local.name, specifier.imported.name)
       } else if (specifier.type === 'ImportDefaultSpecifier') {
-        //console.log(`    ${specifier.local.name} (default)`)
         imports.set(specifier.local.name, 'default')
       }
     }
   }
   addExport (declaration) {
-    console.log(declaration)
-    const exports = this.exports.getDefault(declaration.source.extra.raw, new Map())
+    const exports = (declaration.exportKind === 'type')
+      ? this.exportTypes
+      : this.exports
+    if (declaration.declaration) {
+      if (declaration.declaration.id) {
+        exports.add(declaration.declaration.id.name)
+      }
+      if (declaration.declaration.declarations) {
+        for (const { id: { name } } of declaration.declaration.declarations) {
+          exports.add(name)
+        }
+      }
+    }
     for (const specifier of declaration.specifiers) {
-      console.log(`    ${specifier.exported.name}`)
-      exports.set(specifier.exported.name, specifier.local.name)
+      exports.add(specifier.exported.name)
     }
   }
   patch () {
@@ -101,4 +110,4 @@ class File {
 
 new Directory('./api').load().patch()
 
-//new Directory('./lib').load().patch()
+new Directory('./lib').load().patch()
