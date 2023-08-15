@@ -57,7 +57,6 @@ export class Directory extends Map {
       return this.resolveModuleImport(source, target)
     }
   }
-
   /** Resolve relative path imports, i.e. those
     * that do not cross package boundaries. */
   resolveRelativeImport (source, target) {
@@ -99,13 +98,17 @@ export class Directory extends Map {
     }
     return result
   }
-
   /** Resolve imports across package boundaries. */
   resolveModuleImport (root, source, target) {
     //console.warn(`  ! imports from packages not supported yet`)
     return null
   }
-
+  /** Counter. */
   static invalidDirectoryImports = 0
-
+  /** Save the contents of the patched files. */
+  save () {
+    for (const [name, entry] of this.entries()) {
+      entry.save()
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import recast from 'recast'
 import recastTS from './recast-ts.shim.cjs'
 
-import { readFileSync, statSync } from 'node:fs'
+import { readFileSync, writeFileSync, statSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 export class File {
@@ -15,6 +15,9 @@ export class File {
     return this
   }
   patch () {
+    return this
+  }
+  save () {
     return this
   }
 }
@@ -32,13 +35,13 @@ export class TSFile extends File {
     this.importTypes = new Map()
     this.exports = new Set()
     this.exportTypes = new Set()
+    this.modified = false
+    this.parsed = recast.parse(readFileSync(this.path), { parser: recastTS })
   }
 
   /** Populate the import and export collections. */
   load () {
-    const source = readFileSync(this.path)
-    const parsed = recast.parse(source, { parser: recastTS })
-    for (const declaration of parsed.program.body) {
+    for (const declaration of this.parsed.program.body) {
       //console.log(declaration)
       if (declaration.type === 'ImportDeclaration') {
         //console.log(`  imported (${declaration.importKind}) from ${declaration.source.extra.raw}:`)
@@ -62,26 +65,21 @@ export class TSFile extends File {
 
   /** Replace `import` with `import type` where appropriate. */
   patch (root) {
-    console.log(`\n~ resolving from: ${this.path}:`)
-
+    console.log(`\n~ resolving from: ${this.path}`)
     // Copy the collections that we will be modifying
     const newImports = cloneMap(this.imports)
     const newImportTypes = cloneMap(this.importTypes)
-
     // For every import declaration in current module:
     for (const [target, specifiers] of this.imports.entries()) {
       console.log(`  ${target}`)
-
       // Find the referenced module
       const resolved = root.resolve(this, target)
       if (!resolved) {
-        console.log({target})
         // Ignore imports from outside packages
         if (!target.startsWith('.')) continue
         throw new Error(`failed resolving ${target} from ${this.path}`)
       }
       if (resolved.path.endsWith('.json')) continue
-
       // For every identifier imported from that module:
       for (const [importedAs, imported] of specifiers) {
         if (imported !== importedAs) {
@@ -89,13 +87,12 @@ export class TSFile extends File {
         } else {
           console.log(`    ${imported}`)
         }
-
         // If it's missing in the referenced module's
         // exported values, but exists in its exported *types*,
         // change the import statement to import type:
         if (!resolved.exports.has(imported)) {
           if (resolved.exportTypes.has(imported)) {
-            console.log(`      changing to import type: ${imported}`)
+            console.log(`      changing to type import: ${imported}`)
             TSFile.patchedTypeImports++
             newImports.get(target).delete(importedAs)
             getDefault(newImportTypes, target, new Map()).set(importedAs, imported)
@@ -105,11 +102,69 @@ export class TSFile extends File {
         }
       }
     }
-
     // Replace collections with the modified ones
-    this.imports     = newImports
+    this.imports = newImports
     this.importTypes = newImportTypes
     return this
+  }
+  /** Update AST with patched imports */
+  save () {
+    //console.log()
+    //console.log('~', this.path)
+    // Clone things that we will be modifying while iterating
+    const processedImports = cloneMap(this.imports)
+    const processedImportTypes = cloneMap(this.importTypes)
+    // Iterate over the top-level declarations of the module
+    // to find the imports that we will be modifying
+    const declarations = []
+    for (const declaration of this.parsed.program.body) {
+      const { type, importKind, specifiers, source, assertions } = declaration
+      if (type === 'ImportDeclaration' && importKind === 'value') {
+        // If this is an import declaration, check if we need to
+        // split it into value and type sections.
+        const newValues = this.imports.get(declaration.source.value)
+        const newTypes  = this.importTypes.get(declaration.source.value)
+        const valueSpecifiers = []
+        const typeSpecifiers  = []
+        for (const specifier of declaration.specifiers) {
+          if (newValues.has(specifier.local.name)) {
+            valueSpecifiers.push(specifier)
+          }
+          if (newTypes && newTypes.has(specifier.local.name)) {
+            typeSpecifiers.push(specifier)
+          }
+        }
+        //console.log('source=', declaration.source)
+        // Emit import (values only)
+        if (valueSpecifiers.length > 0) {
+          //console.log('valueSpecifiers=', valueSpecifiers)
+          declarations.push({
+            type: 'ImportDeclaration',
+            importKind: 'value',
+            specifiers: valueSpecifiers,
+            source,
+            assertions
+          })
+        }
+        // Emit import type
+        if (typeSpecifiers.length > 0) {
+          //console.log('typeSpecifiers=', typeSpecifiers)
+          declarations.push({
+            type: 'ImportDeclaration',
+            importKind: 'type',
+            specifiers: typeSpecifiers,
+            source,
+            assertions
+          })
+        }
+      } else {
+        // All other declarations are passed through as-is
+        declarations.push(declaration)
+      }
+    }
+    this.parsed.program.body = declarations
+    //console.log(recast.print(this.parsed).code)
+    writeFileSync(this.path, recast.print(this.parsed).code)
   }
 
   static patchedTypeImports = 0
@@ -125,15 +180,6 @@ function addImport (imports, declaration) {
       imports.set(specifier.local.name, 'default')
     }
   }
-}
-
-/** Clone a map of maps */
-function cloneMap (oldMap) {
-  const newMap = new Map()
-  for (const [key, submap] of oldMap) {
-    newMap.set(key, new Map(submap))
-  }
-  return newMap
 }
 
 function addExport (exports, declaration) {
@@ -152,6 +198,7 @@ function addExport (exports, declaration) {
   }
 }
 
+/** Get a key in a map, setting it to provided default if missing. */
 function getDefault (map, key, def) {
   if (map.has(key)) {
     return map.get(key)
@@ -159,4 +206,13 @@ function getDefault (map, key, def) {
     map.set(key, def)
     return def
   }
+}
+
+/** Clone a map of maps */
+function cloneMap (oldMap) {
+  const newMap = new Map()
+  for (const [key, submap] of oldMap) {
+    newMap.set(key, new Map(submap))
+  }
+  return newMap
 }

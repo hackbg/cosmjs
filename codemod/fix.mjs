@@ -1,6 +1,10 @@
 import { Directory } from './Directory.mjs'
 import { TSFile } from './File.mjs'
-new Directory().load(['api', 'lib']).patch()
+
+new Directory()
+  .load(['api', 'lib'])
+  .patch()
+  .save()
 
 console.log()
 console.log("Invalid directory imports:", Directory.invalidDirectoryImports)
