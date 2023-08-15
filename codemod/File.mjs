@@ -63,30 +63,52 @@ export class TSFile extends File {
   /** Replace `import` with `import type` where appropriate. */
   patch (root) {
     console.log(`\n~ resolving from: ${this.path}:`)
+
+    // Copy the collections that we will be modifying
+    const newImports = cloneMap(this.imports)
+    const newImportTypes = cloneMap(this.importTypes)
+
+    // For every import declaration in current module:
     for (const [target, specifiers] of this.imports.entries()) {
       console.log(`  ${target}`)
+
+      // Find the referenced module
       const resolved = root.resolve(this, target)
-      let wasPatched = false
-      if (resolved) {
-        if (resolved.path.endsWith('.json')) continue
-        for (const [importedAs, imported] of specifiers) {
-          if (imported !== importedAs) {
-            console.log(`    ${imported} (as ${importedAs})`)
+      if (!resolved) {
+        console.log({target})
+        // Ignore imports from outside packages
+        if (!target.startsWith('.')) continue
+        throw new Error(`failed resolving ${target} from ${this.path}`)
+      }
+      if (resolved.path.endsWith('.json')) continue
+
+      // For every identifier imported from that module:
+      for (const [importedAs, imported] of specifiers) {
+        if (imported !== importedAs) {
+          console.log(`    ${imported} (as ${importedAs})`)
+        } else {
+          console.log(`    ${imported}`)
+        }
+
+        // If it's missing in the referenced module's
+        // exported values, but exists in its exported *types*,
+        // change the import statement to import type:
+        if (!resolved.exports.has(imported)) {
+          if (resolved.exportTypes.has(imported)) {
+            console.log(`      changing to import type: ${imported}`)
+            TSFile.patchedTypeImports++
+            newImports.get(target).delete(importedAs)
+            getDefault(newImportTypes, target, new Map()).set(importedAs, imported)
           } else {
-            console.log(`    ${imported}`)
-          }
-          if (!resolved.exports.has(imported)) {
-            if (resolved.exportTypes.has(imported)) {
-              console.log(`      changing to import type: ${imported}`)
-              wasPatched = true
-            } else {
-              throw new Error(`${resolved.path}: ${imported} not found (from ${this.path})`)
-            }
+            throw new Error(`${resolved.path}: ${imported} not found (from ${this.path})`)
           }
         }
       }
-      if (wasPatched) TSFile.patchedTypeImports++
     }
+
+    // Replace collections with the modified ones
+    this.imports     = newImports
+    this.importTypes = newImportTypes
     return this
   }
 
@@ -103,6 +125,15 @@ function addImport (imports, declaration) {
       imports.set(specifier.local.name, 'default')
     }
   }
+}
+
+/** Clone a map of maps */
+function cloneMap (oldMap) {
+  const newMap = new Map()
+  for (const [key, submap] of oldMap) {
+    newMap.set(key, new Map(submap))
+  }
+  return newMap
 }
 
 function addExport (exports, declaration) {
