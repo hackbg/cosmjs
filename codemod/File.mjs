@@ -4,14 +4,30 @@ import recastTS from './recast-ts.shim.cjs'
 import { readFileSync, statSync } from 'node:fs'
 import { resolve } from 'node:path'
 
-/** Represents a TypeScript module. */
 export class File {
-
   constructor (path) {
     if (!statSync(path).isFile()) {
       throw new Error(`${path} must be a file`)
     }
     this.path = path
+  }
+  load () {
+    return this
+  }
+  patch () {
+    return this
+  }
+}
+
+/** Represents a JSON module. */
+export class JSONFile extends File {}
+
+/** Represents a TypeScript module.
+  * Contains its imports and exports. */
+export class TSFile extends File {
+
+  constructor (path) {
+    super(path)
     this.imports = new Map()
     this.importTypes = new Map()
     this.exports = new Set()
@@ -46,13 +62,35 @@ export class File {
 
   /** Replace `import` with `import type` where appropriate. */
   patch (root) {
+    console.log(`\n~ resolving from: ${this.path}:`)
     for (const [target, specifiers] of this.imports.entries()) {
+      console.log(`  ${target}`)
       const resolved = root.resolve(this, target)
-      for (const specifier of specifiers) {
+      let wasPatched = false
+      if (resolved) {
+        if (resolved.path.endsWith('.json')) continue
+        for (const [importedAs, imported] of specifiers) {
+          if (imported !== importedAs) {
+            console.log(`    ${imported} (as ${importedAs})`)
+          } else {
+            console.log(`    ${imported}`)
+          }
+          if (!resolved.exports.has(imported)) {
+            if (resolved.exportTypes.has(imported)) {
+              console.log(`      changing to import type: ${imported}`)
+              wasPatched = true
+            } else {
+              throw new Error(`${resolved.path}: ${imported} not found (from ${this.path})`)
+            }
+          }
+        }
       }
+      if (wasPatched) TSFile.patchedTypeImports++
     }
     return this
   }
+
+  static patchedTypeImports = 0
 
 }
 
