@@ -125,8 +125,12 @@ export class TSFile extends File {
         const newValues = this.imports.get(declaration.source.value)
         const newTypes  = this.importTypes.get(declaration.source.value)
         const valueSpecifiers = []
-        const typeSpecifiers  = []
+        const typeSpecifiers = []
+        let nsSpecifier = null
         for (const specifier of declaration.specifiers) {
+          if (specifier.type === 'ImportNamespaceSpecifier') {
+            nsSpecifier = specifier
+          }
           if (newValues.has(specifier.local.name)) {
             valueSpecifiers.push(specifier)
           }
@@ -153,6 +157,15 @@ export class TSFile extends File {
             type: 'ImportDeclaration',
             importKind: 'type',
             specifiers: typeSpecifiers,
+            source,
+            assertions
+          })
+        }
+        if (nsSpecifier) {
+          declarations.push({
+            type: 'ImportDeclaration',
+            importKind: 'value',
+            specifiers: [nsSpecifier],
             source,
             assertions
           })
