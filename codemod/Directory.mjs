@@ -32,8 +32,6 @@ export class Directory extends Map {
         }
       } else if (stat.isDirectory()) {
         this.set(name, new Directory(path).load())
-      } else {
-        //console.warn(`${path} was not a file or directory`)
       }
     }
     return this
@@ -100,7 +98,6 @@ export class Directory extends Map {
   }
   /** Resolve imports across package boundaries. */
   resolveModuleImport (root, source, target) {
-    //console.warn(`  ! imports from packages not supported yet`)
     return null
   }
   /** Counter. */

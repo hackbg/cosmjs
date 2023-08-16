@@ -42,9 +42,7 @@ export class TSFile extends File {
   /** Populate the import and export collections. */
   load () {
     for (const declaration of this.parsed.program.body) {
-      //console.log(declaration)
       if (declaration.type === 'ImportDeclaration') {
-        //console.log(`  imported (${declaration.importKind}) from ${declaration.source.extra.raw}:`)
         if (declaration.importKind === 'type') {
           addImport(this.importTypes, declaration)
         } else {
@@ -52,7 +50,6 @@ export class TSFile extends File {
         }
       }
       if (declaration.type === 'ExportNamedDeclaration') {
-        //console.log(`  exported (${declaration.exportKind}) from ${declaration.source.extra.raw}:`)
         if (declaration.exportKind === 'type') {
           addExport(this.exportTypes, declaration)
         } else {
