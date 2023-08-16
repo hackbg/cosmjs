@@ -31,12 +31,14 @@ export class TSFile extends File {
 
   constructor (path) {
     super(path)
-    this.imports = new Map()
-    this.importTypes = new Map()
-    this.exports = new Set()
-    this.exportTypes = new Set()
-    this.modified = false
-    this.parsed = recast.parse(readFileSync(this.path), { parser: recastTS })
+    this.imports       = new Map()
+    this.importTypes   = new Map()
+    this.reexports     = new Map()
+    this.reexportTypes = new Map()
+    this.exports       = new Set()
+    this.exportTypes   = new Set()
+    this.modified      = false
+    this.parsed        = recast.parse(readFileSync(this.path), { parser: recastTS })
   }
   /** Populate the import and export collections. */
   load () {
@@ -47,16 +49,60 @@ export class TSFile extends File {
         } else {
           addImport(this.imports, declaration)
         }
+        continue
       }
       if (declaration.type === 'ExportNamedDeclaration') {
         if (declaration.exportKind === 'type') {
           addExport(this.exportTypes, declaration)
+          if (declaration.source) addReexport(this.reexportTypes, declaration)
         } else {
           addExport(this.exports, declaration)
+          if (declaration.source) addReexport(this.reexports, declaration)
+        }
+        continue
+      }
+    }
+
+    return this
+
+    function addImport (imports, declaration) {
+      imports = getDefault(imports, declaration.source.value, new Map())
+      for (const specifier of declaration.specifiers) {
+        if (specifier.type === 'ImportSpecifier') {
+          imports.set(specifier.local.name, specifier.imported.name)
+        } else if (specifier.type === 'ImportDefaultSpecifier') {
+          imports.set(specifier.local.name, 'default')
         }
       }
     }
-    return this
+
+    function addExport (exports, declaration) {
+      if (declaration.declaration) {
+        if (declaration.declaration.id) {
+          exports.add(declaration.declaration.id.name)
+        }
+        if (declaration.declaration.declarations) {
+          for (const { id: { name } } of declaration.declaration.declarations) {
+            exports.add(name)
+          }
+        }
+      }
+      for (const specifier of declaration.specifiers) {
+        exports.add(specifier.exported.name)
+      }
+    }
+
+    function addReexport (reexports, declaration) {
+      reexports = getDefault(reexports, declaration.source.value, new Map())
+      for (const specifier of declaration.specifiers) {
+        if (specifier.type === 'ExportSpecifier') {
+          reexports.set(specifier.exported.name, specifier.local.name)
+        } else if (specifier.type === 'ExportDefaultSpecifier') {
+          reexports.set(specifier.local.name, 'default')
+        }
+      }
+      console.log({reexports})
+    }
   }
   /** Replace `import` with `import type` where appropriate. */
   patch (root) {
@@ -183,33 +229,6 @@ export class TSFile extends File {
 
   static patchedTypeImports = 0
 
-}
-
-function addImport (imports, declaration) {
-  imports = getDefault(imports, declaration.source.value, new Map())
-  for (const specifier of declaration.specifiers) {
-    if (specifier.type === 'ImportSpecifier') {
-      imports.set(specifier.local.name, specifier.imported.name)
-    } else if (specifier.type === 'ImportDefaultSpecifier') {
-      imports.set(specifier.local.name, 'default')
-    }
-  }
-}
-
-function addExport (exports, declaration) {
-  if (declaration.declaration) {
-    if (declaration.declaration.id) {
-      exports.add(declaration.declaration.id.name)
-    }
-    if (declaration.declaration.declarations) {
-      for (const { id: { name } } of declaration.declaration.declarations) {
-        exports.add(name)
-      }
-    }
-  }
-  for (const specifier of declaration.specifiers) {
-    exports.add(specifier.exported.name)
-  }
 }
 
 /** Get a key in a map, setting it to provided default if missing. */
