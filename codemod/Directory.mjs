@@ -106,9 +106,9 @@ export class Directory extends Map {
   /** Counter. */
   static invalidDirectoryImports = 0
   /** Save the contents of the patched files. */
-  save () {
+  save (dry = false) {
     for (const [name, entry] of this.entries()) {
-      entry.save()
+      entry.save(dry)
     }
   }
 }

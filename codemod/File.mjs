@@ -108,76 +108,64 @@ export class TSFile extends File {
     return this
   }
   /** Update AST with patched imports */
-  save () {
-    //console.log()
-    //console.log('~', this.path)
-    // Clone things that we will be modifying while iterating
-    const processedImports = cloneMap(this.imports)
-    const processedImportTypes = cloneMap(this.importTypes)
-    // Iterate over the top-level declarations of the module
-    // to find the imports that we will be modifying
-    const declarations = []
-    for (const declaration of this.parsed.program.body) {
-      const { type, importKind, specifiers, source, assertions } = declaration
-      if (type === 'ImportDeclaration' && importKind === 'value') {
-        // If this is an import declaration, check if we need to
-        // split it into value and type sections.
-        const newValues = this.imports.get(declaration.source.value)
-        const newTypes  = this.importTypes.get(declaration.source.value)
+  save (dry = false) {
+    const { imports, importTypes } = this
+    // Visit each import declaration and optionally
+    // separate it into `import` and `import type`:
+    recast.visit(this.parsed, {
+      visitImportDeclaration (declaration) {
+        // Split the declaration's specifiers into value and type imports
+        // according to the result of the preceding call to `resolve`.
+        const newValues = imports.get(declaration.value.source.value)
+        const newTypes  = importTypes.get(declaration.value.source.value)
         const valueSpecifiers = []
-        const typeSpecifiers = []
         let nsSpecifier = null
-        for (const specifier of declaration.specifiers) {
+        // Leave only the value specifiers, separating the type specifiers.
+        const typeSpecifiers = []
+        declaration.value.specifiers = declaration.value.specifiers.filter(specifier=>{
           if (specifier.type === 'ImportNamespaceSpecifier') {
-            nsSpecifier = specifier
-          }
-          if (newValues.has(specifier.local.name)) {
-            valueSpecifiers.push(specifier)
+            console.log('preserving namespace specifier')
+            // Preserve `import *`
+            return true
           }
           if (newTypes && newTypes.has(specifier.local.name)) {
+            // Extract imports that resolve to types
             typeSpecifiers.push(specifier)
+            return false
+          }
+          // Pass through the rest as is
+          return true
+        })
+        // If there were any type specifiers extracted,
+        // we need to contain them in an `import type` declaration
+        // so that they don't get compiled to missing `import`s.
+        if (typeSpecifiers.length > 0) {
+          if (declaration.value.specifiers.length < 1) {
+            // If all specifiers turned out to be type specifiers,
+            // and there are no remaining value specifiers, change
+            // the existing import declaration to `import type`
+            // so as not to lose the attached comment nodes.
+            declaration.value.specifiers = typeSpecifiers
+            declaration.value.importKind = 'type'
+          } else {
+            // If the declaration turned out to contain some
+            // type specifiers and also some value specifiers,
+            // append a separate `import type`  after the `import`.
+            declaration.insertAfter(Object.assign(recast.types.builders.importDeclaration(
+              typeSpecifiers, declaration.value.source
+            ), {
+              importKind: 'type'
+            }))
           }
         }
-        //console.log('source=', declaration.source)
-        // Emit import (values only)
-        if (valueSpecifiers.length > 0) {
-          //console.log('valueSpecifiers=', valueSpecifiers)
-          declarations.push({
-            type: 'ImportDeclaration',
-            importKind: 'value',
-            specifiers: valueSpecifiers,
-            source,
-            assertions
-          })
-        }
-        // Emit import type
-        if (typeSpecifiers.length > 0) {
-          //console.log('typeSpecifiers=', typeSpecifiers)
-          declarations.push({
-            type: 'ImportDeclaration',
-            importKind: 'type',
-            specifiers: typeSpecifiers,
-            source,
-            assertions
-          })
-        }
-        if (nsSpecifier) {
-          declarations.push({
-            type: 'ImportDeclaration',
-            importKind: 'value',
-            specifiers: [nsSpecifier],
-            source,
-            assertions
-          })
-        }
-      } else {
-        // All other declarations are passed through as-is
-        declarations.push(declaration)
+        // Either way, there's no need to traverse inwards:
+        return false
       }
+    })
+    // If this is not a dry run, save the modified file now.
+    if (!dry) {
+      writeFileSync(this.path, recast.print(this.parsed).code)
     }
-    this.parsed.program.body = declarations
-    //console.log(recast.print(this.parsed).code)
-    writeFileSync(this.path, recast.print(this.parsed).code)
   }
 
   static patchedTypeImports = 0
