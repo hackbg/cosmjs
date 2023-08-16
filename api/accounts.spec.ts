@@ -1,4 +1,4 @@
-import { fromBase64 } from "../lib/encoding/index";
+import { fromBase64 } from "../lib/encoding";
 
 import { Any } from "cosmjs-types/google/protobuf/any";
 
