@@ -38,7 +38,6 @@ export class TSFile extends File {
     this.modified = false
     this.parsed = recast.parse(readFileSync(this.path), { parser: recastTS })
   }
-
   /** Populate the import and export collections. */
   load () {
     for (const declaration of this.parsed.program.body) {
@@ -59,7 +58,6 @@ export class TSFile extends File {
     }
     return this
   }
-
   /** Replace `import` with `import type` where appropriate. */
   patch (root) {
     console.log(`\n~ resolving from: ${this.path}`)
@@ -105,16 +103,34 @@ export class TSFile extends File {
     return this
   }
   /** Update AST with patched imports */
-  save (dry = false) {
-    const { imports, importTypes } = this
+  save (dry = false, root) {
+    const self = this
     // Visit each import declaration and optionally
     // separate it into `import` and `import type`:
     recast.visit(this.parsed, {
       visitImportDeclaration (declaration) {
+        // First, a hacky way to fix directory imports:
+        // Resolve the source module once again.
+        const resolved = root.resolve(self, declaration.value.source.value)
+        if (resolved) {
+          // Append `/index` to the import source if trying to import from directory.
+          if (
+            // The `/index.ts` part is added by Directory#resolve
+            resolved.path.endsWith('/index.ts') &&
+            // Nothing to do if the import already contains `/index`
+            !declaration.value.source.value.endsWith('/index')
+          ) {
+            declaration.value.source.value += '/index'
+          }
+        } else if (declaration.value.source.value.startsWith('.')) {
+          // Throw if a relative import was not found.
+          throw new Error(`failed resolving ${target} from ${this.path}`)
+        }
+        // With that out of the way, now comes the main part:
         // Split the declaration's specifiers into value and type imports
         // according to the result of the preceding call to `resolve`.
-        const newValues = imports.get(declaration.value.source.value)
-        const newTypes  = importTypes.get(declaration.value.source.value)
+        const newValues = self.imports.get(declaration.value.source.value)
+        const newTypes  = self.importTypes.get(declaration.value.source.value)
         const valueSpecifiers = []
         let nsSpecifier = null
         // Leave only the value specifiers, separating the type specifiers.
