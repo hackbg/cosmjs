@@ -41,7 +41,7 @@
     "test-chrome": "pnpm pack-web && karma start --single-run --browsers ChromeHeadless",
     "test-edge": "pnpm pack-web && karma start --single-run --browsers Edge",
     "test-firefox": "pnpm pack-web && karma start --single-run --browsers Firefox",
-    "test-node": "pnpm node jasmine-testrunner.cjs",
+    "test-node": "ganesha-run jasmine-testrunner.cjs",
     "test-safari": "pnpm pack-web && karma start --single-run --browsers Safari"
   },
   "dependencies": {
@@ -64,6 +64,7 @@
   },
   "devDependencies": {
     "@hackbg/ubik": "workspace:./ubik",
+    "@hackbg/ganesha": "^4.2.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/base64-js": "^1.2.5",
     "@types/bn.js": "^5",
