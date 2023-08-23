@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { IdentifiedConnection, ConnectionPaths, Params } from "./connection";
-import { Long, isSet, DeepPartial, Exact } from "../../../../helpers";
+import { Long, isSet } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "ibc.core.connection.v1";
 /** GenesisState defines the ibc connection submodule's genesis state. */

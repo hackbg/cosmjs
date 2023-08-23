@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { FileDescriptorProto } from "../../../google/protobuf/descriptor";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Exact, Rpc } from "../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../helpers";
 export const protobufPackage = "cosmos.reflection.v1";
 /** FileDescriptorsRequest is the Query/FileDescriptors request type. */
 export interface FileDescriptorsRequest {}

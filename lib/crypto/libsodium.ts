@@ -3,7 +3,7 @@
 //
 // libsodium.js API: https://gist.github.com/webmaster128/b2dbe6d54d36dd168c9fabf441b9b09c
 
-import { isNonNullObject } from "../utils";
+import { isNonNullObject } from "../utils/index";
 // Using crypto_pwhash requires sumo. Once we migrate to a standalone
 // Argon2 implementation, we can use the normal libsodium-wrappers
 // again: https://github.com/cosmos/cosmjs/issues/1031

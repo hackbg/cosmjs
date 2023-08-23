@@ -1,5 +1,6 @@
 /* eslint-disable */
-import { Long, DeepPartial, Exact, isSet, bytesFromBase64, base64FromBytes } from "../../helpers";
+import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../helpers";
+import type { DeepPartial, Exact } from "../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "google.protobuf";
 export enum FieldDescriptorProto_Type {

@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { coins } from "../../../lib/amino";
-import { MsgCreateVestingAccount } from "cosmjs-types/cosmos/vesting/v1beta1/tx";
+import { coins } from "../../../lib/amino/index";
+import { MsgCreateVestingAccount } from "../../../types/cosmos/vesting/v1beta1/tx";
 import Long from "long";
 
 import { AminoTypes } from "../../aminotypes";
-import { AminoMsgCreateVestingAccount, createVestingAminoConverters } from "./aminomessages";
+import { createVestingAminoConverters } from "./aminomessages";
+
+import type { AminoMsgCreateVestingAccount } from "./aminomessages";
 
 describe("vesting Amino messages", () => {
   describe("toAmino", () => {

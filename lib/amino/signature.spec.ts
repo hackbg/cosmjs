@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64 } from "../encoding";
+import { fromBase64 } from "../encoding/index";
 
-import { decodeSignature, encodeSecp256k1Signature, StdSignature } from "./signature";
+import { decodeSignature, encodeSecp256k1Signature } from "./signature";
+
+import type { StdSignature } from "./signature";
 
 describe("signature", () => {
   describe("encodeSecp256k1Signature", () => {

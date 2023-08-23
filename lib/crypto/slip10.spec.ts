@@ -1,7 +1,6 @@
-import { fromHex } from "../encoding";
+import { fromHex } from "../encoding/index";
 
 import {
-  HdPath,
   pathToString,
   Slip10,
   Slip10Curve,
@@ -9,6 +8,8 @@ import {
   Slip10RawIndex,
   stringToPath,
 } from "./slip10";
+
+import type { HdPath } from "./slip10";
 
 describe("Slip10", () => {
   it("has working slip10CurveFromString()", () => {

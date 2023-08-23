@@ -4,8 +4,9 @@
 
 import { isJsonCompatibleDictionary } from "../compatibility";
 import { parseJsonRpcId, parseJsonRpcRequest } from "../parse";
-import {
-  jsonRpcCode,
+import { jsonRpcCode } from "../types";
+
+import type {
   JsonRpcErrorResponse,
   JsonRpcRequest,
   JsonRpcResponse,

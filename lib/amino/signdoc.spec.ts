@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Random } from "../crypto";
-import { toBech32 } from "../encoding";
+import { Random } from "../crypto/index";
+import { toBech32 } from "../encoding/index";
 
-import { AminoMsg, escapeCharacters, makeSignDoc, sortedJsonStringify } from "./signdoc";
+import { escapeCharacters, makeSignDoc, sortedJsonStringify } from "./signdoc";
+
+import type { AminoMsg } from "./signdoc";
 
 function makeRandomAddress(): string {
   return toBech32("cosmos", Random.getBytes(20));

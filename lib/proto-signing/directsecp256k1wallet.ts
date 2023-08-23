@@ -1,9 +1,9 @@
-import { encodeSecp256k1Signature, rawSecp256k1PubkeyToRawAddress } from "../amino";
-import { Secp256k1, sha256 } from "../crypto";
-import { toBech32 } from "../encoding";
-import { SignDoc } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+import { encodeSecp256k1Signature, rawSecp256k1PubkeyToRawAddress } from "../amino/index";
+import { Secp256k1, sha256 } from "../crypto/index";
+import { toBech32 } from "../encoding/index";
+import { SignDoc } from "../../types/cosmos/tx/v1beta1/tx";
 
-import { AccountData, DirectSignResponse, OfflineDirectSigner } from "./signer";
+import type { AccountData, DirectSignResponse, OfflineDirectSigner } from "./signer";
 import { makeSignBytes } from "./signing";
 
 /**

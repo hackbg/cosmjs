@@ -1,11 +1,13 @@
-import { coins, makeCosmoshubPath } from "../amino";
-import { Secp256k1, Secp256k1Signature, sha256 } from "../crypto";
-import { fromBase64, fromHex } from "../encoding";
+import { coins, makeCosmoshubPath } from "../amino/index";
+import { Secp256k1, Secp256k1Signature, sha256 } from "../crypto/index";
+import { fromBase64, fromHex } from "../encoding/index";
 
 import { DirectSecp256k1HdWallet, extractKdfConfiguration } from "./directsecp256k1hdwallet";
 import { makeAuthInfoBytes, makeSignBytes, makeSignDoc } from "./signing";
 import { base64Matcher, faucet, testVectors } from "./testutils.spec";
-import { executeKdf, KdfConfiguration } from "./wallet";
+import { executeKdf } from "./wallet";
+
+import type { KdfConfiguration } from "./wallet";
 
 describe("DirectSecp256k1HdWallet", () => {
   // m/44'/118'/0'/0/0

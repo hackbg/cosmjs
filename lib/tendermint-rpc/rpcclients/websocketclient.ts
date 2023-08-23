@@ -1,16 +1,13 @@
-import {
-  isJsonRpcErrorResponse,
-  JsonRpcId,
-  JsonRpcRequest,
-  JsonRpcResponse,
-  JsonRpcSuccessResponse,
-  parseJsonRpcResponse,
-} from "../../json-rpc";
-import { ConnectionStatus, ReconnectingSocket, SocketWrapperMessageEvent } from "../../socket";
-import { firstEvent } from "../../stream";
+import { isJsonRpcErrorResponse, parseJsonRpcResponse } from "../../json-rpc/index";
+import type { JsonRpcId, JsonRpcRequest, JsonRpcResponse, JsonRpcSuccessResponse } from "../../json-rpc/index";
+import { ConnectionStatus, ReconnectingSocket } from "../../socket/index";
+import type { SocketWrapperMessageEvent } from "../../socket/index";
+import { firstEvent } from "../../stream/index";
 import { Listener, Producer, Stream, Subscription } from "xstream";
 
-import { hasProtocol, RpcStreamingClient, SubscriptionEvent } from "./rpcclient";
+import { hasProtocol } from "./rpcclient";
+
+import type { RpcStreamingClient, SubscriptionEvent } from "./rpcclient";
 
 function defaultErrorHandler(error: any): never {
   throw error;

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64, toBase64 } from "../lib/encoding";
+import { fromBase64, toBase64 } from "../lib/encoding/index";
 import {
   coins,
   DirectSecp256k1HdWallet,
@@ -7,22 +7,21 @@ import {
   makeAuthInfoBytes,
   makeSignDoc,
   Registry,
-  TxBodyEncodeObject,
-} from "../lib/proto-signing";
-import { assert, sleep } from "../lib/utils";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+} from "../lib/proto-signing/index";
+import type { TxBodyEncodeObject } from "../lib/proto-signing/index";
+import { assert, sleep } from "../lib/utils/index";
+import { TxRaw } from "../types/cosmos/tx/v1beta1/tx";
 import { ReadonlyDate } from "readonly-date";
 
 import {
   assertIsDeliverTxSuccess,
   BroadcastTxError,
-  DeliverTxResponse,
   isDeliverTxFailure,
   isDeliverTxSuccess,
-  PrivateStargateClient,
   StargateClient,
   TimeoutError,
 } from "./stargateclient";
+import type { DeliverTxResponse, PrivateStargateClient } from "./stargateclient";
 import {
   faucet,
   makeRandomAddress,

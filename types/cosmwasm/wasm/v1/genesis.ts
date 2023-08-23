@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { Params, CodeInfo, ContractInfo, Model, ContractCodeHistoryEntry } from "./types";
-import { Long, isSet, DeepPartial, Exact, bytesFromBase64, base64FromBytes } from "../../../helpers";
+import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmwasm.wasm.v1";
 /** GenesisState - genesis state of x/wasm */

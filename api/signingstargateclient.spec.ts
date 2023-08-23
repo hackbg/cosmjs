@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention,no-bitwise */
-import { Secp256k1HdWallet } from "../lib/amino";
+import { Secp256k1HdWallet } from "../lib/amino/index";
 import {
   coin,
   coins,
@@ -7,33 +7,26 @@ import {
   DirectSecp256k1HdWallet,
   makeCosmoshubPath,
   Registry,
-} from "../lib/proto-signing";
-import { Tendermint34Client } from "../lib/tendermint-rpc";
-import { assert, sleep } from "../lib/utils";
+} from "../lib/proto-signing/index";
+import { Tendermint34Client } from "../lib/tendermint-rpc/index";
+import { assert, sleep } from "../lib/utils/index";
 import { DeepPartial } from "cosmjs-types";
-import { MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
-import { BasicAllowance } from "cosmjs-types/cosmos/feegrant/v1beta1/feegrant";
-import { MsgGrantAllowance } from "cosmjs-types/cosmos/feegrant/v1beta1/tx";
-import { MsgDelegate } from "cosmjs-types/cosmos/staking/v1beta1/tx";
-import { AuthInfo, TxBody, TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { Any } from "cosmjs-types/google/protobuf/any";
+import { MsgSend } from "../types/cosmos/bank/v1beta1/tx";
+import { Coin } from "../types/cosmos/base/v1beta1/coin";
+import { BasicAllowance } from "../types/cosmos/feegrant/v1beta1/feegrant";
+import { MsgGrantAllowance } from "../types/cosmos/feegrant/v1beta1/tx";
+import { MsgDelegate } from "../types/cosmos/staking/v1beta1/tx";
+import { AuthInfo, TxBody, TxRaw } from "../types/cosmos/tx/v1beta1/tx";
+import { Any } from "../types/google/protobuf/any";
 import Long from "long";
 import protobuf from "protobufjs/minimal";
 
 import { AminoTypes } from "./aminotypes";
-import {
-  AminoMsgDelegate,
-  MsgDelegateEncodeObject,
-  MsgSendEncodeObject,
-  setupFeegrantExtension,
-} from "./modules";
-import { QueryClient } from "./queryclient";
-import {
-  PrivateSigningStargateClient,
-  SigningStargateClient,
-  SigningStargateClientOptions,
-} from "./signingstargateclient";
+import { setupFeegrantExtension } from "./modules/index";
+import type { AminoMsgDelegate, MsgDelegateEncodeObject, MsgSendEncodeObject } from "./modules/index";
+import { QueryClient } from "./queryclient/index";
+import { SigningStargateClient } from "./signingstargateclient";
+import type { PrivateSigningStargateClient, SigningStargateClientOptions } from "./signingstargateclient";
 import { assertIsDeliverTxFailure, assertIsDeliverTxSuccess, isDeliverTxFailure } from "./stargateclient";
 import {
   defaultGasPrice,

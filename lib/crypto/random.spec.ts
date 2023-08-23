@@ -1,4 +1,4 @@
-import { isUint8Array } from "../utils";
+import { isUint8Array } from "../utils/index";
 
 import { Random } from "./random";
 

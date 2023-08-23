@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { coin, coins, DirectSecp256k1HdWallet } from "../../../lib/proto-signing";
-import { Tendermint34Client } from "../../../lib/tendermint-rpc";
-import { sleep } from "../../../lib/utils";
-import { MsgDelegate } from "cosmjs-types/cosmos/staking/v1beta1/tx";
+import { coin, coins, DirectSecp256k1HdWallet } from "../../../lib/proto-signing/index";
+import { Tendermint34Client } from "../../../lib/tendermint-rpc/index";
+import { sleep } from "../../../lib/utils/index";
+import { MsgDelegate } from "../../../types/cosmos/staking/v1beta1/tx";
 
-import { QueryClient } from "../../queryclient";
+import { QueryClient } from "../../queryclient/index";
 import { SigningStargateClient } from "../../signingstargateclient";
 import { assertIsDeliverTxSuccess } from "../../stargateclient";
 import {
@@ -15,8 +15,10 @@ import {
   simappEnabled,
   validator,
 } from "../../testutils-stargate.spec";
-import { MsgDelegateEncodeObject } from "../";
-import { DistributionExtension, setupDistributionExtension } from "./queries";
+import type { MsgDelegateEncodeObject } from "..//index";
+import { setupDistributionExtension } from "./queries";
+
+import type { DistributionExtension } from "./queries";
 
 async function makeClientWithDistribution(
   rpcUrl: string,

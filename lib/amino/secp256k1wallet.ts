@@ -1,10 +1,11 @@
-import { Secp256k1, Sha256 } from "../crypto";
-import { toBech32 } from "../encoding";
+import { Secp256k1, Sha256 } from "../crypto/index";
+import { toBech32 } from "../encoding/index";
 
 import { rawSecp256k1PubkeyToRawAddress } from "./addresses";
 import { encodeSecp256k1Signature } from "./signature";
-import { serializeSignDoc, StdSignDoc } from "./signdoc";
-import { AccountData, AminoSignResponse, OfflineAminoSigner } from "./signer";
+import { serializeSignDoc } from "./signdoc";
+import type { StdSignDoc } from "./signdoc";
+import type { AccountData, AminoSignResponse, OfflineAminoSigner } from "./signer";
 
 /**
  * A wallet that holds a single secp256k1 keypair.

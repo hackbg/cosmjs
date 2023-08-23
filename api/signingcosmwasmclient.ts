@@ -1,47 +1,45 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { encodeSecp256k1Pubkey, makeSignDoc as makeSignDocAmino } from "../lib/amino";
-import { sha256 } from "../lib/crypto";
-import { fromBase64, toHex, toUtf8 } from "../lib/encoding";
-import { Int53, Uint53 } from "../lib/math";
+import { encodeSecp256k1Pubkey, makeSignDoc as makeSignDocAmino } from "../lib/amino/index";
+import { sha256 } from "../lib/crypto/index";
+import { fromBase64, toHex, toUtf8 } from "../lib/encoding/index";
+import { Int53, Uint53 } from "../lib/math/index";
 import {
-  EncodeObject,
   encodePubkey,
   isOfflineDirectSigner,
   makeAuthInfoBytes,
   makeSignDoc,
-  OfflineSigner,
   Registry,
-  TxBodyEncodeObject,
-} from "../lib/proto-signing";
+} from "../lib/proto-signing/index";
+import type { EncodeObject, OfflineSigner, TxBodyEncodeObject } from "../lib/proto-signing/index";
 import {
   AminoTypes,
   calculateFee,
-  Coin,
   createDefaultAminoConverters,
   defaultRegistryTypes as defaultStargateTypes,
-  DeliverTxResponse,
-  Event,
   GasPrice,
   isDeliverTxFailure,
   logs,
+} from "./index";
+
+import type { Coin } from "./index";
+
+import type {
   MsgDelegateEncodeObject,
   MsgSendEncodeObject,
   MsgUndelegateEncodeObject,
   MsgWithdrawDelegatorRewardEncodeObject,
-  SignerData,
   StdFee,
 } from "./index";
-import {
-  HttpEndpoint,
-  Tendermint34Client,
-  Tendermint37Client,
-  TendermintClient,
-} from "../lib/tendermint-rpc";
-import { assert, assertDefined } from "../lib/utils";
-import { MsgWithdrawDelegatorReward } from "cosmjs-types/cosmos/distribution/v1beta1/tx";
-import { MsgDelegate, MsgUndelegate } from "cosmjs-types/cosmos/staking/v1beta1/tx";
-import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+
+import type { DeliverTxResponse, Event, SignerData } from "./index";
+import { Tendermint34Client, Tendermint37Client } from "../lib/tendermint-rpc/index";
+import type { HttpEndpoint } from "../lib/tendermint-rpc/index";
+import type { TendermintClient } from "../lib/tendermint-rpc/index";
+import { assert, assertDefined } from "../lib/utils/index";
+import { MsgWithdrawDelegatorReward } from "../types/cosmos/distribution/v1beta1/tx";
+import { MsgDelegate, MsgUndelegate } from "../types/cosmos/staking/v1beta1/tx";
+import { SignMode } from "../types/cosmos/tx/signing/v1beta1/signing";
+import { TxRaw } from "../types/cosmos/tx/v1beta1/tx";
 import {
   MsgClearAdmin,
   MsgExecuteContract,
@@ -50,14 +48,15 @@ import {
   MsgMigrateContract,
   MsgStoreCode,
   MsgUpdateAdmin,
-} from "cosmjs-types/cosmwasm/wasm/v1/tx";
-import { AccessConfig } from "cosmjs-types/cosmwasm/wasm/v1/types";
+} from "../types/cosmwasm/wasm/v1/tx";
+import { AccessConfig } from "../types/cosmwasm/wasm/v1/types";
 import Long from "long";
 import pako from "pako";
 
 import { CosmWasmClient } from "./cosmwasmclient";
-import {
-  createWasmAminoConverters,
+import { createWasmAminoConverters, wasmTypes } from "./modules/index";
+
+import type {
   JsonObject,
   MsgClearAdminEncodeObject,
   MsgExecuteContractEncodeObject,
@@ -66,8 +65,7 @@ import {
   MsgMigrateContractEncodeObject,
   MsgStoreCodeEncodeObject,
   MsgUpdateAdminEncodeObject,
-  wasmTypes,
-} from "./modules";
+} from "./modules/index";
 
 export interface UploadResult {
   /** A hex encoded sha256 checksum of the original Wasm code (that is stored on chain) */

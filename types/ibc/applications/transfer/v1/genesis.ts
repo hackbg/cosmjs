@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { DenomTrace, Params } from "./transfer";
 import * as _m0 from "protobufjs/minimal";
-import { isSet, DeepPartial, Exact } from "../../../../helpers";
+import { isSet } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.transfer.v1";
 /** GenesisState defines the ibc-transfer genesis state */
 export interface GenesisState {

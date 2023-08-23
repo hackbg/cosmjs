@@ -1,33 +1,32 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Secp256k1HdWallet } from "../lib/amino";
-import { sha256 } from "../lib/crypto";
-import { toHex, toUtf8 } from "../lib/encoding";
-import { decodeTxRaw, DirectSecp256k1HdWallet, Registry } from "../lib/proto-signing";
+import { Secp256k1HdWallet } from "../lib/amino/index";
+import { sha256 } from "../lib/crypto/index";
+import { toHex, toUtf8 } from "../lib/encoding/index";
+import { decodeTxRaw, DirectSecp256k1HdWallet, Registry } from "../lib/proto-signing/index";
 import {
-  AminoMsgDelegate,
   AminoTypes,
   assertIsDeliverTxSuccess,
   coin,
   coins,
   createStakingAminoConverters,
-  MsgDelegateEncodeObject,
-  MsgSendEncodeObject,
 } from "./index";
-import { assert, sleep } from "../lib/utils";
+import type { AminoMsgDelegate, MsgDelegateEncodeObject, MsgSendEncodeObject } from "./index";
+import { assert, sleep } from "../lib/utils/index";
 import { DeepPartial } from "cosmjs-types";
-import { MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
-import { MsgDelegate } from "cosmjs-types/cosmos/staking/v1beta1/tx";
-import { AuthInfo, TxBody, TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { MsgExecuteContract, MsgStoreCode } from "cosmjs-types/cosmwasm/wasm/v1/tx";
-import { AccessConfig, AccessType } from "cosmjs-types/cosmwasm/wasm/v1/types";
+import { MsgSend } from "../types/cosmos/bank/v1beta1/tx";
+import { Coin } from "../types/cosmos/base/v1beta1/coin";
+import { MsgDelegate } from "../types/cosmos/staking/v1beta1/tx";
+import { AuthInfo, TxBody, TxRaw } from "../types/cosmos/tx/v1beta1/tx";
+import { MsgExecuteContract, MsgStoreCode } from "../types/cosmwasm/wasm/v1/tx";
+import { AccessConfig, AccessType } from "../types/cosmwasm/wasm/v1/types";
 import Long from "long";
 import pako from "pako";
 import protobuf from "protobufjs/minimal";
 
 import { instantiate2Address } from "./instantiate2";
-import { MsgExecuteContractEncodeObject, MsgStoreCodeEncodeObject } from "./modules";
-import { SigningCosmWasmClient, SigningCosmWasmClientOptions } from "./signingcosmwasmclient";
+import type { MsgExecuteContractEncodeObject, MsgStoreCodeEncodeObject } from "./modules/index";
+import { SigningCosmWasmClient } from "./signingcosmwasmclient";
+import type { SigningCosmWasmClientOptions } from "./signingcosmwasmclient";
 import {
   alice,
   defaultClearAdminFee,

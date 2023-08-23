@@ -1,10 +1,11 @@
-import { MultisigThresholdPubkey, pubkeyToAddress, StdFee } from "../lib/amino";
-import { fromBech32 } from "../lib/encoding";
-import { encodePubkey } from "../lib/proto-signing";
-import { CompactBitArray, MultiSignature } from "cosmjs-types/cosmos/crypto/multisig/v1beta1/multisig";
-import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
-import { AuthInfo, SignerInfo } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+import { pubkeyToAddress } from "../lib/amino/index";
+import type { MultisigThresholdPubkey, StdFee } from "../lib/amino/index";
+import { fromBech32 } from "../lib/encoding/index";
+import { encodePubkey } from "../lib/proto-signing/index";
+import { CompactBitArray, MultiSignature } from "../types/cosmos/crypto/multisig/v1beta1/multisig";
+import { SignMode } from "../types/cosmos/tx/signing/v1beta1/signing";
+import { AuthInfo, SignerInfo } from "../types/cosmos/tx/v1beta1/tx";
+import { TxRaw } from "../types/cosmos/tx/v1beta1/tx";
 import Long from "long";
 
 export function makeCompactBitArray(bits: readonly boolean[]): CompactBitArray {

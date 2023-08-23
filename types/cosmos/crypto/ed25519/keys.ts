@@ -1,6 +1,7 @@
 /* eslint-disable */
 import * as _m0 from "protobufjs/minimal";
-import { isSet, bytesFromBase64, base64FromBytes, DeepPartial, Exact } from "../../../helpers";
+import { isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.crypto.ed25519";
 /**
  * PubKey is an ed25519 public key for handling Tendermint keys in SDK.

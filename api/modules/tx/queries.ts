@@ -1,18 +1,18 @@
-import { Pubkey } from "../../../lib/amino";
-import { encodePubkey } from "../../../lib/proto-signing";
-import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
+import type { Pubkey } from "../../../lib/amino/index";
+import { encodePubkey } from "../../../lib/proto-signing/index";
+import { SignMode } from "../../../types/cosmos/tx/signing/v1beta1/signing";
 import {
   GetTxRequest,
   GetTxResponse,
   ServiceClientImpl,
   SimulateRequest,
   SimulateResponse,
-} from "cosmjs-types/cosmos/tx/v1beta1/service";
-import { AuthInfo, Fee, Tx, TxBody } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { Any } from "cosmjs-types/google/protobuf/any";
+} from "../../../types/cosmos/tx/v1beta1/service";
+import { AuthInfo, Fee, Tx, TxBody } from "../../../types/cosmos/tx/v1beta1/tx";
+import { Any } from "../../../types/google/protobuf/any";
 import Long from "long";
 
-import { createProtobufRpcClient, QueryClient } from "../../queryclient";
+import { createProtobufRpcClient, QueryClient } from "../../queryclient/index";
 
 export interface TxExtension {
   readonly tx: {

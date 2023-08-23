@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { toAscii, toHex } from "../../encoding";
-import { firstEvent, toListPromise } from "../../stream";
-import { assert, sleep } from "../../utils";
+import { toAscii, toHex } from "../../encoding/index";
+import { firstEvent, toListPromise } from "../../stream/index";
+import { assert, sleep } from "../../utils/index";
 import { ReadonlyDate } from "readonly-date";
 import { Stream } from "xstream";
 
-import { HttpClient, RpcClient, WebsocketClient } from "../rpcclients";
+import { HttpClient, WebsocketClient } from "../rpcclients/index";
+import type { RpcClient } from "../rpcclients/index";
 import {
   buildKvTx,
-  ExpectedValues,
   nonNegativeIntegerMatcher,
   pendingWithoutTendermint,
   randomString,
@@ -16,7 +16,8 @@ import {
   tendermintInstances,
   tendermintSearchIndexUpdated,
 } from "../testutil.spec";
-import { adaptor34 } from "./adaptor";
+import type { ExpectedValues } from "../testutil.spec";
+import { adaptor34 } from "./adaptor/index";
 import { buildQuery } from "./requests";
 import * as responses from "./responses";
 import { Tendermint34Client } from "./tendermint34client";

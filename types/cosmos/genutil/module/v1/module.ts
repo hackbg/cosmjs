@@ -1,6 +1,6 @@
 /* eslint-disable */
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Exact } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "cosmos.genutil.module.v1";
 /** Module is the config object for the genutil module. */
 export interface Module {}

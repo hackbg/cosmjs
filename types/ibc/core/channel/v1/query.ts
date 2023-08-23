@@ -3,7 +3,8 @@ import { PageRequest, PageResponse } from "../../../../cosmos/base/query/v1beta1
 import { Channel, IdentifiedChannel, PacketState } from "./channel";
 import { Height, IdentifiedClientState } from "../../client/v1/client";
 import { Any } from "../../../../google/protobuf/any";
-import { Long, isSet, DeepPartial, Exact, bytesFromBase64, base64FromBytes, Rpc } from "../../../../helpers";
+import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "ibc.core.channel.v1";
 /** QueryChannelRequest is the request type for the Query/Channel RPC method */

@@ -1,10 +1,12 @@
 // See https://github.com/tendermint/tendermint/blob/f2ada0a604b4c0763bda2f64fac53d506d3beca7/docs/spec/blockchain/encoding.md#public-key-cryptography
 
-import { ripemd160, sha256 } from "../crypto";
-import { fromBase64, toBech32 } from "../encoding";
+import { ripemd160, sha256 } from "../crypto/index";
+import { fromBase64, toBech32 } from "../encoding/index";
 
 import { encodeAminoPubkey } from "./encoding";
-import { isEd25519Pubkey, isMultisigThresholdPubkey, isSecp256k1Pubkey, Pubkey } from "./pubkeys";
+import { isEd25519Pubkey, isMultisigThresholdPubkey, isSecp256k1Pubkey } from "./pubkeys";
+
+import type { Pubkey } from "./pubkeys";
 
 export function rawEd25519PubkeyToRawAddress(pubkeyData: Uint8Array): Uint8Array {
   if (pubkeyData.length !== 32) {

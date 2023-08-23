@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Grant } from "./feegrant";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Exact } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.feegrant.v1beta1";
 /** GenesisState contains a set of fee allowances, persisted from the store */
 export interface GenesisState {

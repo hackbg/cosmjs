@@ -1,7 +1,7 @@
-import { DefaultValueProducer, ValueAndUpdates } from "../stream";
+import { DefaultValueProducer, ValueAndUpdates } from "../stream/index";
 import { Listener, Producer, Stream } from "xstream";
 
-import { SocketWrapperMessageEvent } from "./socketwrapper";
+import type { SocketWrapperMessageEvent } from "./socketwrapper";
 import { StreamingSocket } from "./streamingsocket";
 
 export enum ConnectionStatus {

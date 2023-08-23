@@ -6,13 +6,12 @@ import { Duration } from "../../../google/protobuf/duration";
 import {
   Long,
   isSet,
-  DeepPartial,
-  Exact,
   fromJsonTimestamp,
   fromTimestamp,
   bytesFromBase64,
   base64FromBytes,
 } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.gov.v1beta1";
 /** VoteOption enumerates the valid vote options for a given governance proposal. */

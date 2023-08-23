@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { toUtf8 } from "../encoding";
-import { Uint53 } from "../math";
+import { toUtf8 } from "../encoding/index";
+import { Uint53 } from "../math/index";
 
-import { Coin } from "./coins";
+import type { Coin } from "./coins";
 
 export interface AminoMsg {
   readonly type: string;

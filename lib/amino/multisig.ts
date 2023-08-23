@@ -1,8 +1,8 @@
-import { toHex } from "../encoding";
-import { Uint53 } from "../math";
+import { toHex } from "../encoding/index";
+import { Uint53 } from "../math/index";
 
 import { pubkeyToRawAddress } from "./addresses";
-import { MultisigThresholdPubkey, SinglePubkey } from "./pubkeys";
+import type { MultisigThresholdPubkey, SinglePubkey } from "./pubkeys";
 
 /**
  * Compare arrays lexicographically.

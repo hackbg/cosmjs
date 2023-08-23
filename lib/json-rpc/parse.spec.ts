@@ -4,7 +4,9 @@ import {
   parseJsonRpcResponse,
   parseJsonRpcSuccessResponse,
 } from "./parse";
-import { jsonRpcCode, JsonRpcErrorResponse, JsonRpcRequest, JsonRpcSuccessResponse } from "./types";
+import { jsonRpcCode } from "./types";
+
+import type { JsonRpcErrorResponse, JsonRpcRequest, JsonRpcSuccessResponse } from "./types";
 
 describe("parse", () => {
   describe("parseJsonRpcId", () => {

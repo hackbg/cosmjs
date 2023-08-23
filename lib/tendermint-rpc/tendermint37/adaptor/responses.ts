@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64, fromHex } from "../../../encoding";
-import { JsonRpcSuccessResponse } from "../../../json-rpc";
-import { assert } from "../../../utils";
+import { fromBase64, fromHex } from "../../../encoding/index";
+import type { JsonRpcSuccessResponse } from "../../../json-rpc/index";
+import { assert } from "../../../utils/index";
 
-import { DateWithNanoseconds, fromRfc3339WithNanoseconds } from "../../dates";
+import { fromRfc3339WithNanoseconds } from "../../dates";
+import type { DateWithNanoseconds } from "../../dates";
 import { apiToBigInt, apiToSmallInt } from "../../inthelpers";
-import { SubscriptionEvent } from "../../rpcclients";
-import { BlockIdFlag, CommitSignature, ValidatorPubkey } from "../../types";
+import type { SubscriptionEvent } from "../../rpcclients/index";
+import { BlockIdFlag } from "../../types";
+import type { CommitSignature, ValidatorPubkey } from "../../types";
 import {
   assertArray,
   assertBoolean,

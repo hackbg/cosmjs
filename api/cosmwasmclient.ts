@@ -1,44 +1,46 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromUtf8, toHex } from "../lib/encoding";
-import { Uint53 } from "../lib/math";
+import { fromUtf8, toHex } from "../lib/encoding/index";
+import { Uint53 } from "../lib/math/index";
 import {
-  Account,
   accountFromAny,
-  AuthExtension,
-  BankExtension,
-  Block,
   BroadcastTxError,
-  Coin,
-  DeliverTxResponse,
   fromTendermintEvent,
-  IndexedTx,
   QueryClient,
-  SearchTxQuery,
-  SequenceResponse,
   setupAuthExtension,
   setupBankExtension,
   setupTxExtension,
   TimeoutError,
-  TxExtension,
 } from "./index";
-import {
-  HttpEndpoint,
-  Tendermint34Client,
-  Tendermint37Client,
-  TendermintClient,
-  toRfc3339WithNanoseconds,
-} from "../lib/tendermint-rpc";
-import { assert, sleep } from "../lib/utils";
-import { TxMsgData } from "cosmjs-types/cosmos/base/abci/v1beta1/abci";
+
+import type { Coin } from "./index";
+
+import type { AuthExtension, BankExtension, TxExtension } from "./index";
+
+import type {
+  Account,
+  Block,
+  DeliverTxResponse,
+  IndexedTx,
+  SearchTxQuery,
+  SequenceResponse,
+} from "./index";
+
+import { Tendermint34Client, Tendermint37Client, toRfc3339WithNanoseconds } from "../lib/tendermint-rpc/index";
+import type { HttpEndpoint } from "../lib/tendermint-rpc/index";
+import type { TendermintClient } from "../lib/tendermint-rpc/index";
+import { assert, sleep } from "../lib/utils/index";
+import { TxMsgData } from "../types/cosmos/base/abci/v1beta1/abci";
 import {
   CodeInfoResponse,
   QueryCodesResponse,
   QueryContractsByCodeResponse,
   QueryContractsByCreatorResponse,
-} from "cosmjs-types/cosmwasm/wasm/v1/query";
-import { ContractCodeHistoryOperationType } from "cosmjs-types/cosmwasm/wasm/v1/types";
+} from "../types/cosmwasm/wasm/v1/query";
+import { ContractCodeHistoryOperationType } from "../types/cosmwasm/wasm/v1/types";
 
-import { JsonObject, setupWasmExtension, WasmExtension } from "./modules";
+import { setupWasmExtension } from "./modules/index";
+
+import type { JsonObject, WasmExtension } from "./modules/index";
 
 export interface Code {
   readonly id: number;

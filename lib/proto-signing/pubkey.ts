@@ -5,16 +5,14 @@ import {
   isEd25519Pubkey,
   isMultisigThresholdPubkey,
   isSecp256k1Pubkey,
-  MultisigThresholdPubkey,
-  Pubkey,
-  SinglePubkey,
-} from "../amino";
-import { fromBase64 } from "../encoding";
-import { Uint53 } from "../math";
-import { PubKey as CosmosCryptoEd25519Pubkey } from "cosmjs-types/cosmos/crypto/ed25519/keys";
-import { LegacyAminoPubKey } from "cosmjs-types/cosmos/crypto/multisig/keys";
-import { PubKey as CosmosCryptoSecp256k1Pubkey } from "cosmjs-types/cosmos/crypto/secp256k1/keys";
-import { Any } from "cosmjs-types/google/protobuf/any";
+} from "../amino/index";
+import type { MultisigThresholdPubkey, Pubkey, SinglePubkey } from "../amino/index";
+import { fromBase64 } from "../encoding/index";
+import { Uint53 } from "../math/index";
+import { PubKey as CosmosCryptoEd25519Pubkey } from "../../types/cosmos/crypto/ed25519/keys";
+import { LegacyAminoPubKey } from "../../types/cosmos/crypto/multisig/keys";
+import { PubKey as CosmosCryptoSecp256k1Pubkey } from "../../types/cosmos/crypto/secp256k1/keys";
+import { Any } from "../../types/google/protobuf/any";
 
 /**
  * Takes a pubkey in the Amino JSON object style (type/value wrapper)

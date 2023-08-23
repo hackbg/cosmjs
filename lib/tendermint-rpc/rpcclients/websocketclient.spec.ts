@@ -1,10 +1,10 @@
-import { Uint53 } from "../../math";
-import { toListPromise } from "../../stream";
+import { Uint53 } from "../../math/index";
+import { toListPromise } from "../../stream/index";
 import { Stream } from "xstream";
 
 import { createJsonRpcRequest } from "../jsonrpc";
 import { defaultInstance } from "../testutil.spec";
-import { SubscriptionEvent } from "./rpcclient";
+import type { SubscriptionEvent } from "./rpcclient";
 import { WebsocketClient } from "./websocketclient";
 
 function pendingWithoutTendermint(): void {

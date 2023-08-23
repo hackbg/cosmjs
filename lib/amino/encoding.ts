@@ -1,17 +1,10 @@
-import { fromBase64, fromBech32, fromHex, toBase64, toBech32, toHex } from "../encoding";
-import { Uint53 } from "../math";
-import { arrayContentStartsWith } from "../utils";
+import { fromBase64, fromBech32, fromHex, toBase64, toBech32, toHex } from "../encoding/index";
+import { Uint53 } from "../math/index";
+import { arrayContentStartsWith } from "../utils/index";
 
-import {
-  Ed25519Pubkey,
-  isEd25519Pubkey,
-  isMultisigThresholdPubkey,
-  isSecp256k1Pubkey,
-  MultisigThresholdPubkey,
-  Pubkey,
-  pubkeyType,
-  Secp256k1Pubkey,
-} from "./pubkeys";
+import { isEd25519Pubkey, isMultisigThresholdPubkey, isSecp256k1Pubkey, pubkeyType } from "./pubkeys";
+
+import type { Ed25519Pubkey, MultisigThresholdPubkey, Pubkey, Secp256k1Pubkey } from "./pubkeys";
 
 /**
  * Takes a Secp256k1 public key as raw bytes and returns the Amino JSON

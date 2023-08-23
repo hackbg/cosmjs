@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { MerklePrefix } from "../../commitment/v1/commitment";
-import { Long, isSet, DeepPartial, Exact } from "../../../../helpers";
+import { Long, isSet } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "ibc.core.connection.v1";
 /**

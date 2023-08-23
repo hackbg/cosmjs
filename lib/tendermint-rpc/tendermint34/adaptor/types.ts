@@ -1,6 +1,6 @@
-import { JsonRpcRequest, JsonRpcSuccessResponse } from "../../../json-rpc";
+import type { JsonRpcRequest, JsonRpcSuccessResponse } from "../../../json-rpc/index";
 
-import { SubscriptionEvent } from "../../rpcclients";
+import type { SubscriptionEvent } from "../../rpcclients/index";
 import * as requests from "../requests";
 import * as responses from "../responses";
 

@@ -1,5 +1,5 @@
-import { fromUtf8 } from "../lib/encoding";
-import { tendermint34, tendermint37 } from "../lib/tendermint-rpc";
+import { fromUtf8 } from "../lib/encoding/index";
+import { tendermint34, tendermint37 } from "../lib/tendermint-rpc/index";
 
 /**
  * An event attribute.

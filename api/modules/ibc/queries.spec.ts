@@ -1,10 +1,12 @@
-import { Tendermint34Client } from "../../../lib/tendermint-rpc";
+import { Tendermint34Client } from "../../../lib/tendermint-rpc/index";
 import Long from "long";
 
-import { QueryClient } from "../../queryclient";
+import { QueryClient } from "../../queryclient/index";
 import { simapp } from "../../testutils-stargate.spec";
 import * as ibcTest from "./ibctestdata.spec";
-import { IbcExtension, setupIbcExtension } from "./queries";
+import { setupIbcExtension } from "./queries";
+
+import type { IbcExtension } from "./queries";
 
 async function makeClientWithIbc(rpcUrl: string): Promise<[QueryClient & IbcExtension, Tendermint34Client]> {
   const tmClient = await Tendermint34Client.connect(rpcUrl);

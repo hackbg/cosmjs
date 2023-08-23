@@ -1,7 +1,7 @@
 import { ReadonlyDate } from "readonly-date";
 
-import { ReadonlyDateWithNanoseconds } from "../dates";
-import { CommitSignature, ValidatorPubkey } from "../types";
+import type { ReadonlyDateWithNanoseconds } from "../dates";
+import type { CommitSignature, ValidatorPubkey } from "../types";
 
 export type Response =
   | AbciInfoResponse

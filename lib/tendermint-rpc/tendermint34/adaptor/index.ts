@@ -1,9 +1,9 @@
 import { hashBlock, hashTx } from "../hasher";
 import { Params } from "./requests";
 import { Responses } from "./responses";
-import { Adaptor } from "./types";
+import type { Adaptor } from "./types";
 
-export { Decoder, Encoder, Params, Responses } from "./types";
+export type { Decoder, Encoder, Params, Responses } from "./types";
 
 export const adaptor34: Adaptor = {
   params: Params,

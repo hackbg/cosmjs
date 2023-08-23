@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { Params, Validator, Delegation, UnbondingDelegation, Redelegation } from "./staking";
-import { Long, isSet, bytesFromBase64, base64FromBytes, DeepPartial, Exact } from "../../../helpers";
+import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.staking.v1beta1";
 /** GenesisState defines the staking module's genesis state. */

@@ -1,5 +1,5 @@
-import { StdSignature } from "./signature";
-import { StdSignDoc } from "./signdoc";
+import type { StdSignature } from "./signature";
+import type { StdSignDoc } from "./signdoc";
 
 export type Algo = "secp256k1" | "ed25519" | "sr25519";
 

@@ -5,11 +5,10 @@ import {
   isSet,
   fromJsonTimestamp,
   fromTimestamp,
-  DeepPartial,
-  Exact,
   bytesFromBase64,
   base64FromBytes,
 } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.base.store.v1beta1";
 /**

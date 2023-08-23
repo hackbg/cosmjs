@@ -1,8 +1,8 @@
-import { ValueAndUpdates } from "../stream";
+import { ValueAndUpdates } from "../stream/index";
 import { Listener, Producer, Stream } from "xstream";
 
 import { ConnectionStatus, QueueingStreamingSocket } from "./queueingstreamingsocket";
-import { SocketWrapperMessageEvent } from "./socketwrapper";
+import type { SocketWrapperMessageEvent } from "./socketwrapper";
 
 /**
  * A wrapper around QueueingStreamingSocket that reconnects automatically.

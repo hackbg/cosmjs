@@ -4,7 +4,8 @@ import { PacketId } from "../../../core/channel/v1/channel";
 import { IdentifiedPacketFees } from "./fee";
 import { Coin } from "../../../../cosmos/base/v1beta1/coin";
 import { FeeEnabledChannel } from "./genesis";
-import { Long, isSet, DeepPartial, Exact, Rpc } from "../../../../helpers";
+import { Long, isSet } from "../../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "ibc.applications.fee.v1";
 /** QueryIncentivizedPacketsRequest defines the request type for the IncentivizedPackets rpc */

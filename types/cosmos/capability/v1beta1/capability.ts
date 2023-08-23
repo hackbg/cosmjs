@@ -1,5 +1,6 @@
 /* eslint-disable */
-import { Long, isSet, DeepPartial, Exact } from "../../../helpers";
+import { Long, isSet } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.capability.v1beta1";
 /**

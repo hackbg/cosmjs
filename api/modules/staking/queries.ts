@@ -15,11 +15,11 @@ import {
   QueryValidatorResponse,
   QueryValidatorsResponse,
   QueryValidatorUnbondingDelegationsResponse,
-} from "cosmjs-types/cosmos/staking/v1beta1/query";
-import { BondStatus } from "cosmjs-types/cosmos/staking/v1beta1/staking";
+} from "../../../types/cosmos/staking/v1beta1/query";
+import { BondStatus } from "../../../types/cosmos/staking/v1beta1/staking";
 import Long from "long";
 
-import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient";
+import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient/index";
 
 // It's an enum in Go and a string in the protobuf API. "BOND_STATUS_UNSPECIFIED"
 // is excluded and "" is supported instead 🤷.

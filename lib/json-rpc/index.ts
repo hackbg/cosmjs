@@ -1,5 +1,6 @@
 export { makeJsonRpcId } from "./id";
-export { JsonRpcClient, SimpleMessagingConnection } from "./jsonrpcclient";
+export { JsonRpcClient } from "./jsonrpcclient";
+export type { SimpleMessagingConnection } from "./jsonrpcclient";
 export {
   parseJsonRpcErrorResponse,
   parseJsonRpcId,
@@ -7,14 +8,5 @@ export {
   parseJsonRpcResponse,
   parseJsonRpcSuccessResponse,
 } from "./parse";
-export {
-  isJsonRpcErrorResponse,
-  isJsonRpcSuccessResponse,
-  jsonRpcCode,
-  JsonRpcError,
-  JsonRpcErrorResponse,
-  JsonRpcId,
-  JsonRpcRequest,
-  JsonRpcResponse,
-  JsonRpcSuccessResponse,
-} from "./types";
+export { isJsonRpcErrorResponse, isJsonRpcSuccessResponse, jsonRpcCode } from "./types";
+export type { JsonRpcError, JsonRpcErrorResponse, JsonRpcId, JsonRpcRequest, JsonRpcResponse, JsonRpcSuccessResponse } from "./types";

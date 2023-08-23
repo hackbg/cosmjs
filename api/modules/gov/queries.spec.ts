@@ -1,19 +1,19 @@
-import { coin, coins, makeCosmoshubPath } from "../../../lib/amino";
-import { toAscii } from "../../../lib/encoding";
-import { DirectSecp256k1HdWallet } from "../../../lib/proto-signing";
-import { Tendermint34Client } from "../../../lib/tendermint-rpc";
-import { assert, sleep } from "../../../lib/utils";
+import { coin, coins, makeCosmoshubPath } from "../../../lib/amino/index";
+import { toAscii } from "../../../lib/encoding/index";
+import { DirectSecp256k1HdWallet } from "../../../lib/proto-signing/index";
+import { Tendermint34Client } from "../../../lib/tendermint-rpc/index";
+import { assert, sleep } from "../../../lib/utils/index";
 import {
   ProposalStatus,
   TextProposal,
   Vote,
   VoteOption,
   WeightedVoteOption,
-} from "cosmjs-types/cosmos/gov/v1beta1/gov";
-import { Any } from "cosmjs-types/google/protobuf/any";
+} from "../../../types/cosmos/gov/v1beta1/gov";
+import { Any } from "../../../types/google/protobuf/any";
 import Long from "long";
 
-import { longify, QueryClient } from "../../queryclient";
+import { longify, QueryClient } from "../../queryclient/index";
 import { SigningStargateClient } from "../../signingstargateclient";
 import { assertIsDeliverTxSuccess } from "../../stargateclient";
 import {
@@ -26,8 +26,14 @@ import {
   simappEnabled,
   validator,
 } from "../../testutils-stargate.spec";
-import { MsgDelegateEncodeObject, MsgSubmitProposalEncodeObject, MsgVoteEncodeObject } from "../";
-import { GovExtension, setupGovExtension } from "./queries";
+import type {
+  MsgDelegateEncodeObject,
+  MsgSubmitProposalEncodeObject,
+  MsgVoteEncodeObject,
+} from "..//index";
+import { setupGovExtension } from "./queries";
+
+import type { GovExtension } from "./queries";
 
 async function makeClientWithGov(rpcUrl: string): Promise<[QueryClient & GovExtension, Tendermint34Client]> {
   const tmClient = await Tendermint34Client.connect(rpcUrl);

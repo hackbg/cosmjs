@@ -1,10 +1,10 @@
-import { makeCosmoshubPath } from "../../../lib/amino";
-import { coins, DirectSecp256k1HdWallet } from "../../../lib/proto-signing";
-import { Tendermint34Client } from "../../../lib/tendermint-rpc";
-import { assertDefined, sleep } from "../../../lib/utils";
-import { GenericAuthorization } from "cosmjs-types/cosmos/authz/v1beta1/authz";
+import { makeCosmoshubPath } from "../../../lib/amino/index";
+import { coins, DirectSecp256k1HdWallet } from "../../../lib/proto-signing/index";
+import { Tendermint34Client } from "../../../lib/tendermint-rpc/index";
+import { assertDefined, sleep } from "../../../lib/utils/index";
+import { GenericAuthorization } from "../../../types/cosmos/authz/v1beta1/authz";
 
-import { QueryClient } from "../../queryclient";
+import { QueryClient } from "../../queryclient/index";
 import { SigningStargateClient } from "../../signingstargateclient";
 import { assertIsDeliverTxSuccess } from "../../stargateclient";
 import {
@@ -16,7 +16,9 @@ import {
   simapp,
   simappEnabled,
 } from "../../testutils-stargate.spec";
-import { AuthzExtension, setupAuthzExtension } from "./queries";
+import { setupAuthzExtension } from "./queries";
+
+import type { AuthzExtension } from "./queries";
 
 async function makeClientWithAuthz(
   rpcUrl: string,

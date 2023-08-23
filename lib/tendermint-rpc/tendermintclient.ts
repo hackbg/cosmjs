@@ -1,5 +1,5 @@
-import { Tendermint34Client } from "./tendermint34";
-import { Tendermint37Client } from "./tendermint37";
+import { Tendermint34Client } from "./tendermint34/index";
+import { Tendermint37Client } from "./tendermint37/index";
 
 /** A TendermintClient is either a Tendermint34Client or a Tendermint37Client */
 export type TendermintClient = Tendermint34Client | Tendermint37Client;

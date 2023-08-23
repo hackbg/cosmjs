@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { GroupInfo, GroupMember, GroupPolicyInfo, Proposal, Vote } from "./types";
-import { Long, isSet, DeepPartial, Exact } from "../../../helpers";
+import { Long, isSet } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.group.v1";
 /** GenesisState defines the group module's genesis state. */

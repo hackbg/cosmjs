@@ -1,6 +1,7 @@
 /* eslint-disable */
 import * as _m0 from "protobufjs/minimal";
-import { isSet, DeepPartial, Exact } from "../../../../helpers";
+import { isSet } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "cosmos.auth.module.v1";
 /** Module is the config object for the auth module. */
 export interface Module {

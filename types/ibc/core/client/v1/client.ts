@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { Any } from "../../../../google/protobuf/any";
 import { Plan } from "../../../../cosmos/upgrade/v1beta1/upgrade";
-import { Long, isSet, DeepPartial, Exact } from "../../../../helpers";
+import { Long, isSet } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "ibc.core.client.v1";
 /**

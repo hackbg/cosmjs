@@ -6,14 +6,12 @@ import { Duration } from "../../../../google/protobuf/duration";
 import {
   Long,
   isSet,
-  DeepPartial,
-  Exact,
   bytesFromBase64,
   fromJsonTimestamp,
   base64FromBytes,
   fromTimestamp,
-  Rpc,
 } from "../../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.orm.query.v1alpha1";
 /** GetRequest is the Query/Get request type. */

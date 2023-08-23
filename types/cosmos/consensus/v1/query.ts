@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { ConsensusParams } from "../../../tendermint/types/params";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Exact, isSet, Rpc } from "../../../helpers";
+import { isSet } from "../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../helpers";
 export const protobufPackage = "cosmos.consensus.v1";
 /** QueryParamsRequest defines the request type for querying x/consensus parameters. */
 export interface QueryParamsRequest {}

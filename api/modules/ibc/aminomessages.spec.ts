@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { coin } from "../../../lib/proto-signing";
-import { MsgTransfer } from "cosmjs-types/ibc/applications/transfer/v1/tx";
+import { coin } from "../../../lib/proto-signing/index";
+import { MsgTransfer } from "../../../types/ibc/applications/transfer/v1/tx";
 import Long from "long";
 
 import { AminoTypes } from "../../aminotypes";
-import { AminoMsgTransfer, createIbcAminoConverters } from "./aminomessages";
+import { createIbcAminoConverters } from "./aminomessages";
+
+import type { AminoMsgTransfer } from "./aminomessages";
 
 describe("AminoTypes", () => {
   describe("toAmino", () => {

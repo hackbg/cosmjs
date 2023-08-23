@@ -1,6 +1,6 @@
 import { ripemd160 as nobleRipemd160 } from "@noble/hashes/ripemd160";
 
-import { HashFunction } from "./hash";
+import type { HashFunction } from "./hash";
 import { toRealUint8Array } from "./utils";
 
 export class Ripemd160 implements HashFunction {

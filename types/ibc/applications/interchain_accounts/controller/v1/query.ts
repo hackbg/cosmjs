@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { Params } from "./controller";
 import * as _m0 from "protobufjs/minimal";
-import { isSet, DeepPartial, Exact, Rpc } from "../../../../../helpers";
+import { isSet } from "../../../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../../../helpers";
 export const protobufPackage = "ibc.applications.interchain_accounts.controller.v1";
 /** QueryInterchainAccountRequest is the request type for the Query/InterchainAccount RPC method. */
 export interface QueryInterchainAccountRequest {

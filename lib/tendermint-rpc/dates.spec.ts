@@ -2,12 +2,13 @@ import { ReadonlyDate } from "readonly-date";
 
 import {
   DateTime,
-  DateWithNanoseconds,
   fromRfc3339WithNanoseconds,
   fromSeconds,
   toRfc3339WithNanoseconds,
   toSeconds,
 } from "./dates";
+
+import type { DateWithNanoseconds } from "./dates";
 
 describe("dates", () => {
   describe("fromRfc3339WithNanoseconds", () => {

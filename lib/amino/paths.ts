@@ -1,4 +1,6 @@
-import { HdPath, Slip10RawIndex } from "../crypto";
+import { Slip10RawIndex } from "../crypto/index";
+
+import type { HdPath } from "../crypto/index";
 
 /**
  * The Cosmos Hub derivation path in the form `m/44'/118'/0'/0/a`

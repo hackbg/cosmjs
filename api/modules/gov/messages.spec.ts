@@ -1,10 +1,10 @@
-import { coin, coins, makeCosmoshubPath, Secp256k1HdWallet } from "../../../lib/amino";
-import { DirectSecp256k1HdWallet } from "../../../lib/proto-signing";
-import { assert, sleep } from "../../../lib/utils";
-import { TextProposal, VoteOption } from "cosmjs-types/cosmos/gov/v1beta1/gov";
-import { Any } from "cosmjs-types/google/protobuf/any";
+import { coin, coins, makeCosmoshubPath, Secp256k1HdWallet } from "../../../lib/amino/index";
+import { DirectSecp256k1HdWallet } from "../../../lib/proto-signing/index";
+import { assert, sleep } from "../../../lib/utils/index";
+import { TextProposal, VoteOption } from "../../../types/cosmos/gov/v1beta1/gov";
+import { Any } from "../../../types/google/protobuf/any";
 
-import { longify } from "../../queryclient";
+import { longify } from "../../queryclient/index";
 import { SigningStargateClient } from "../../signingstargateclient";
 import { assertIsDeliverTxSuccess } from "../../stargateclient";
 import {
@@ -16,8 +16,12 @@ import {
   simappEnabled,
   validator,
 } from "../../testutils-stargate.spec";
-import { MsgDelegateEncodeObject, MsgSubmitProposalEncodeObject, MsgVoteEncodeObject } from "../";
-import { MsgVoteWeightedEncodeObject } from "./messages";
+import type {
+  MsgDelegateEncodeObject,
+  MsgSubmitProposalEncodeObject,
+  MsgVoteEncodeObject,
+} from "..//index";
+import type { MsgVoteWeightedEncodeObject } from "./messages";
 
 describe("gov messages", () => {
   const defaultFee = {

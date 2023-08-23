@@ -1,4 +1,4 @@
-import { Sha256, sha256 } from "../../crypto";
+import { Sha256, sha256 } from "../../crypto/index";
 
 import {
   encodeBlockId,
@@ -8,7 +8,7 @@ import {
   encodeUvarint,
   encodeVersion,
 } from "./encodings";
-import { Header } from "./responses";
+import type { Header } from "./responses";
 
 // hash is sha256
 // https://github.com/tendermint/tendermint/blob/master/UPGRADING.md#v0260

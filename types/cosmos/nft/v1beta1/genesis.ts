@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { Class, NFT } from "./nft";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Exact, isSet } from "../../../helpers";
+import { isSet } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.nft.v1beta1";
 /** GenesisState defines the nft module's genesis state. */
 export interface GenesisState {

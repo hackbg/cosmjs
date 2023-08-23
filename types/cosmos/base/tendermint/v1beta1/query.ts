@@ -5,7 +5,8 @@ import { BlockID } from "../../../../tendermint/types/types";
 import { Block as Block1 } from "../../../../tendermint/types/block";
 import { Block as Block2 } from "./types";
 import { DefaultNodeInfo } from "../../../../tendermint/p2p/types";
-import { Long, isSet, DeepPartial, Exact, bytesFromBase64, base64FromBytes, Rpc } from "../../../../helpers";
+import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.base.tendermint.v1beta1";
 /** GetValidatorSetByHeightRequest is the request type for the Query/GetValidatorSetByHeight RPC method. */

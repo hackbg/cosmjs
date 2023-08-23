@@ -1,4 +1,4 @@
-import { fromBase64, toBase64 } from "../lib/encoding";
+import { fromBase64, toBase64 } from "../lib/encoding/index";
 import {
   coins,
   decodeTxRaw,
@@ -7,15 +7,16 @@ import {
   makeAuthInfoBytes,
   makeSignDoc,
   Registry,
-  TxBodyEncodeObject,
-} from "../lib/proto-signing";
-import { assert, sleep } from "../lib/utils";
-import { MsgSendResponse } from "cosmjs-types/cosmos/bank/v1beta1/tx";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+} from "../lib/proto-signing/index";
+import type { TxBodyEncodeObject } from "../lib/proto-signing/index";
+import { assert, sleep } from "../lib/utils/index";
+import { MsgSendResponse } from "../types/cosmos/bank/v1beta1/tx";
+import { Coin } from "../types/cosmos/base/v1beta1/coin";
+import { TxRaw } from "../types/cosmos/tx/v1beta1/tx";
 
-import { isMsgSendEncodeObject } from "./modules";
-import { DeliverTxResponse, isDeliverTxFailure, isDeliverTxSuccess, StargateClient } from "./stargateclient";
+import { isMsgSendEncodeObject } from "./modules/index";
+import { isDeliverTxFailure, isDeliverTxSuccess, StargateClient } from "./stargateclient";
+import type { DeliverTxResponse } from "./stargateclient";
 import {
   defaultSigningClientOptions,
   faucet,

@@ -10,10 +10,10 @@ import {
   QueryValidatorCommissionResponse,
   QueryValidatorOutstandingRewardsResponse,
   QueryValidatorSlashesResponse,
-} from "cosmjs-types/cosmos/distribution/v1beta1/query";
+} from "../../../types/cosmos/distribution/v1beta1/query";
 import Long from "long";
 
-import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient";
+import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient/index";
 
 export interface DistributionExtension {
   readonly distribution: {

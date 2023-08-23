@@ -1,6 +1,8 @@
 import { Listener, Producer, Stream } from "xstream";
 
-import { SocketWrapper, SocketWrapperMessageEvent } from "./socketwrapper";
+import { SocketWrapper } from "./socketwrapper";
+
+import type { SocketWrapperMessageEvent } from "./socketwrapper";
 
 /**
  * A WebSocket wrapper that exposes all events as a stream.

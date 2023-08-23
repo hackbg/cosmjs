@@ -1,6 +1,6 @@
 import { keccak_256 } from "@noble/hashes/sha3";
 
-import { HashFunction } from "./hash";
+import type { HashFunction } from "./hash";
 import { toRealUint8Array } from "./utils";
 
 export class Keccak256 implements HashFunction {

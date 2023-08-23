@@ -1,24 +1,24 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64 } from "../../../lib/encoding";
-import { coin } from "../../../lib/proto-signing";
-import { PubKey as CosmosCryptoSecp256k1Pubkey } from "cosmjs-types/cosmos/crypto/secp256k1/keys";
+import { fromBase64 } from "../../../lib/encoding/index";
+import { coin } from "../../../lib/proto-signing/index";
+import { PubKey as CosmosCryptoSecp256k1Pubkey } from "../../../types/cosmos/crypto/secp256k1/keys";
 import {
   MsgBeginRedelegate,
   MsgCreateValidator,
   MsgDelegate,
   MsgEditValidator,
   MsgUndelegate,
-} from "cosmjs-types/cosmos/staking/v1beta1/tx";
+} from "../../../types/cosmos/staking/v1beta1/tx";
 
 import { AminoTypes } from "../../aminotypes";
-import {
+import { createStakingAminoConverters, protoDecimalToJson } from "./aminomessages";
+
+import type {
   AminoMsgBeginRedelegate,
   AminoMsgCreateValidator,
   AminoMsgDelegate,
   AminoMsgEditValidator,
   AminoMsgUndelegate,
-  createStakingAminoConverters,
-  protoDecimalToJson,
 } from "./aminomessages";
 
 describe("AminoTypes", () => {

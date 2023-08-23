@@ -1,16 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoSignResponse, Secp256k1HdWallet, Secp256k1HdWalletOptions, StdSignDoc } from "../lib/amino";
-import { Bip39, EnglishMnemonic, Random } from "../lib/crypto";
-import { fromBase64, toBech32 } from "../lib/encoding";
+import { Secp256k1HdWallet } from "../lib/amino/index";
+import type { AminoSignResponse, Secp256k1HdWalletOptions, StdSignDoc } from "../lib/amino/index";
+import { Bip39, EnglishMnemonic, Random } from "../lib/crypto/index";
+import { fromBase64, toBech32 } from "../lib/encoding/index";
+import { DirectSecp256k1HdWallet, makeAuthInfoBytes } from "../lib/proto-signing/index";
+import type { DirectSecp256k1HdWalletOptions, DirectSignResponse } from "../lib/proto-signing/index";
 import {
-  DirectSecp256k1HdWallet,
-  DirectSecp256k1HdWalletOptions,
-  DirectSignResponse,
-  makeAuthInfoBytes,
-} from "../lib/proto-signing";
-import {
-  AuthExtension,
-  BankExtension,
   calculateFee,
   coins,
   GasPrice,
@@ -18,12 +13,14 @@ import {
   setupAuthExtension,
   setupBankExtension,
 } from "./index";
-import { Tendermint34Client } from "../lib/tendermint-rpc";
-import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
-import { AuthInfo, SignDoc, TxBody } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+import type { AuthExtension, BankExtension } from "./index";
+import { Tendermint34Client } from "../lib/tendermint-rpc/index";
+import { SignMode } from "../types/cosmos/tx/signing/v1beta1/signing";
+import { AuthInfo, SignDoc, TxBody } from "../types/cosmos/tx/v1beta1/tx";
 
-import { setupWasmExtension, WasmExtension } from "./modules";
-import { SigningCosmWasmClientOptions } from "./signingcosmwasmclient";
+import { setupWasmExtension } from "./modules/index";
+import type { WasmExtension } from "./modules/index";
+import type { SigningCosmWasmClientOptions } from "./signingcosmwasmclient";
 import hackatom from "./testdata/contract.json";
 
 export const defaultGasPrice = GasPrice.fromString("0.025ucosm");

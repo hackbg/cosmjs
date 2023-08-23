@@ -1,34 +1,30 @@
-import { encodeSecp256k1Pubkey, makeSignDoc as makeSignDocAmino, StdFee } from "../lib/amino";
-import { fromBase64 } from "../lib/encoding";
-import { Int53, Uint53 } from "../lib/math";
+import { encodeSecp256k1Pubkey, makeSignDoc as makeSignDocAmino } from "../lib/amino/index";
+import type { StdFee } from "../lib/amino/index";
+import { fromBase64 } from "../lib/encoding/index";
+import { Int53, Uint53 } from "../lib/math/index";
 import {
-  EncodeObject,
   encodePubkey,
-  GeneratedType,
   isOfflineDirectSigner,
   makeAuthInfoBytes,
   makeSignDoc,
-  OfflineSigner,
   Registry,
-  TxBodyEncodeObject,
-} from "../lib/proto-signing";
-import {
-  HttpEndpoint,
-  Tendermint34Client,
-  Tendermint37Client,
-  TendermintClient,
-} from "../lib/tendermint-rpc";
-import { assert, assertDefined } from "../lib/utils";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
-import { MsgWithdrawDelegatorReward } from "cosmjs-types/cosmos/distribution/v1beta1/tx";
-import { MsgDelegate, MsgUndelegate } from "cosmjs-types/cosmos/staking/v1beta1/tx";
-import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { MsgTransfer } from "cosmjs-types/ibc/applications/transfer/v1/tx";
-import { Height } from "cosmjs-types/ibc/core/client/v1/client";
+} from "../lib/proto-signing/index";
+import type { EncodeObject, GeneratedType, OfflineSigner, TxBodyEncodeObject } from "../lib/proto-signing/index";
+import { Tendermint34Client, Tendermint37Client } from "../lib/tendermint-rpc/index";
+import type { HttpEndpoint } from "../lib/tendermint-rpc/index";
+import type { TendermintClient } from "../lib/tendermint-rpc/index";
+import { assert, assertDefined } from "../lib/utils/index";
+import { Coin } from "../types/cosmos/base/v1beta1/coin";
+import { MsgWithdrawDelegatorReward } from "../types/cosmos/distribution/v1beta1/tx";
+import { MsgDelegate, MsgUndelegate } from "../types/cosmos/staking/v1beta1/tx";
+import { SignMode } from "../types/cosmos/tx/signing/v1beta1/signing";
+import { TxRaw } from "../types/cosmos/tx/v1beta1/tx";
+import { MsgTransfer } from "../types/ibc/applications/transfer/v1/tx";
+import { Height } from "../types/ibc/core/client/v1/client";
 import Long from "long";
 
-import { AminoConverters, AminoTypes } from "./aminotypes";
+import { AminoTypes } from "./aminotypes";
+import type { AminoConverters } from "./aminotypes";
 import { calculateFee, GasPrice } from "./fee";
 import {
   authzTypes,
@@ -38,14 +34,18 @@ import {
   govTypes,
   groupTypes,
   ibcTypes,
+  stakingTypes,
+  vestingTypes,
+} from "./modules/index";
+
+import type {
   MsgDelegateEncodeObject,
   MsgSendEncodeObject,
   MsgTransferEncodeObject,
   MsgUndelegateEncodeObject,
   MsgWithdrawDelegatorRewardEncodeObject,
-  stakingTypes,
-  vestingTypes,
-} from "./modules";
+} from "./modules/index";
+
 import {
   createAuthzAminoConverters,
   createBankAminoConverters,
@@ -55,8 +55,10 @@ import {
   createIbcAminoConverters,
   createStakingAminoConverters,
   createVestingAminoConverters,
-} from "./modules";
-import { DeliverTxResponse, StargateClient, StargateClientOptions } from "./stargateclient";
+} from "./modules/index";
+import { StargateClient } from "./stargateclient";
+
+import type { DeliverTxResponse, StargateClientOptions } from "./stargateclient";
 
 export const defaultRegistryTypes: ReadonlyArray<[string, GeneratedType]> = [
   ["/cosmos.base.v1beta1.Coin", Coin],

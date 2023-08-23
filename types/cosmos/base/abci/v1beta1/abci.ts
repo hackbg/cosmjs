@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { Any } from "../../../../google/protobuf/any";
 import { Event } from "../../../../tendermint/abci/types";
-import { Long, isSet, DeepPartial, Exact, bytesFromBase64, base64FromBytes } from "../../../../helpers";
+import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.base.abci.v1beta1";
 /**

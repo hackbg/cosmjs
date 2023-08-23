@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Secp256k1, Secp256k1Signature, Sha256 } from "../crypto";
-import { fromBase64, fromHex } from "../encoding";
+import { Secp256k1, Secp256k1Signature, Sha256 } from "../crypto/index";
+import { fromBase64, fromHex } from "../encoding/index";
 
 import { Secp256k1Wallet } from "./secp256k1wallet";
-import { serializeSignDoc, StdSignDoc } from "./signdoc";
+import { serializeSignDoc } from "./signdoc";
+
+import type { StdSignDoc } from "./signdoc";
 
 describe("Secp256k1Wallet", () => {
   const defaultPrivkey = fromHex("b8c462d2bb0c1a92edf44f735021f16c270f28ee2c3d1cb49943a5e70a3c763e");

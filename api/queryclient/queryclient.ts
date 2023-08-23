@@ -1,10 +1,11 @@
 /* eslint-disable no-dupe-class-members, @typescript-eslint/ban-types, @typescript-eslint/naming-convention */
 import { iavlSpec, ics23, tendermintSpec, verifyExistence, verifyNonExistence } from "@confio/ics23";
-import { toAscii, toHex } from "../../lib/encoding";
-import { firstEvent } from "../../lib/stream";
-import { tendermint34, TendermintClient } from "../../lib/tendermint-rpc";
-import { arrayContentEquals, assert, assertDefined, isNonNullObject, sleep } from "../../lib/utils";
-import { ProofOps } from "cosmjs-types/tendermint/crypto/proof";
+import { toAscii, toHex } from "../../lib/encoding/index";
+import { firstEvent } from "../../lib/stream/index";
+import { tendermint34 } from "../../lib/tendermint-rpc/index";
+import type { TendermintClient } from "../../lib/tendermint-rpc/index";
+import { arrayContentEquals, assert, assertDefined, isNonNullObject, sleep } from "../../lib/utils/index";
+import { ProofOps } from "../../types/tendermint/crypto/proof";
 import { Stream } from "xstream";
 
 type QueryExtensionSetup<P> = (base: QueryClient) => P;

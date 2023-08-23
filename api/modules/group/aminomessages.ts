@@ -1,4 +1,4 @@
-import { AminoConverters } from "../../aminotypes";
+import type { AminoConverters } from "../../aminotypes";
 
 export function createGroupAminoConverters(): AminoConverters {
   // Missing, see https://github.com/cosmos/cosmjs/issues/1441

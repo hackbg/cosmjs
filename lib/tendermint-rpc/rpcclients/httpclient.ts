@@ -1,12 +1,11 @@
-import {
-  isJsonRpcErrorResponse,
-  JsonRpcRequest,
-  JsonRpcSuccessResponse,
-  parseJsonRpcResponse,
-} from "../../json-rpc";
+import { isJsonRpcErrorResponse, parseJsonRpcResponse } from "../../json-rpc/index";
+
+import type { JsonRpcRequest, JsonRpcSuccessResponse } from "../../json-rpc/index";
 
 import { http } from "./http";
-import { hasProtocol, RpcClient } from "./rpcclient";
+import { hasProtocol } from "./rpcclient";
+
+import type { RpcClient } from "./rpcclient";
 
 export interface HttpEndpoint {
   /**

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import * as _m0 from "protobufjs/minimal";
-import { isSet, DeepPartial, Exact } from "../../../../../helpers";
+import { isSet } from "../../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../../helpers";
 export const protobufPackage = "ibc.applications.interchain_accounts.host.v1";
 /**
  * Params defines the set of on-chain interchain accounts parameters.

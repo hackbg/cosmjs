@@ -1,5 +1,5 @@
-import { Random } from "../crypto";
-import { fromBase64, fromBech32, fromHex } from "../encoding";
+import { Random } from "../crypto/index";
+import { fromBase64, fromBech32, fromHex } from "../encoding/index";
 
 import {
   decodeAminoPubkey,
@@ -9,7 +9,7 @@ import {
   encodeEd25519Pubkey,
   encodeSecp256k1Pubkey,
 } from "./encoding";
-import { Pubkey } from "./pubkeys";
+import type { Pubkey } from "./pubkeys";
 import {
   testgroup1,
   testgroup1PubkeyBech32,

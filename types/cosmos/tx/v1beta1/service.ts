@@ -4,7 +4,8 @@ import { PageRequest, PageResponse } from "../../base/query/v1beta1/pagination";
 import { TxResponse, GasInfo, Result } from "../../base/abci/v1beta1/abci";
 import { BlockID } from "../../../tendermint/types/types";
 import { Block } from "../../../tendermint/types/block";
-import { Long, isSet, DeepPartial, Exact, bytesFromBase64, base64FromBytes, Rpc } from "../../../helpers";
+import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.tx.v1beta1";
 /** OrderBy defines the sorting order */

@@ -1,19 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoSignResponse, Secp256k1HdWallet, Secp256k1HdWalletOptions, StdSignDoc } from "../lib/amino";
-import { Bip39, EnglishMnemonic, Random } from "../lib/crypto";
-import { toBech32 } from "../lib/encoding";
-import {
-  coins,
-  DirectSecp256k1HdWallet,
-  DirectSecp256k1HdWalletOptions,
-  DirectSignResponse,
-  makeAuthInfoBytes,
-} from "../lib/proto-signing";
-import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
-import { AuthInfo, SignDoc, TxBody } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+import { Secp256k1HdWallet } from "../lib/amino/index";
+import type { AminoSignResponse, Secp256k1HdWalletOptions, StdSignDoc } from "../lib/amino/index";
+import { Bip39, EnglishMnemonic, Random } from "../lib/crypto/index";
+import { toBech32 } from "../lib/encoding/index";
+import { coins, DirectSecp256k1HdWallet, makeAuthInfoBytes } from "../lib/proto-signing/index";
+import type { DirectSecp256k1HdWalletOptions, DirectSignResponse } from "../lib/proto-signing/index";
+import { SignMode } from "../types/cosmos/tx/signing/v1beta1/signing";
+import { AuthInfo, SignDoc, TxBody } from "../types/cosmos/tx/v1beta1/tx";
 
 import { calculateFee, GasPrice } from "./fee";
-import { SigningStargateClientOptions } from "./signingstargateclient";
+import type { SigningStargateClientOptions } from "./signingstargateclient";
 
 export function simapp44Enabled(): boolean {
   return !!process.env.SIMAPP44_ENABLED;

@@ -1,13 +1,12 @@
-import {
-  isJsonRpcErrorResponse,
-  JsonRpcRequest,
-  JsonRpcSuccessResponse,
-  parseJsonRpcResponse,
-} from "../../json-rpc";
+import { isJsonRpcErrorResponse, parseJsonRpcResponse } from "../../json-rpc/index";
+
+import type { JsonRpcRequest, JsonRpcSuccessResponse } from "../../json-rpc/index";
 
 import { http } from "./http";
-import { HttpEndpoint } from "./httpclient";
-import { hasProtocol, RpcClient } from "./rpcclient";
+import type { HttpEndpoint } from "./httpclient";
+import { hasProtocol } from "./rpcclient";
+
+import type { RpcClient } from "./rpcclient";
 
 export interface HttpBatchClientOptions {
   /** Interval for dispatching batches (in milliseconds) */

@@ -1,4 +1,4 @@
-import { GeneratedType } from "../../../lib/proto-signing";
+import type { GeneratedType } from "../../../lib/proto-signing/index";
 import {
   MsgCreateGroup,
   MsgCreateGroupPolicy,
@@ -14,7 +14,7 @@ import {
   MsgUpdateGroupPolicyMetadata,
   MsgVote,
   MsgWithdrawProposal,
-} from "cosmjs-types/cosmos/group/v1/tx";
+} from "../../../types/cosmos/group/v1/tx";
 
 export const groupTypes: ReadonlyArray<[string, GeneratedType]> = [
   ["/cosmos.group.v1.MsgCreateGroup", MsgCreateGroup],

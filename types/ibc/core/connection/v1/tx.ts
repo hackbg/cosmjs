@@ -2,7 +2,8 @@
 import { Counterparty, Version } from "./connection";
 import { Any } from "../../../../google/protobuf/any";
 import { Height } from "../../client/v1/client";
-import { Long, isSet, DeepPartial, Exact, bytesFromBase64, base64FromBytes, Rpc } from "../../../../helpers";
+import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "ibc.core.connection.v1";
 /**

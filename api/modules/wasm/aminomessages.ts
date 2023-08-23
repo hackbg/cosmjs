@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64, fromUtf8, toBase64, toUtf8 } from "../../../lib/encoding";
-import { AminoConverters, Coin } from "../../index";
+import { fromBase64, fromUtf8, toBase64, toUtf8 } from "../../../lib/encoding/index";
+import type { Coin } from "../../index";
+import type { AminoConverters } from "../../index";
 import {
   MsgClearAdmin,
   MsgExecuteContract,
@@ -9,8 +10,8 @@ import {
   MsgMigrateContract,
   MsgStoreCode,
   MsgUpdateAdmin,
-} from "cosmjs-types/cosmwasm/wasm/v1/tx";
-import { AccessType } from "cosmjs-types/cosmwasm/wasm/v1/types";
+} from "../../../types/cosmwasm/wasm/v1/tx";
+import { AccessType } from "../../../types/cosmwasm/wasm/v1/types";
 import Long from "long";
 
 export function accessTypeFromString(str: string): AccessType {

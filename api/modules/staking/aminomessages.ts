@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoMsg, Coin, Pubkey } from "../../../lib/amino";
-import { Decimal } from "../../../lib/math";
-import { decodePubkey, encodePubkey } from "../../../lib/proto-signing";
-import { assertDefinedAndNotNull } from "../../../lib/utils";
+import type { AminoMsg, Coin, Pubkey } from "../../../lib/amino/index";
+import { Decimal } from "../../../lib/math/index";
+import { decodePubkey, encodePubkey } from "../../../lib/proto-signing/index";
+import { assertDefinedAndNotNull } from "../../../lib/utils/index";
 import {
   MsgBeginRedelegate,
   MsgCreateValidator,
   MsgDelegate,
   MsgEditValidator,
   MsgUndelegate,
-} from "cosmjs-types/cosmos/staking/v1beta1/tx";
+} from "../../../types/cosmos/staking/v1beta1/tx";
 
-import { AminoConverter } from "../..";
+import type { AminoConverter } from "../../index";
 
 /** The initial commission rates to be used for creating a validator */
 interface CommissionRates {

@@ -1,15 +1,10 @@
 import { Stream } from "xstream";
 
 import { createJsonRpcRequest } from "../jsonrpc";
-import {
-  HttpClient,
-  HttpEndpoint,
-  instanceOfRpcStreamingClient,
-  RpcClient,
-  SubscriptionEvent,
-  WebsocketClient,
-} from "../rpcclients";
-import { adaptor37, Decoder, Encoder, Params, Responses } from "./adaptor";
+import { HttpClient, instanceOfRpcStreamingClient, WebsocketClient } from "../rpcclients/index";
+import type { HttpEndpoint, RpcClient, SubscriptionEvent } from "../rpcclients/index";
+import { adaptor37 } from "./adaptor/index";
+import type { Decoder, Encoder, Params, Responses } from "./adaptor/index";
 import * as requests from "./requests";
 import * as responses from "./responses";
 

@@ -2,7 +2,8 @@
 import { Coin } from "../../../../cosmos/base/v1beta1/coin";
 import { PacketId } from "../../../core/channel/v1/channel";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Exact, isSet } from "../../../../helpers";
+import { isSet } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.fee.v1";
 /** Fee defines the ICS29 receive, acknowledgement and timeout fees */
 export interface Fee {

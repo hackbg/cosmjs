@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64, toBase64 } from "../encoding";
+import { fromBase64, toBase64 } from "../encoding/index";
 
 import { encodeSecp256k1Pubkey } from "./encoding";
-import { Pubkey, pubkeyType } from "./pubkeys";
+import { pubkeyType } from "./pubkeys";
+
+import type { Pubkey } from "./pubkeys";
 
 export interface StdSignature {
   readonly pub_key: Pubkey;

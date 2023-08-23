@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { coins } from "./coins";
-import { StdSignature } from "./signature";
-import { makeSignDoc, StdFee } from "./signdoc";
+import type { StdSignature } from "./signature";
+import { makeSignDoc } from "./signdoc";
+import type { StdFee } from "./signdoc";
 import { makeStdTx } from "./stdtx";
 
 describe("makeStdTx", () => {

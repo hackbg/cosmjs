@@ -1,6 +1,7 @@
 /* eslint-disable */
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Exact, isSet, Rpc } from "../../../../helpers";
+import { isSet } from "../../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
 export const protobufPackage = "cosmos.base.node.v1beta1";
 /** ConfigRequest defines the request structure for the Config gRPC query. */
 export interface ConfigRequest {}

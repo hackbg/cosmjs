@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { CommitmentProof } from "../../../../cosmos/ics23/v1/proofs";
 import * as _m0 from "protobufjs/minimal";
-import { isSet, bytesFromBase64, base64FromBytes, DeepPartial, Exact } from "../../../../helpers";
+import { isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.core.commitment.v1";
 /**
  * MerkleRoot defines a merkle root hash.

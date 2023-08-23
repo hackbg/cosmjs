@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { TextProposal, VoteOption } from "cosmjs-types/cosmos/gov/v1beta1/gov";
-import { MsgDeposit, MsgSubmitProposal, MsgVote, MsgVoteWeighted } from "cosmjs-types/cosmos/gov/v1beta1/tx";
+import { TextProposal, VoteOption } from "../../../types/cosmos/gov/v1beta1/gov";
+import { MsgDeposit, MsgSubmitProposal, MsgVote, MsgVoteWeighted } from "../../../types/cosmos/gov/v1beta1/tx";
 import Long from "long";
 
 import { AminoTypes } from "../../aminotypes";
-import {
+import { createGovAminoConverters } from "./aminomessages";
+
+import type {
   AminoMsgDeposit,
   AminoMsgSubmitProposal,
   AminoMsgVote,
   AminoMsgVoteWeighted,
-  createGovAminoConverters,
 } from "./aminomessages";
 
 describe("AminoTypes", () => {

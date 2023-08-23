@@ -1,8 +1,8 @@
-import { fromBech32, fromHex, toBase64 } from "../encoding";
+import { fromBech32, fromHex, toBase64 } from "../encoding/index";
 
 import { pubkeyToAddress, pubkeyToRawAddress } from "./addresses";
 import { decodeBech32Pubkey } from "./encoding";
-import { MultisigThresholdPubkey } from "./pubkeys";
+import type { MultisigThresholdPubkey } from "./pubkeys";
 
 describe("addresses", () => {
   describe("pubkeyToRawAddress", () => {

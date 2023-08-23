@@ -1,10 +1,10 @@
-import { coin, coins, DirectSecp256k1HdWallet, Registry } from "../../../lib/proto-signing";
-import { Tendermint34Client } from "../../../lib/tendermint-rpc";
-import { assertDefined, sleep } from "../../../lib/utils";
-import { MsgDelegate } from "cosmjs-types/cosmos/staking/v1beta1/tx";
+import { coin, coins, DirectSecp256k1HdWallet, Registry } from "../../../lib/proto-signing/index";
+import { Tendermint34Client } from "../../../lib/tendermint-rpc/index";
+import { assertDefined, sleep } from "../../../lib/utils/index";
+import { MsgDelegate } from "../../../types/cosmos/staking/v1beta1/tx";
 import Long from "long";
 
-import { QueryClient } from "../../queryclient";
+import { QueryClient } from "../../queryclient/index";
 import { defaultRegistryTypes, SigningStargateClient } from "../../signingstargateclient";
 import { assertIsDeliverTxSuccess, StargateClient } from "../../stargateclient";
 import {
@@ -17,7 +17,9 @@ import {
   simappEnabled,
   validator,
 } from "../../testutils-stargate.spec";
-import { setupTxExtension, TxExtension } from "./queries";
+import { setupTxExtension } from "./queries";
+
+import type { TxExtension } from "./queries";
 
 async function makeClientWithTx(rpcUrl: string): Promise<[QueryClient & TxExtension, Tendermint34Client]> {
   const tmClient = await Tendermint34Client.connect(rpcUrl);

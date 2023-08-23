@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { toAscii } from "../../../lib/encoding";
-import { Uint64 } from "../../../lib/math";
-import { Any } from "cosmjs-types/google/protobuf/any";
+import { toAscii } from "../../../lib/encoding/index";
+import { Uint64 } from "../../../lib/math/index";
+import { Any } from "../../../types/google/protobuf/any";
 import {
   QueryClientImpl as TransferQuery,
   QueryDenomTraceResponse,
   QueryDenomTracesResponse,
   QueryParamsResponse as QueryTransferParamsResponse,
-} from "cosmjs-types/ibc/applications/transfer/v1/query";
-import { Channel } from "cosmjs-types/ibc/core/channel/v1/channel";
+} from "../../../types/ibc/applications/transfer/v1/query";
+import { Channel } from "../../../types/ibc/core/channel/v1/channel";
 import {
   QueryChannelClientStateResponse,
   QueryChannelConsensusStateResponse,
@@ -25,8 +25,8 @@ import {
   QueryPacketReceiptResponse,
   QueryUnreceivedAcksResponse,
   QueryUnreceivedPacketsResponse,
-} from "cosmjs-types/ibc/core/channel/v1/query";
-import { Height } from "cosmjs-types/ibc/core/client/v1/client";
+} from "../../../types/ibc/core/channel/v1/query";
+import { Height } from "../../../types/ibc/core/client/v1/client";
 import {
   QueryClientImpl as ClientQuery,
   QueryClientParamsResponse,
@@ -35,7 +35,7 @@ import {
   QueryConsensusStateRequest,
   QueryConsensusStateResponse,
   QueryConsensusStatesResponse,
-} from "cosmjs-types/ibc/core/client/v1/query";
+} from "../../../types/ibc/core/client/v1/query";
 import {
   QueryClientConnectionsResponse,
   QueryClientImpl as ConnectionQuery,
@@ -44,14 +44,14 @@ import {
   QueryConnectionConsensusStateResponse,
   QueryConnectionResponse,
   QueryConnectionsResponse,
-} from "cosmjs-types/ibc/core/connection/v1/query";
+} from "../../../types/ibc/core/connection/v1/query";
 import {
   ClientState as TendermintClientState,
   ConsensusState as TendermintConsensusState,
-} from "cosmjs-types/ibc/lightclients/tendermint/v1/tendermint";
+} from "../../../types/ibc/lightclients/tendermint/v1/tendermint";
 import Long from "long";
 
-import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient";
+import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient/index";
 
 function decodeTendermintClientStateAny(clientState: Any | undefined): TendermintClientState {
   if (clientState?.typeUrl !== "/ibc.lightclients.tendermint.v1.ClientState") {

@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { Params, ValidatorSigningInfo } from "./slashing";
-import { Long, isSet, DeepPartial, Exact } from "../../../helpers";
+import { Long, isSet } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.slashing.v1beta1";
 /** GenesisState defines the slashing module's genesis state. */

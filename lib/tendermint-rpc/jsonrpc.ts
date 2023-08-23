@@ -1,4 +1,4 @@
-import { JsonRpcRequest } from "../json-rpc";
+import type { JsonRpcRequest } from "../json-rpc/index";
 
 const numbersWithoutZero = "123456789";
 

@@ -1,7 +1,9 @@
-import { firstEvent } from "../stream";
+import { firstEvent } from "../stream/index";
 import { Stream } from "xstream";
 
-import { isJsonRpcErrorResponse, JsonRpcRequest, JsonRpcResponse, JsonRpcSuccessResponse } from "./types";
+import { isJsonRpcErrorResponse } from "./types";
+
+import type { JsonRpcRequest, JsonRpcResponse, JsonRpcSuccessResponse } from "./types";
 
 export interface SimpleMessagingConnection<Request, Response> {
   readonly responseStream: Stream<Response>;

@@ -1,12 +1,12 @@
-import { EncodeObject, GeneratedType } from "../../../lib/proto-signing";
+import type { EncodeObject, GeneratedType } from "../../../lib/proto-signing/index";
 import {
   MsgDeposit as V1MsgDeposit,
   MsgSubmitProposal as V1MsgSubmitProposal,
   MsgUpdateParams as V1MsgUpdateParams,
   MsgVote as V1MsgVote,
   MsgVoteWeighted as V1MsgVoteWeighted,
-} from "cosmjs-types/cosmos/gov/v1/tx";
-import { MsgDeposit, MsgSubmitProposal, MsgVote, MsgVoteWeighted } from "cosmjs-types/cosmos/gov/v1beta1/tx";
+} from "../../../types/cosmos/gov/v1/tx";
+import { MsgDeposit, MsgSubmitProposal, MsgVote, MsgVoteWeighted } from "../../../types/cosmos/gov/v1beta1/tx";
 
 export const govTypes: ReadonlyArray<[string, GeneratedType]> = [
   ["/cosmos.gov.v1.MsgDeposit", V1MsgDeposit],

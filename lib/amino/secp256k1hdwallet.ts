@@ -1,32 +1,27 @@
 import {
   Bip39,
   EnglishMnemonic,
-  HdPath,
   pathToString,
   Random,
   Secp256k1,
-  Secp256k1Keypair,
   sha256,
   Slip10,
   Slip10Curve,
   stringToPath,
-} from "../crypto";
-import { fromBase64, fromUtf8, toBase64, toBech32, toUtf8 } from "../encoding";
-import { assert, isNonNullObject } from "../utils";
+} from "../crypto/index";
+import type { HdPath, Secp256k1Keypair } from "../crypto/index";
+import { fromBase64, fromUtf8, toBase64, toBech32, toUtf8 } from "../encoding/index";
+import { assert, isNonNullObject } from "../utils/index";
 
 import { rawSecp256k1PubkeyToRawAddress } from "./addresses";
 import { makeCosmoshubPath } from "./paths";
 import { encodeSecp256k1Signature } from "./signature";
-import { serializeSignDoc, StdSignDoc } from "./signdoc";
-import { AccountData, AminoSignResponse, OfflineAminoSigner } from "./signer";
-import {
-  decrypt,
-  encrypt,
-  EncryptionConfiguration,
-  executeKdf,
-  KdfConfiguration,
-  supportedAlgorithms,
-} from "./wallet";
+import { serializeSignDoc } from "./signdoc";
+import type { StdSignDoc } from "./signdoc";
+import type { AccountData, AminoSignResponse, OfflineAminoSigner } from "./signer";
+import { decrypt, encrypt, executeKdf, supportedAlgorithms } from "./wallet";
+
+import type { EncryptionConfiguration, KdfConfiguration } from "./wallet";
 
 interface AccountDataWithPrivkey extends AccountData {
   readonly privkey: Uint8Array;

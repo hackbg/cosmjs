@@ -6,13 +6,12 @@ import { Timestamp } from "../../../../google/protobuf/timestamp";
 import {
   Long,
   isSet,
-  DeepPartial,
-  Exact,
   fromJsonTimestamp,
   bytesFromBase64,
   fromTimestamp,
   base64FromBytes,
 } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.base.tendermint.v1beta1";
 /**

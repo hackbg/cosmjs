@@ -1,5 +1,5 @@
-import { Uint64 } from "../../../lib/math";
-import { ProposalStatus } from "cosmjs-types/cosmos/gov/v1beta1/gov";
+import { Uint64 } from "../../../lib/math/index";
+import { ProposalStatus } from "../../../types/cosmos/gov/v1beta1/gov";
 import {
   QueryClientImpl,
   QueryDepositResponse,
@@ -10,10 +10,10 @@ import {
   QueryTallyResultResponse,
   QueryVoteResponse,
   QueryVotesResponse,
-} from "cosmjs-types/cosmos/gov/v1beta1/query";
+} from "../../../types/cosmos/gov/v1beta1/query";
 import Long from "long";
 
-import { createPagination, createProtobufRpcClient, longify, QueryClient } from "../../queryclient";
+import { createPagination, createProtobufRpcClient, longify, QueryClient } from "../../queryclient/index";
 
 export type GovParamsType = "deposit" | "tallying" | "voting";
 

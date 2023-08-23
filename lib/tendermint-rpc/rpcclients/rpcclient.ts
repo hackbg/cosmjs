@@ -1,4 +1,4 @@
-import { JsonRpcRequest, JsonRpcSuccessResponse } from "../../json-rpc";
+import type { JsonRpcRequest, JsonRpcSuccessResponse } from "../../json-rpc/index";
 import { Stream } from "xstream";
 
 /**

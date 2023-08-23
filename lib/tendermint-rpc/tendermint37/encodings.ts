@@ -1,7 +1,7 @@
-import { toUtf8 } from "../../encoding";
+import { toUtf8 } from "../../encoding/index";
 
-import { ReadonlyDateWithNanoseconds } from "../dates";
-import { BlockId, Version } from "./responses";
+import type { ReadonlyDateWithNanoseconds } from "../dates";
+import type { BlockId, Version } from "./responses";
 
 /**
  * A runtime checker that ensures a given value is set (i.e. not undefined or null)

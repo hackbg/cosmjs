@@ -1,4 +1,4 @@
-import { fromHex } from "../../lib/encoding";
+import { fromHex } from "../../lib/encoding/index";
 
 import { decodeCosmosSdkDecFromProto } from "./utils";
 

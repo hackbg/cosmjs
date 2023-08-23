@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromHex } from "../encoding";
-import { assert } from "../utils";
-import { MsgSend as IMsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
-import { TxBody } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { Any } from "cosmjs-types/google/protobuf/any";
+import { fromHex } from "../encoding/index";
+import { assert } from "../utils/index";
+import { MsgSend as IMsgSend } from "../../types/cosmos/bank/v1beta1/tx";
+import { TxBody } from "../../types/cosmos/tx/v1beta1/tx";
+import { Any } from "../../types/google/protobuf/any";
 import Long from "long";
 import { Field, Type } from "protobufjs";
 

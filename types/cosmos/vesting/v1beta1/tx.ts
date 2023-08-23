@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { Coin } from "../../base/v1beta1/coin";
 import { Period } from "./vesting";
-import { Long, isSet, DeepPartial, Exact, Rpc } from "../../../helpers";
+import { Long, isSet } from "../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.vesting.v1beta1";
 /**

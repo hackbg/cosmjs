@@ -1,12 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Secp256k1, Secp256k1Signature, sha256 } from "../crypto";
-import { fromBase64, fromHex } from "../encoding";
+import { Secp256k1, Secp256k1Signature, sha256 } from "../crypto/index";
+import { fromBase64, fromHex } from "../encoding/index";
 
 import { makeCosmoshubPath } from "./paths";
 import { extractKdfConfiguration, Secp256k1HdWallet } from "./secp256k1hdwallet";
-import { serializeSignDoc, StdSignDoc } from "./signdoc";
+import { serializeSignDoc } from "./signdoc";
+import type { StdSignDoc } from "./signdoc";
 import { base64Matcher } from "./testutils.spec";
-import { executeKdf, KdfConfiguration } from "./wallet";
+import { executeKdf } from "./wallet";
+
+import type { KdfConfiguration } from "./wallet";
 
 describe("Secp256k1HdWallet", () => {
   // m/44'/118'/0'/0/0

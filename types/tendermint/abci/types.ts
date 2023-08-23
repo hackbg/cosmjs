@@ -7,14 +7,12 @@ import { PublicKey } from "../crypto/keys";
 import {
   Long,
   isSet,
-  DeepPartial,
-  Exact,
   fromJsonTimestamp,
   bytesFromBase64,
   fromTimestamp,
   base64FromBytes,
-  Rpc,
 } from "../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "tendermint.abci";
 export enum CheckTxType {

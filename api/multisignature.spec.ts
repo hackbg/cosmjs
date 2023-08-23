@@ -4,14 +4,15 @@ import {
   makeCosmoshubPath,
   pubkeyToAddress,
   Secp256k1HdWallet,
-} from "../lib/amino";
-import { coins } from "../lib/proto-signing";
-import { assert } from "../lib/utils";
-import { MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
+} from "../lib/amino/index";
+import { coins } from "../lib/proto-signing/index";
+import { assert } from "../lib/utils/index";
+import { MsgSend } from "../types/cosmos/bank/v1beta1/tx";
 
-import { MsgSendEncodeObject } from "./modules";
+import type { MsgSendEncodeObject } from "./modules/index";
 import { makeCompactBitArray, makeMultisignedTxBytes } from "./multisignature";
-import { SignerData, SigningStargateClient } from "./signingstargateclient";
+import { SigningStargateClient } from "./signingstargateclient";
+import type { SignerData } from "./signingstargateclient";
 import { assertIsDeliverTxSuccess, StargateClient } from "./stargateclient";
 import { faucet, pendingWithoutSimapp, simapp } from "./testutils-stargate.spec";
 

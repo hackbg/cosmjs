@@ -1,8 +1,8 @@
-import { coin } from "../lib/proto-signing";
-import { MsgDelegate } from "cosmjs-types/cosmos/staking/v1beta1/tx";
+import { coin } from "../lib/proto-signing/index";
+import { MsgDelegate } from "../types/cosmos/staking/v1beta1/tx";
 
 import { AminoTypes } from "./aminotypes";
-import { createBankAminoConverters, createStakingAminoConverters } from "./modules";
+import { createBankAminoConverters, createStakingAminoConverters } from "./modules/index";
 
 describe("AminoTypes", () => {
   describe("constructor", () => {

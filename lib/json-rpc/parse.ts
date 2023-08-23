@@ -1,11 +1,6 @@
-import {
-  isJsonCompatibleArray,
-  isJsonCompatibleDictionary,
-  isJsonCompatibleValue,
-  JsonCompatibleDictionary,
-  JsonCompatibleValue,
-} from "./compatibility";
-import {
+import { isJsonCompatibleArray, isJsonCompatibleDictionary, isJsonCompatibleValue } from "./compatibility";
+import type { JsonCompatibleDictionary, JsonCompatibleValue } from "./compatibility";
+import type {
   JsonRpcError,
   JsonRpcErrorResponse,
   JsonRpcId,

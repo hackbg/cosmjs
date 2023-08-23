@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { isNonNullObject } from "../lib/utils";
+import { isNonNullObject } from "../lib/utils/index";
 
-import { Attribute, Event } from "./events";
+import type { Attribute, Event } from "./events";
 
 export interface Log {
   readonly msg_index: number;

@@ -1,21 +1,23 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { sha256 } from "../lib/crypto";
-import { fromAscii, fromBase64, fromHex, toAscii } from "../lib/encoding";
-import { Int53 } from "../lib/math";
+import { sha256 } from "../lib/crypto/index";
+import { fromAscii, fromBase64, fromHex, toAscii } from "../lib/encoding/index";
+import { Int53 } from "../lib/math/index";
 import {
   DirectSecp256k1HdWallet,
   encodePubkey,
   makeAuthInfoBytes,
   makeSignDoc,
   Registry,
-  TxBodyEncodeObject,
-} from "../lib/proto-signing";
-import { assertIsDeliverTxSuccess, coins, logs, MsgSendEncodeObject, StdFee } from "./index";
-import { assert, sleep } from "../lib/utils";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+} from "../lib/proto-signing/index";
+import type { TxBodyEncodeObject } from "../lib/proto-signing/index";
+import { assertIsDeliverTxSuccess, coins, logs } from "./index";
+import type { MsgSendEncodeObject, StdFee } from "./index";
+import { assert, sleep } from "../lib/utils/index";
+import { TxRaw } from "../types/cosmos/tx/v1beta1/tx";
 import { ReadonlyDate } from "readonly-date";
 
-import { Code, CosmWasmClient, PrivateCosmWasmClient } from "./cosmwasmclient";
+import { CosmWasmClient } from "./cosmwasmclient";
+import type { Code, PrivateCosmWasmClient } from "./cosmwasmclient";
 import { SigningCosmWasmClient } from "./signingcosmwasmclient";
 import {
   alice,

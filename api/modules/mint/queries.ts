@@ -1,9 +1,9 @@
-import { Decimal } from "../../../lib/math";
-import { assert } from "../../../lib/utils";
-import { Params } from "cosmjs-types/cosmos/mint/v1beta1/mint";
-import { QueryClientImpl } from "cosmjs-types/cosmos/mint/v1beta1/query";
+import { Decimal } from "../../../lib/math/index";
+import { assert } from "../../../lib/utils/index";
+import { Params } from "../../../types/cosmos/mint/v1beta1/mint";
+import { QueryClientImpl } from "../../../types/cosmos/mint/v1beta1/query";
 
-import { createProtobufRpcClient, decodeCosmosSdkDecFromProto, QueryClient } from "../../queryclient";
+import { createProtobufRpcClient, decodeCosmosSdkDecFromProto, QueryClient } from "../../queryclient/index";
 
 /**
  * Like Params from "cosmjs-types/cosmos/mint/v1beta1/mint"

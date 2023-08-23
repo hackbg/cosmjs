@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { Timestamp } from "../../../google/protobuf/timestamp";
-import { Long, isSet, fromJsonTimestamp, fromTimestamp, DeepPartial, Exact } from "../../../helpers";
+import { Long, isSet, fromJsonTimestamp, fromTimestamp } from "../../../helpers";
+import type { DeepPartial, Exact } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.evidence.v1beta1";
 /**

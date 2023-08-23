@@ -1,34 +1,29 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { addCoins } from "../lib/amino";
-import { toHex } from "../lib/encoding";
-import { Uint53 } from "../lib/math";
-import {
-  HttpEndpoint,
-  Tendermint34Client,
-  Tendermint37Client,
-  TendermintClient,
-  toRfc3339WithNanoseconds,
-} from "../lib/tendermint-rpc";
-import { assert, sleep } from "../lib/utils";
-import { MsgData, TxMsgData } from "cosmjs-types/cosmos/base/abci/v1beta1/abci";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
-import { QueryDelegatorDelegationsResponse } from "cosmjs-types/cosmos/staking/v1beta1/query";
-import { DelegationResponse } from "cosmjs-types/cosmos/staking/v1beta1/staking";
+import { addCoins } from "../lib/amino/index";
+import { toHex } from "../lib/encoding/index";
+import { Uint53 } from "../lib/math/index";
+import { Tendermint34Client, Tendermint37Client, toRfc3339WithNanoseconds } from "../lib/tendermint-rpc/index";
+import type { HttpEndpoint } from "../lib/tendermint-rpc/index";
+import type { TendermintClient } from "../lib/tendermint-rpc/index";
+import { assert, sleep } from "../lib/utils/index";
+import { MsgData, TxMsgData } from "../types/cosmos/base/abci/v1beta1/abci";
+import { Coin } from "../types/cosmos/base/v1beta1/coin";
+import { QueryDelegatorDelegationsResponse } from "../types/cosmos/staking/v1beta1/query";
+import { DelegationResponse } from "../types/cosmos/staking/v1beta1/staking";
 
-import { Account, accountFromAny, AccountParser } from "./accounts";
-import { Event, fromTendermintEvent } from "./events";
+import { accountFromAny } from "./accounts";
+import type { Account, AccountParser } from "./accounts";
+import { fromTendermintEvent } from "./events";
+import type { Event } from "./events";
 import {
-  AuthExtension,
-  BankExtension,
   setupAuthExtension,
   setupBankExtension,
   setupStakingExtension,
   setupTxExtension,
-  StakingExtension,
-  TxExtension,
-} from "./modules";
-import { QueryClient } from "./queryclient";
-import { SearchTxQuery } from "./search";
+} from "./modules/index";
+import type { AuthExtension, BankExtension, StakingExtension, TxExtension } from "./modules/index";
+import { QueryClient } from "./queryclient/index";
+import type { SearchTxQuery } from "./search";
 
 export class TimeoutError extends Error {
   public readonly txId: string;

@@ -1,4 +1,4 @@
-import { Decimal } from "../lib/math";
+import { Decimal } from "../lib/math/index";
 
 import { calculateFee, GasPrice } from "./fee";
 

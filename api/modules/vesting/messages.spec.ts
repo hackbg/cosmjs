@@ -1,6 +1,6 @@
-import { coin, coins, Secp256k1HdWallet } from "../../../lib/amino";
-import { DirectSecp256k1HdWallet } from "../../../lib/proto-signing";
-import { MsgCreateVestingAccount } from "cosmjs-types/cosmos/vesting/v1beta1/tx";
+import { coin, coins, Secp256k1HdWallet } from "../../../lib/amino/index";
+import { DirectSecp256k1HdWallet } from "../../../lib/proto-signing/index";
+import { MsgCreateVestingAccount } from "../../../types/cosmos/vesting/v1beta1/tx";
 import Long from "long";
 
 import { SigningStargateClient } from "../../signingstargateclient";

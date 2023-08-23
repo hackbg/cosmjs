@@ -1,4 +1,4 @@
-import { Coin } from "../amino";
+import type { Coin } from "../amino/index";
 
 /**
  * Takes a coins list like "819966000ucosm,700000000ustake" and parses it.

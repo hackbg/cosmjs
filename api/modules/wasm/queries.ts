@@ -1,4 +1,4 @@
-import { fromUtf8, toUtf8 } from "../../../lib/encoding";
+import { fromUtf8, toUtf8 } from "../../../lib/encoding/index";
 import { createPagination, createProtobufRpcClient, QueryClient } from "../../index";
 import {
   QueryAllContractStateResponse,
@@ -10,7 +10,7 @@ import {
   QueryContractsByCodeResponse,
   QueryContractsByCreatorResponse,
   QueryRawContractStateResponse,
-} from "cosmjs-types/cosmwasm/wasm/v1/query";
+} from "../../../types/cosmwasm/wasm/v1/query";
 import Long from "long";
 
 /**

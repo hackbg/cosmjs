@@ -1,4 +1,4 @@
-import { fromHex, toAscii, toUtf8 } from "../encoding";
+import { fromHex, toAscii, toUtf8 } from "../encoding/index";
 
 import {
   getNodeCrypto,

@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { encodePubkey } from "../../../lib/proto-signing";
-import { Tendermint34Client } from "../../../lib/tendermint-rpc";
-import { assert } from "../../../lib/utils";
-import { BaseAccount } from "cosmjs-types/cosmos/auth/v1beta1/auth";
-import { Any } from "cosmjs-types/google/protobuf/any";
+import { encodePubkey } from "../../../lib/proto-signing/index";
+import { Tendermint34Client } from "../../../lib/tendermint-rpc/index";
+import { assert } from "../../../lib/utils/index";
+import { BaseAccount } from "../../../types/cosmos/auth/v1beta1/auth";
+import { Any } from "../../../types/google/protobuf/any";
 import Long from "long";
 
-import { QueryClient } from "../../queryclient";
+import { QueryClient } from "../../queryclient/index";
 import { nonExistentAddress, pendingWithoutSimapp, simapp, unused, validator } from "../../testutils-stargate.spec";
-import { AuthExtension, setupAuthExtension } from "./queries";
+import { setupAuthExtension } from "./queries";
+
+import type { AuthExtension } from "./queries";
 
 async function makeClientWithAuth(
   rpcUrl: string,

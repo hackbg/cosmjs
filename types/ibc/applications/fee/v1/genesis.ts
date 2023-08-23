@@ -2,7 +2,8 @@
 import { IdentifiedPacketFees } from "./fee";
 import { PacketId } from "../../../core/channel/v1/channel";
 import * as _m0 from "protobufjs/minimal";
-import { DeepPartial, Exact, isSet } from "../../../../helpers";
+import { isSet } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.fee.v1";
 /** GenesisState defines the ICS29 fee middleware genesis state */
 export interface GenesisState {

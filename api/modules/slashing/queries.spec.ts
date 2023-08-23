@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Tendermint34Client } from "../../../lib/tendermint-rpc";
+import { Tendermint34Client } from "../../../lib/tendermint-rpc/index";
 
-import { QueryClient } from "../../queryclient";
+import { QueryClient } from "../../queryclient/index";
 import { pendingWithoutSimapp, simapp } from "../../testutils-stargate.spec";
-import { setupSlashingExtension, SlashingExtension } from "./queries";
+import { setupSlashingExtension } from "./queries";
+
+import type { SlashingExtension } from "./queries";
 
 async function makeClientWithSlashing(
   rpcUrl: string,

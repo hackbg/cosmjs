@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64, fromHex } from "../../../encoding";
+import { fromBase64, fromHex } from "../../../encoding/index";
 
 import { decodeEvent, decodeValidatorGenesis, decodeValidatorInfo, decodeValidatorUpdate } from "./responses";
 

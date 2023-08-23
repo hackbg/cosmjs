@@ -8,11 +8,10 @@ import {
   isSet,
   bytesFromBase64,
   base64FromBytes,
-  DeepPartial,
-  Exact,
   fromJsonTimestamp,
   fromTimestamp,
 } from "../../helpers";
+import type { DeepPartial, Exact } from "../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "tendermint.types";
 /** BlockIdFlag indicates which BlcokID the signature is for */

@@ -1,26 +1,20 @@
-import { sha256 } from "../../../lib/crypto";
-import { fromAscii, fromHex, toAscii, toHex, toUtf8 } from "../../../lib/encoding";
-import { DirectSecp256k1HdWallet, OfflineDirectSigner, Registry } from "../../../lib/proto-signing";
-import {
-  assertIsDeliverTxSuccess,
-  Coin,
-  coin,
-  coins,
-  DeliverTxResponse,
-  logs,
-  SigningStargateClient,
-  StdFee,
-} from "../../index";
-import { assert, assertDefined } from "../../../lib/utils";
-import { MsgExecuteContract, MsgInstantiateContract, MsgStoreCode } from "cosmjs-types/cosmwasm/wasm/v1/tx";
-import { AbsoluteTxPosition, ContractCodeHistoryOperationType } from "cosmjs-types/cosmwasm/wasm/v1/types";
+import { sha256 } from "../../../lib/crypto/index";
+import { fromAscii, fromHex, toAscii, toHex, toUtf8 } from "../../../lib/encoding/index";
+import { DirectSecp256k1HdWallet, Registry } from "../../../lib/proto-signing/index";
+import type { OfflineDirectSigner } from "../../../lib/proto-signing/index";
+import { assertIsDeliverTxSuccess, coin, coins, logs, SigningStargateClient } from "../../index";
+import type { Coin } from "../../index";
+import type { StdFee } from "../../index";
+import type { DeliverTxResponse } from "../../index";
+import { assert, assertDefined } from "../../../lib/utils/index";
+import { MsgExecuteContract, MsgInstantiateContract, MsgStoreCode } from "../../../types/cosmwasm/wasm/v1/tx";
+import { AbsoluteTxPosition, ContractCodeHistoryOperationType } from "../../../types/cosmwasm/wasm/v1/types";
 import Long from "long";
 
 import { SigningCosmWasmClient } from "../../signingcosmwasmclient";
 import {
   alice,
   bech32AddressMatcher,
-  ContractUploadInstructions,
   defaultSigningClientOptions,
   getHackatom,
   makeRandomAddress,
@@ -29,13 +23,16 @@ import {
   wasmd,
   wasmdEnabled,
 } from "../../testutils-cosmwasm.spec";
-import {
+import type { ContractUploadInstructions } from "../../testutils-cosmwasm.spec";
+import { wasmTypes } from "./messages";
+
+import type {
   MsgExecuteContractEncodeObject,
   MsgInstantiateContractEncodeObject,
   MsgStoreCodeEncodeObject,
-  wasmTypes,
 } from "./messages";
-import { JsonObject } from "./queries";
+
+import type { JsonObject } from "./queries";
 
 const registry = new Registry(wasmTypes);
 

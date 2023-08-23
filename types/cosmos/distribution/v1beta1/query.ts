@@ -8,7 +8,8 @@ import {
   DelegationDelegatorReward,
 } from "./distribution";
 import { DecCoin } from "../../base/v1beta1/coin";
-import { Long, DeepPartial, Exact, isSet, Rpc } from "../../../helpers";
+import { Long, isSet } from "../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.distribution.v1beta1";
 /** QueryParamsRequest is the request type for the Query/Params RPC method. */

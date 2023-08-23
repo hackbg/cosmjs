@@ -1,15 +1,15 @@
-import { Pubkey } from "../lib/amino";
-import { Uint64 } from "../lib/math";
-import { decodePubkey } from "../lib/proto-signing";
-import { assert } from "../lib/utils";
-import { BaseAccount, ModuleAccount } from "cosmjs-types/cosmos/auth/v1beta1/auth";
+import type { Pubkey } from "../lib/amino/index";
+import { Uint64 } from "../lib/math/index";
+import { decodePubkey } from "../lib/proto-signing/index";
+import { assert } from "../lib/utils/index";
+import { BaseAccount, ModuleAccount } from "../types/cosmos/auth/v1beta1/auth";
 import {
   BaseVestingAccount,
   ContinuousVestingAccount,
   DelayedVestingAccount,
   PeriodicVestingAccount,
-} from "cosmjs-types/cosmos/vesting/v1beta1/vesting";
-import { Any } from "cosmjs-types/google/protobuf/any";
+} from "../types/cosmos/vesting/v1beta1/vesting";
+import { Any } from "../types/google/protobuf/any";
 import Long from "long";
 
 export interface Account {

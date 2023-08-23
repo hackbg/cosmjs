@@ -1,5 +1,5 @@
-import { GeneratedType } from "../../../lib/proto-signing";
-import { MsgGrantAllowance, MsgRevokeAllowance } from "cosmjs-types/cosmos/feegrant/v1beta1/tx";
+import type { GeneratedType } from "../../../lib/proto-signing/index";
+import { MsgGrantAllowance, MsgRevokeAllowance } from "../../../types/cosmos/feegrant/v1beta1/tx";
 
 export const feegrantTypes: ReadonlyArray<[string, GeneratedType]> = [
   ["/cosmos.feegrant.v1beta1.MsgGrantAllowance", MsgGrantAllowance],

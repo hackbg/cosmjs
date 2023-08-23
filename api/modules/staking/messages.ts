@@ -1,11 +1,11 @@
-import { EncodeObject, GeneratedType } from "../../../lib/proto-signing";
+import type { EncodeObject, GeneratedType } from "../../../lib/proto-signing/index";
 import {
   MsgBeginRedelegate,
   MsgCreateValidator,
   MsgDelegate,
   MsgEditValidator,
   MsgUndelegate,
-} from "cosmjs-types/cosmos/staking/v1beta1/tx";
+} from "../../../types/cosmos/staking/v1beta1/tx";
 
 export const stakingTypes: ReadonlyArray<[string, GeneratedType]> = [
   ["/cosmos.staking.v1beta1.MsgBeginRedelegate", MsgBeginRedelegate],

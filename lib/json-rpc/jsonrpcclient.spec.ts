@@ -2,9 +2,10 @@
 
 import { Producer, Stream } from "xstream";
 
-import { JsonRpcClient, SimpleMessagingConnection } from "./jsonrpcclient";
+import { JsonRpcClient } from "./jsonrpcclient";
+import type { SimpleMessagingConnection } from "./jsonrpcclient";
 import { parseJsonRpcResponse } from "./parse";
-import { JsonRpcRequest, JsonRpcResponse } from "./types";
+import type { JsonRpcRequest, JsonRpcResponse } from "./types";
 
 function pendingWithoutWorker(): void {
   if (typeof Worker === "undefined") {

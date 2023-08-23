@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { fromBase64, toBase64, toUtf8 } from "../../../lib/encoding";
+import { fromBase64, toBase64, toUtf8 } from "../../../lib/encoding/index";
 import { AminoTypes, coins } from "../../index";
 import {
   MsgClearAdmin,
@@ -9,11 +9,13 @@ import {
   MsgMigrateContract,
   MsgStoreCode,
   MsgUpdateAdmin,
-} from "cosmjs-types/cosmwasm/wasm/v1/tx";
-import { AccessType } from "cosmjs-types/cosmwasm/wasm/v1/types";
+} from "../../../types/cosmwasm/wasm/v1/tx";
+import { AccessType } from "../../../types/cosmwasm/wasm/v1/types";
 import Long from "long";
 
-import {
+import { createWasmAminoConverters } from "./aminomessages";
+
+import type {
   AminoMsgClearAdmin,
   AminoMsgExecuteContract,
   AminoMsgInstantiateContract,
@@ -21,7 +23,6 @@ import {
   AminoMsgMigrateContract,
   AminoMsgStoreCode,
   AminoMsgUpdateAdmin,
-  createWasmAminoConverters,
 } from "./aminomessages";
 
 describe("AminoTypes", () => {

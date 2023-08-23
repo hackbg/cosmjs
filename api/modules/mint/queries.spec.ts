@@ -1,8 +1,10 @@
-import { Tendermint34Client } from "../../../lib/tendermint-rpc";
+import { Tendermint34Client } from "../../../lib/tendermint-rpc/index";
 
-import { QueryClient } from "../../queryclient";
+import { QueryClient } from "../../queryclient/index";
 import { pendingWithoutSimapp, simapp } from "../../testutils-stargate.spec";
-import { MintExtension, setupMintExtension } from "./queries";
+import { setupMintExtension } from "./queries";
+
+import type { MintExtension } from "./queries";
 
 async function makeClientWithMint(
   rpcUrl: string,

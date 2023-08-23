@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoMsg, Coin } from "../../../lib/amino";
-import { MsgMultiSend, MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
+import type { AminoMsg, Coin } from "../../../lib/amino/index";
+import { MsgMultiSend, MsgSend } from "../../../types/cosmos/bank/v1beta1/tx";
 
 // eslint-disable-next-line import/no-cycle
-import { AminoConverters } from "../../aminotypes";
+import type { AminoConverters } from "../../aminotypes";
 
 /** A high level transaction of the coin module */
 export interface AminoMsgSend extends AminoMsg {

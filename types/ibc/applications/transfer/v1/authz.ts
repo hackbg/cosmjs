@@ -1,7 +1,8 @@
 /* eslint-disable */
 import { Coin } from "../../../../cosmos/base/v1beta1/coin";
 import * as _m0 from "protobufjs/minimal";
-import { isSet, DeepPartial, Exact } from "../../../../helpers";
+import { isSet } from "../../../../helpers";
+import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.transfer.v1";
 /** Allocation defines the spend limit for a particular port and channel */
 export interface Allocation {

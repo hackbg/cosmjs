@@ -1,6 +1,6 @@
-import { Tendermint34Client } from "../../../lib/tendermint-rpc";
+import { Tendermint34Client } from "../../../lib/tendermint-rpc/index";
 
-import { QueryClient } from "../../queryclient";
+import { QueryClient } from "../../queryclient/index";
 import {
   nonExistentAddress,
   nonNegativeIntegerMatcher,
@@ -8,7 +8,9 @@ import {
   simapp,
   unused,
 } from "../../testutils-stargate.spec";
-import { BankExtension, setupBankExtension } from "./queries";
+import { setupBankExtension } from "./queries";
+
+import type { BankExtension } from "./queries";
 
 async function makeClientWithBank(
   rpcUrl: string,

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoMsg } from "../../../lib/amino";
+import type { AminoMsg } from "../../../lib/amino/index";
 
-import { AminoConverters } from "../../aminotypes";
+import type { AminoConverters } from "../../aminotypes";
 
 // See https://github.com/cosmos/cosmos-sdk/blob/v0.45.1/proto/cosmos/slashing/v1beta1/tx.proto
 

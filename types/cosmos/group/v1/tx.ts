@@ -9,7 +9,8 @@ import {
   proposalExecutorResultToJSON,
 } from "./types";
 import { Any } from "../../../google/protobuf/any";
-import { Long, isSet, DeepPartial, Exact, Rpc } from "../../../helpers";
+import { Long, isSet } from "../../../helpers";
+import type { DeepPartial, Exact, Rpc } from "../../../helpers";
 import * as _m0 from "protobufjs/minimal";
 export const protobufPackage = "cosmos.group.v1";
 /** Exec defines modes of execution of a proposal on creation or on new vote. */

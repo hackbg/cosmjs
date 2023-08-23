@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoMsg, Coin } from "../../../lib/amino";
-import { Decimal } from "../../../lib/math";
-import { assert, assertDefinedAndNotNull, isNonNullObject } from "../../../lib/utils";
-import { TextProposal, voteOptionFromJSON } from "cosmjs-types/cosmos/gov/v1beta1/gov";
-import { MsgDeposit, MsgSubmitProposal, MsgVote, MsgVoteWeighted } from "cosmjs-types/cosmos/gov/v1beta1/tx";
-import { Any } from "cosmjs-types/google/protobuf/any";
+import type { AminoMsg, Coin } from "../../../lib/amino/index";
+import { Decimal } from "../../../lib/math/index";
+import { assert, assertDefinedAndNotNull, isNonNullObject } from "../../../lib/utils/index";
+import { TextProposal, voteOptionFromJSON } from "../../../types/cosmos/gov/v1beta1/gov";
+import { MsgDeposit, MsgSubmitProposal, MsgVote, MsgVoteWeighted } from "../../../types/cosmos/gov/v1beta1/tx";
+import { Any } from "../../../types/google/protobuf/any";
 import Long from "long";
 
-import { AminoConverters } from "../../aminotypes";
-import { decodeCosmosSdkDecFromProto } from "../../queryclient";
+import type { AminoConverters } from "../../aminotypes";
+import { decodeCosmosSdkDecFromProto } from "../../queryclient/index";
 
 /** Supports submitting arbitrary proposal content. */
 export interface AminoMsgSubmitProposal extends AminoMsg {

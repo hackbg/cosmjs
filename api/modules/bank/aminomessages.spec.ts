@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { coins } from "../../../lib/proto-signing";
-import { MsgMultiSend, MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
+import { coins } from "../../../lib/proto-signing/index";
+import { MsgMultiSend, MsgSend } from "../../../types/cosmos/bank/v1beta1/tx";
 
 import { AminoTypes } from "../../aminotypes";
-import { AminoMsgMultiSend, AminoMsgSend, createBankAminoConverters } from "./aminomessages";
+import { createBankAminoConverters } from "./aminomessages";
+
+import type { AminoMsgMultiSend, AminoMsgSend } from "./aminomessages";
 
 describe("AminoTypes", () => {
   describe("toAmino", () => {

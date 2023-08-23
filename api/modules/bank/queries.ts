@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { assert } from "../../../lib/utils";
-import { Metadata } from "cosmjs-types/cosmos/bank/v1beta1/bank";
-import { QueryClientImpl, QueryTotalSupplyResponse } from "cosmjs-types/cosmos/bank/v1beta1/query";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { assert } from "../../../lib/utils/index";
+import { Metadata } from "../../../types/cosmos/bank/v1beta1/bank";
+import { QueryClientImpl, QueryTotalSupplyResponse } from "../../../types/cosmos/bank/v1beta1/query";
+import { Coin } from "../../../types/cosmos/base/v1beta1/coin";
 
-import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient";
+import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient/index";
 
 export interface BankExtension {
   readonly bank: {

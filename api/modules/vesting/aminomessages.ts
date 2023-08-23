@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AminoMsg, Coin } from "../../../lib/amino";
-import { MsgCreateVestingAccount } from "cosmjs-types/cosmos/vesting/v1beta1/tx";
+import type { AminoMsg, Coin } from "../../../lib/amino/index";
+import { MsgCreateVestingAccount } from "../../../types/cosmos/vesting/v1beta1/tx";
 import Long from "long";
 
-import { AminoConverters } from "../../aminotypes";
+import type { AminoConverters } from "../../aminotypes";
 
 export interface AminoMsgCreateVestingAccount extends AminoMsg {
   readonly type: "cosmos-sdk/MsgCreateVestingAccount";

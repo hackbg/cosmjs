@@ -2,9 +2,9 @@ import {
   QueryAllowanceResponse,
   QueryAllowancesResponse,
   QueryClientImpl,
-} from "cosmjs-types/cosmos/feegrant/v1beta1/query";
+} from "../../../types/cosmos/feegrant/v1beta1/query";
 
-import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient";
+import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient/index";
 
 export interface FeegrantExtension {
   readonly feegrant: {
