@@ -1,5 +1,5 @@
 import { fromUtf8, toUtf8 } from "../../../lib/encoding/index";
-import { createPagination, createProtobufRpcClient, QueryClient } from "../../index";
+import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient/index";
 import {
   QueryAllContractStateResponse,
   QueryClientImpl,

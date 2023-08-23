@@ -12,14 +12,20 @@ import {
 } from "../lib/proto-signing/index";
 import type { EncodeObject, OfflineSigner, TxBodyEncodeObject } from "../lib/proto-signing/index";
 import {
-  AminoTypes,
+  AminoTypes
+} from "./aminotypes";
+import {
   calculateFee,
+  GasPrice,
+} from "./fee";
+import {
   createDefaultAminoConverters,
   defaultRegistryTypes as defaultStargateTypes,
-  GasPrice,
+} from "./signingstargateclient";
+import {
   isDeliverTxFailure,
-  logs,
-} from "./index";
+} from "./stargateclient";
+import * as logs from "./logs";
 
 import type { Coin } from "./index";
 
