@@ -3,6 +3,8 @@ dist/
 docs/
 node_modules/
 tmp/
-**/*.js
+**/*.dist.js
+**/*.dist.mjs
+**/*.dist.cjs
+**/*.dist.d.ts
 **/*.js.map
-**/*.d.ts

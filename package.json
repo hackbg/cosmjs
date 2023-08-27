@@ -2,8 +2,9 @@
   "name": "@hackbg/cosmjs-esm",
   "type": "module",
   "description": "Cosmos/CosmWasm SDKs as a monolithic ESM package",
-  "version": "0.31.0",
+  "version": "1.0.0-rc.1",
   "license": "AGPL-3.0",
+  "main": "api/index.ts",
   "contributors": [
     "Adam Avramov <adam@hack.bg>",
     "Confio OÜ <hello@confio.tech>",
@@ -42,7 +43,8 @@
     "test-edge": "pnpm pack-web && karma start --single-run --browsers Edge",
     "test-firefox": "pnpm pack-web && karma start --single-run --browsers Firefox",
     "test-node": "ganesha-run jasmine-testrunner.cjs",
-    "test-safari": "pnpm pack-web && karma start --single-run --browsers Safari"
+    "test-safari": "pnpm pack-web && karma start --single-run --browsers Safari",
+    "ubik": "ubik"
   },
   "dependencies": {
     "@confio/ics23": "^0.6.8",

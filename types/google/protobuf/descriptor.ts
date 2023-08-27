@@ -44,6 +44,8 @@ export enum FieldDescriptorProto_Type {
   /** TYPE_SINT64 - Uses ZigZag encoding. */
   TYPE_SINT64 = 18,
   UNRECOGNIZED = -1,
+
+  __ERROR__ = 0
 }
 export function fieldDescriptorProto_TypeFromJSON(object: any): FieldDescriptorProto_Type {
   switch (object) {
@@ -156,6 +158,8 @@ export enum FieldDescriptorProto_Label {
   LABEL_REQUIRED = 2,
   LABEL_REPEATED = 3,
   UNRECOGNIZED = -1,
+
+  __ERROR__ = 0
 }
 export function fieldDescriptorProto_LabelFromJSON(object: any): FieldDescriptorProto_Label {
   switch (object) {
@@ -199,6 +203,8 @@ export enum FileOptions_OptimizeMode {
   /** LITE_RUNTIME - Generate code using MessageLite and the lite runtime. */
   LITE_RUNTIME = 3,
   UNRECOGNIZED = -1,
+
+  __ERROR__ = 0
 }
 export function fileOptions_OptimizeModeFromJSON(object: any): FileOptions_OptimizeMode {
   switch (object) {
