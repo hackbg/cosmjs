@@ -78,7 +78,7 @@ function createBasePageRequest(): PageRequest {
   };
 }
 export const PageRequest = {
-  encode(message: PageRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: PageRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.key.length !== 0) {
       writer.uint32(10).bytes(message.key);
     }
@@ -96,7 +96,7 @@ export const PageRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): PageRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): PageRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBasePageRequest();
@@ -163,7 +163,7 @@ function createBasePageResponse(): PageResponse {
   };
 }
 export const PageResponse = {
-  encode(message: PageResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: PageResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.nextKey.length !== 0) {
       writer.uint32(10).bytes(message.nextKey);
     }
@@ -172,7 +172,7 @@ export const PageResponse = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): PageResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): PageResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBasePageResponse();

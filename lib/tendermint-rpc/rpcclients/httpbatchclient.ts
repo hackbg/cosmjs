@@ -52,7 +52,10 @@ export class HttpBatchClient implements RpcClient {
   }
 
   public disconnect(): void {
-    this.timer && clearInterval(this.timer);
+    this.timer && clearInterval(
+      //@ts-ignore
+      this.timer
+    );
     this.timer = undefined;
   }
 
