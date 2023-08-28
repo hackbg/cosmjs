@@ -1,7 +1,9 @@
 /* eslint-disable */
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as __m0 from "protobufjs/minimal";
+//@ts-ignore
+const _m0 = __m0.default
 export const protobufPackage = "cosmos.base.query.v1beta1";
 /**
  * PageRequest is to be embedded in gRPC request messages for efficient
