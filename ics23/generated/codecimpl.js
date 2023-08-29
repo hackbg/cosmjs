@@ -1,7 +1,7 @@
 /*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
 "use strict";
 
-var $protobuf = require("protobufjs/minimal");
+import $protobuf from "@hackbg/protobufjs-esm/minimal";
 
 // Common aliases
 var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
@@ -3887,6 +3887,5 @@ export const ics23 = (function() {
     })();
 
     return ics23;
-})();
 
-module.exports = $root;
+})();

@@ -12,7 +12,7 @@ import {
 } from "./index";
 import type { AminoMsgDelegate, MsgDelegateEncodeObject, MsgSendEncodeObject } from "./index";
 import { assert, sleep } from "../lib/utils/index";
-import { DeepPartial } from "cosmjs-types";
+import { DeepPartial } from "../types";
 import { MsgSend } from "../types/cosmos/bank/v1beta1/tx";
 import { Coin } from "../types/cosmos/base/v1beta1/coin";
 import { MsgDelegate } from "../types/cosmos/staking/v1beta1/tx";

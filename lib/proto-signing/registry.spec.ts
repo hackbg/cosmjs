@@ -5,7 +5,8 @@ import { MsgSend as IMsgSend } from "../../types/cosmos/bank/v1beta1/tx";
 import { TxBody } from "../../types/cosmos/tx/v1beta1/tx";
 import { Any } from "../../types/google/protobuf/any";
 import Long from "long";
-import { Field, Type } from "@hackbg/protobufjs-esm";
+import $protobuf from "@hackbg/protobufjs-esm";
+const { Field, Type } = $protobuf
 
 import { isPbjsGeneratedType, isTsProtoGeneratedType, Registry } from "./registry";
 

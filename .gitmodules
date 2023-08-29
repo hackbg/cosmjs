@@ -1,3 +1,7 @@
 [submodule "ubik"]
 	path = ubik
 	url = git@github.com:hackbg/ubik.git
+[submodule "protobuf.js"]
+	path = protobuf.js
+	url = git@github.com:hackbg/protobuf.js.git
+	branch = release-6.11.4-npm

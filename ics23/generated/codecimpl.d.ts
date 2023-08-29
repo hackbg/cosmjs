@@ -1,4 +1,4 @@
-import * as $protobuf from "protobufjs";
+import * as $protobuf from "@hackbg/protobufjs-esm";
 /** Namespace ics23. */
 export namespace ics23 {
   /** HashOp enum. */
