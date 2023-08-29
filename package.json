@@ -2,7 +2,7 @@
   "name": "@hackbg/cosmjs-esm",
   "type": "module",
   "description": "Cosmos/CosmWasm SDKs as a monolithic ESM package",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "license": "AGPL-3.0",
   "main": "api/index.ts",
   "contributors": [
@@ -24,7 +24,10 @@
     "build/",
     "*.md",
     "!*.spec.*",
-    "!**/testdata/"
+    "!**/testdata/",
+    "api",
+    "lib",
+    "types"
   ],
   "scripts": {
     "build": "rm -rf ./build && tsc",
