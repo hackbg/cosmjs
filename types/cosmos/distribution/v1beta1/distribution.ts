@@ -2,7 +2,7 @@
 import { DecCoin, Coin } from "../../base/v1beta1/coin";
 import { Long, isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmos.distribution.v1beta1";
 /** Params defines the set of params for the distribution module. */
 export interface Params {

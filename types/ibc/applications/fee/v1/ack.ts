@@ -1,5 +1,5 @@
 /* eslint-disable */
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.fee.v1";

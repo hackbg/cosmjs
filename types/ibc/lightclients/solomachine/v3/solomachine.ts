@@ -2,7 +2,7 @@
 import { Any } from "../../../../google/protobuf/any";
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "ibc.lightclients.solomachine.v3";
 /**
  * ClientState defines a solo machine client that tracks the current consensus

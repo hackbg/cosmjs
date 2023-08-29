@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { ConsensusParams } from "../../../tendermint/types/params";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../helpers";
 export const protobufPackage = "cosmos.consensus.v1";

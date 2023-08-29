@@ -3,7 +3,7 @@ import { Coin } from "../../base/v1beta1/coin";
 import { Timestamp } from "../../../google/protobuf/timestamp";
 import { Duration } from "../../../google/protobuf/duration";
 import { Any } from "../../../google/protobuf/any";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet, fromJsonTimestamp, fromTimestamp } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.feegrant.v1beta1";

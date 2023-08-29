@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { BaseAccount } from "../../../../cosmos/auth/v1beta1/auth";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.interchain_accounts.v1";

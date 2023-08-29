@@ -5,7 +5,7 @@
  * and run the transpile command or yarn proto command to regenerate this bundle.
  */
 
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import * as _Long from "long";
 
 // @ts-ignore

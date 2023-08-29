@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { PageRequest, PageResponse } from "../../base/query/v1beta1/pagination";
 import { Any } from "../../../google/protobuf/any";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../helpers";
 export const protobufPackage = "cosmos.evidence.v1beta1";

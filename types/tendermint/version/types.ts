@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Long, isSet } from "../../helpers";
 import type { DeepPartial, Exact } from "../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "tendermint.version";
 /**
  * App includes the protocol and software version for the application.

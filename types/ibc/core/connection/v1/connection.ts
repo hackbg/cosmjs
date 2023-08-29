@@ -2,7 +2,7 @@
 import { MerklePrefix } from "../../commitment/v1/commitment";
 import { Long, isSet } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "ibc.core.connection.v1";
 /**
  * State defines if a connection is in one of the following states:

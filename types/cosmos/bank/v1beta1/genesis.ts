@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Params, Metadata, SendEnabled } from "./bank";
 import { Coin } from "../../base/v1beta1/coin";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.bank.v1beta1";

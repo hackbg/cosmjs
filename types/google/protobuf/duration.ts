@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Long, isSet } from "../../helpers";
 import type { DeepPartial, Exact } from "../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "google.protobuf";
 /**
  * A Duration represents a signed, fixed-length span of time represented

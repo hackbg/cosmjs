@@ -10,7 +10,7 @@ import {
   base64FromBytes,
 } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmos.slashing.v1beta1";
 /**
  * ValidatorSigningInfo defines a validator's signing info for monitoring their

@@ -19,7 +19,7 @@ import { MsgDelegate } from "../types/cosmos/staking/v1beta1/tx";
 import { AuthInfo, TxBody, TxRaw } from "../types/cosmos/tx/v1beta1/tx";
 import { Any } from "../types/google/protobuf/any";
 import Long from "long";
-import protobuf from "protobufjs/minimal";
+import protobuf from "@hackbg/protobufjs-esm/minimal";
 
 import { AminoTypes } from "./aminotypes";
 import { setupFeegrantExtension } from "./modules/index";

@@ -15,7 +15,7 @@ import {
 import { PageRequest, PageResponse } from "../../base/query/v1beta1/pagination";
 import { Long, isSet } from "../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmos.gov.v1";
 /** QueryProposalRequest is the request type for the Query/Proposal RPC method. */
 export interface QueryProposalRequest {

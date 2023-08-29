@@ -2,7 +2,7 @@
 import { Deposit, Vote, Proposal, DepositParams, VotingParams, TallyParams, Params } from "./gov";
 import { Long, isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmos.gov.v1";
 /** GenesisState defines the gov module's genesis state. */
 export interface GenesisState {

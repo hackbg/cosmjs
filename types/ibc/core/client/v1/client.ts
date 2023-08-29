@@ -3,7 +3,7 @@ import { Any } from "../../../../google/protobuf/any";
 import { Plan } from "../../../../cosmos/upgrade/v1beta1/upgrade";
 import { Long, isSet } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "ibc.core.client.v1";
 /**
  * IdentifiedClientState defines a client state with an additional client

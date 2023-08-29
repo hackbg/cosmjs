@@ -6,7 +6,7 @@ import { BlockID } from "../../../tendermint/types/types";
 import { Block } from "../../../tendermint/types/block";
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmos.tx.v1beta1";
 /** OrderBy defines the sorting order */
 export enum OrderBy {

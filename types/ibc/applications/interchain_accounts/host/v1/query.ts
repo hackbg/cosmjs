@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { Params } from "./host";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet } from "../../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../../helpers";
 export const protobufPackage = "ibc.applications.interchain_accounts.host.v1";

@@ -2,7 +2,7 @@
 import { InterchainAccountPacketData } from "../../v1/packet";
 import { Long, isSet } from "../../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "ibc.applications.interchain_accounts.controller.v1";
 /** MsgRegisterInterchainAccount defines the payload for Msg/RegisterAccount */
 export interface MsgRegisterInterchainAccount {

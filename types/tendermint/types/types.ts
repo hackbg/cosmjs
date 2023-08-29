@@ -12,7 +12,7 @@ import {
   fromTimestamp,
 } from "../../helpers";
 import type { DeepPartial, Exact } from "../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "tendermint.types";
 /** BlockIdFlag indicates which BlcokID the signature is for */
 export enum BlockIDFlag {

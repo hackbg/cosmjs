@@ -2,7 +2,7 @@
 import { Timestamp } from "../../../google/protobuf/timestamp";
 import { Long, isSet, fromJsonTimestamp, fromTimestamp } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmos.evidence.v1beta1";
 /**
  * Equivocation implements the Evidence interface and defines evidence of double

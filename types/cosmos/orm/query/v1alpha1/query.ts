@@ -12,7 +12,7 @@ import {
   fromTimestamp,
 } from "../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmos.orm.query.v1alpha1";
 /** GetRequest is the Query/Get request type. */
 export interface GetRequest {

@@ -2,7 +2,7 @@
 import { Duration } from "../../google/protobuf/duration";
 import { Long, isSet } from "../../helpers";
 import type { DeepPartial, Exact } from "../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "tendermint.types";
 /**
  * ConsensusParams contains consensus critical parameters that determine the

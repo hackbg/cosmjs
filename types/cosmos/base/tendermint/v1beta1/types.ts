@@ -12,7 +12,7 @@ import {
   base64FromBytes,
 } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmos.base.tendermint.v1beta1";
 /**
  * Block is tendermint type Block, with the Header proposer address

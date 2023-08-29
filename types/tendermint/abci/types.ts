@@ -13,7 +13,7 @@ import {
   base64FromBytes,
 } from "../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "tendermint.abci";
 export enum CheckTxType {
   NEW = 0,

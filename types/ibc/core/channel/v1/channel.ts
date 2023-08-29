@@ -2,7 +2,7 @@
 import { Height } from "../../client/v1/client";
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "ibc.core.channel.v1";
 /**
  * State defines if a channel is in one of the following states:

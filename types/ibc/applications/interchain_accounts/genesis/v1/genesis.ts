@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Params as Params1 } from "../../controller/v1/controller";
 import { Params as Params2 } from "../../host/v1/host";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet } from "../../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../../helpers";
 export const protobufPackage = "ibc.applications.interchain_accounts.genesis.v1";

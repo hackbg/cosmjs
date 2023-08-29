@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Fee, PacketFee } from "./fee";
 import { PacketId } from "../../../core/channel/v1/channel";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet } from "../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.fee.v1";

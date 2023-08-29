@@ -8,7 +8,7 @@ import {
   ResponseEndBlock,
   ResponseCommit,
 } from "../../../../tendermint/abci/types";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "cosmos.base.store.v1beta1";

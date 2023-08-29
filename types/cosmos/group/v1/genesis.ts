@@ -2,7 +2,7 @@
 import { GroupInfo, GroupMember, GroupPolicyInfo, Proposal, Vote } from "./types";
 import { Long, isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmos.group.v1";
 /** GenesisState defines the group module's genesis state. */
 export interface GenesisState {

@@ -21,7 +21,7 @@ import { MsgExecuteContract, MsgStoreCode } from "../types/cosmwasm/wasm/v1/tx";
 import { AccessConfig, AccessType } from "../types/cosmwasm/wasm/v1/types";
 import Long from "long";
 import pako from "pako";
-import protobuf from "protobufjs/minimal";
+import protobuf from "@hackbg/protobufjs-esm/minimal";
 
 import { instantiate2Address } from "./instantiate2";
 import type { MsgExecuteContractEncodeObject, MsgStoreCodeEncodeObject } from "./modules/index";

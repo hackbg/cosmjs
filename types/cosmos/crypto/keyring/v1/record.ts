@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Any } from "../../../../google/protobuf/any";
 import { BIP44Params } from "../../hd/v1/hd";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "cosmos.crypto.keyring.v1";

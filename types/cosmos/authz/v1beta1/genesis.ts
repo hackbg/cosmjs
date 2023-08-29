@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { GrantAuthorization } from "./authz";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.authz.v1beta1";
 /** GenesisState defines the authz module's genesis state. */

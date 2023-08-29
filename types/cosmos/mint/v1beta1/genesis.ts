@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { Minter, Params } from "./mint";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.mint.v1beta1";

@@ -6,7 +6,7 @@ import { Coin } from "../../../../cosmos/base/v1beta1/coin";
 import { FeeEnabledChannel } from "./genesis";
 import { Long, isSet } from "../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
-import * as _m0 from "protobufjs/minimal";
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "ibc.applications.fee.v1";
 /** QueryIncentivizedPacketsRequest defines the request type for the IncentivizedPackets rpc */
 export interface QueryIncentivizedPacketsRequest {
