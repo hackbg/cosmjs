@@ -5,7 +5,7 @@ importers:
   .:
     dependencies:
       '@hackbg/protobufjs-esm':
-        specifier: ~6.11.3
+        specifier: ~6.11.4-patch.1
         version: 6.11.4
       '@noble/hashes':
         specifier: ^1

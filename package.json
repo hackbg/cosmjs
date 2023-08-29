@@ -2,7 +2,7 @@
   "name": "@hackbg/cosmjs-esm",
   "type": "module",
   "description": "Cosmos/CosmWasm SDKs as a monolithic ESM package",
-  "version": "1.0.0-rc.12",
+  "version": "1.0.0-rc.13",
   "license": "AGPL-3.0",
   "main": "api/index.ts",
   "contributors": [
@@ -61,7 +61,7 @@
     "libsodium-wrappers-sumo": "^0.7.11",
     "long": "^4.0.0",
     "pako": "^2.0.2",
-    "@hackbg/protobufjs-esm": "~6.11.3",
+    "@hackbg/protobufjs-esm": "~6.11.4-patch.1",
     "readonly-date": "^1.0.0",
     "ws": "^7",
     "xstream": "^11.14.0"
