@@ -27,6 +27,7 @@
     "!**/testdata/",
     "api",
     "lib",
+    "ics23",
     "types"
   ],
   "scripts": {
@@ -50,7 +51,6 @@
     "ubik": "ubik"
   },
   "dependencies": {
-    "@confio/ics23": "^0.6.8",
     "@noble/hashes": "^1",
     "axios": "^0.21.2",
     "base64-js": "^1.3.0",

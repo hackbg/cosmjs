@@ -1,5 +1,5 @@
 /* eslint-disable no-dupe-class-members, @typescript-eslint/ban-types, @typescript-eslint/naming-convention */
-import { iavlSpec, ics23, tendermintSpec, verifyExistence, verifyNonExistence } from "@confio/ics23";
+import { iavlSpec, ics23, tendermintSpec, verifyExistence, verifyNonExistence } from "../../ics23/index";
 import { toAscii, toHex } from "../../lib/encoding/index";
 import { firstEvent } from "../../lib/stream/index";
 import { tendermint34 } from "../../lib/tendermint-rpc/index";
