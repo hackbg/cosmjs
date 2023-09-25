@@ -10,11 +10,11 @@ import {
   setupBankExtension,
   setupTxExtension,
   TimeoutError,
-} from "./index";
+} from "../index";
 
-import type { Coin } from "./index";
+import type { Coin } from "../index";
 
-import type { AuthExtension, BankExtension, TxExtension } from "./index";
+import type { AuthExtension, BankExtension, TxExtension } from "../index";
 
 import type {
   Account,
@@ -23,7 +23,7 @@ import type {
   IndexedTx,
   SearchTxQuery,
   SequenceResponse,
-} from "./index";
+} from "../index";
 
 import { Tendermint34Client, Tendermint37Client, toRfc3339WithNanoseconds } from "../lib/tendermint-rpc/index";
 import type { HttpEndpoint } from "../lib/tendermint-rpc/index";

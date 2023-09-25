@@ -9,9 +9,9 @@ import {
   Registry,
 } from "../lib/proto-signing/index";
 import type { TxBodyEncodeObject } from "../lib/proto-signing/index";
-import { coins, isDeliverTxFailure, isDeliverTxSuccess, isMsgSendEncodeObject } from "./index";
-import type { Coin } from "./index";
-import type { DeliverTxResponse } from "./index";
+import { coins, isDeliverTxFailure, isDeliverTxSuccess, isMsgSendEncodeObject } from "../index";
+import type { Coin } from "../index";
+import type { DeliverTxResponse } from "../index";
 import { assert, sleep } from "../lib/utils/index";
 import { TxRaw } from "../types/cosmos/tx/v1beta1/tx";
 

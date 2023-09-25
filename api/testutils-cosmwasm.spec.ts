@@ -12,8 +12,8 @@ import {
   QueryClient,
   setupAuthExtension,
   setupBankExtension,
-} from "./index";
-import type { AuthExtension, BankExtension } from "./index";
+} from "../index";
+import type { AuthExtension, BankExtension } from "../index";
 import { Tendermint34Client } from "../lib/tendermint-rpc/index";
 import { SignMode } from "../types/cosmos/tx/signing/v1beta1/signing";
 import { AuthInfo, SignDoc, TxBody } from "../types/cosmos/tx/v1beta1/tx";

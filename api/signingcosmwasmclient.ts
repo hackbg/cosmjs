@@ -27,7 +27,7 @@ import {
 } from "./stargateclient";
 import * as logs from "./logs";
 
-import type { Coin } from "./index";
+import type { Coin } from "../index";
 
 import type {
   MsgDelegateEncodeObject,
@@ -35,9 +35,9 @@ import type {
   MsgUndelegateEncodeObject,
   MsgWithdrawDelegatorRewardEncodeObject,
   StdFee,
-} from "./index";
+} from "../index";
 
-import type { DeliverTxResponse, Event, SignerData } from "./index";
+import type { DeliverTxResponse, Event, SignerData } from "../index";
 import { Tendermint34Client, Tendermint37Client } from "../lib/tendermint-rpc/index";
 import type { HttpEndpoint } from "../lib/tendermint-rpc/index";
 import type { TendermintClient } from "../lib/tendermint-rpc/index";

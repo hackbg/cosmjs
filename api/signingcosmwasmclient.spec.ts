@@ -9,8 +9,8 @@ import {
   coin,
   coins,
   createStakingAminoConverters,
-} from "./index";
-import type { AminoMsgDelegate, MsgDelegateEncodeObject, MsgSendEncodeObject } from "./index";
+} from "../index";
+import type { AminoMsgDelegate, MsgDelegateEncodeObject, MsgSendEncodeObject } from "../index";
 import { assert, sleep } from "../lib/utils/index";
 import { DeepPartial } from "../types";
 import { MsgSend } from "../types/cosmos/bank/v1beta1/tx";

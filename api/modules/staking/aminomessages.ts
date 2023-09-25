@@ -11,7 +11,7 @@ import {
   MsgUndelegate,
 } from "../../../types/cosmos/staking/v1beta1/tx";
 
-import type { AminoConverter } from "../../index";
+import type { AminoConverter } from "../../../index";
 
 /** The initial commission rates to be used for creating a validator */
 interface CommissionRates {
