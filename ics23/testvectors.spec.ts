@@ -61,57 +61,57 @@ describe("calculateExistenceRoot", () => {
   }
 
   it("should parse iavl left", () => {
-    validateTestVector("../testdata/iavl/exist_left.json", iavlSpec);
+    validateTestVector("./ics23/testdata/iavl/exist_left.json", iavlSpec);
   });
   it("should parse iavl right", () => {
-    validateTestVector("../testdata/iavl/exist_right.json", iavlSpec);
+    validateTestVector("./ics23/testdata/iavl/exist_right.json", iavlSpec);
   });
   it("should parse iavl middle", () => {
-    validateTestVector("../testdata/iavl/exist_middle.json", iavlSpec);
+    validateTestVector("./ics23/testdata/iavl/exist_middle.json", iavlSpec);
   });
   it("should parse iavl left - nonexist", () => {
-    validateTestVector("../testdata/iavl/nonexist_left.json", iavlSpec);
+    validateTestVector("./ics23/testdata/iavl/nonexist_left.json", iavlSpec);
   });
   it("should parse iavl right - nonexist", () => {
-    validateTestVector("../testdata/iavl/nonexist_right.json", iavlSpec);
+    validateTestVector("./ics23/testdata/iavl/nonexist_right.json", iavlSpec);
   });
   it("should parse iavl middle - nonexist", () => {
-    validateTestVector("../testdata/iavl/nonexist_middle.json", iavlSpec);
+    validateTestVector("./ics23/testdata/iavl/nonexist_middle.json", iavlSpec);
   });
 
   it("should parse tendermint left", () => {
     validateTestVector(
-      "../testdata/tendermint/exist_left.json",
+      "./ics23/testdata/tendermint/exist_left.json",
       tendermintSpec
     );
   });
   it("should parse tendermint right", () => {
     validateTestVector(
-      "../testdata/tendermint/exist_right.json",
+      "./ics23/testdata/tendermint/exist_right.json",
       tendermintSpec
     );
   });
   it("should parse tendermint middle", () => {
     validateTestVector(
-      "../testdata/tendermint/exist_middle.json",
+      "./ics23/testdata/tendermint/exist_middle.json",
       tendermintSpec
     );
   });
   it("should parse tendermint left - nonexist", () => {
     validateTestVector(
-      "../testdata/tendermint/nonexist_left.json",
+      "./ics23/testdata/tendermint/nonexist_left.json",
       tendermintSpec
     );
   });
   it("should parse tendermint right - nonexist", () => {
     validateTestVector(
-      "../testdata/tendermint/nonexist_right.json",
+      "./ics23/testdata/tendermint/nonexist_right.json",
       tendermintSpec
     );
   });
   it("should parse tendermint middle - nonexist", () => {
     validateTestVector(
-      "../testdata/tendermint/nonexist_middle.json",
+      "./ics23/testdata/tendermint/nonexist_middle.json",
       tendermintSpec
     );
   });
@@ -164,36 +164,36 @@ describe("calculateExistenceRoot", () => {
 
   it("should validate iavl batch exist", () => {
     const { proof, data } = loadBatch([
-      "../testdata/iavl/exist_left.json",
-      "../testdata/iavl/exist_right.json",
-      "../testdata/iavl/exist_middle.json",
-      "../testdata/iavl/nonexist_left.json",
-      "../testdata/iavl/nonexist_right.json",
-      "../testdata/iavl/nonexist_middle.json",
+      "./ics23/testdata/iavl/exist_left.json",
+      "./ics23/testdata/iavl/exist_right.json",
+      "./ics23/testdata/iavl/exist_middle.json",
+      "./ics23/testdata/iavl/nonexist_left.json",
+      "./ics23/testdata/iavl/nonexist_right.json",
+      "./ics23/testdata/iavl/nonexist_middle.json",
     ]);
     validateBatch(proof, iavlSpec, data[0]);
   });
 
   it("should validate iavl batch nonexist", () => {
     const { proof, data } = loadBatch([
-      "../testdata/iavl/exist_left.json",
-      "../testdata/iavl/exist_right.json",
-      "../testdata/iavl/exist_middle.json",
-      "../testdata/iavl/nonexist_left.json",
-      "../testdata/iavl/nonexist_right.json",
-      "../testdata/iavl/nonexist_middle.json",
+      "./ics23/testdata/iavl/exist_left.json",
+      "./ics23/testdata/iavl/exist_right.json",
+      "./ics23/testdata/iavl/exist_middle.json",
+      "./ics23/testdata/iavl/nonexist_left.json",
+      "./ics23/testdata/iavl/nonexist_right.json",
+      "./ics23/testdata/iavl/nonexist_middle.json",
     ]);
     validateBatch(proof, iavlSpec, data[5]);
   });
 
   it("should validate compressed iavl batch exist", () => {
     const { proof, data } = loadBatch([
-      "../testdata/iavl/exist_left.json",
-      "../testdata/iavl/exist_right.json",
-      "../testdata/iavl/exist_middle.json",
-      "../testdata/iavl/nonexist_left.json",
-      "../testdata/iavl/nonexist_right.json",
-      "../testdata/iavl/nonexist_middle.json",
+      "./ics23/testdata/iavl/exist_left.json",
+      "./ics23/testdata/iavl/exist_right.json",
+      "./ics23/testdata/iavl/exist_middle.json",
+      "./ics23/testdata/iavl/nonexist_left.json",
+      "./ics23/testdata/iavl/nonexist_right.json",
+      "./ics23/testdata/iavl/nonexist_middle.json",
     ]);
     const small = compress(proof);
 
@@ -209,12 +209,12 @@ describe("calculateExistenceRoot", () => {
 
   it("should validate compressed iavl batch nonexist", () => {
     const { proof, data } = loadBatch([
-      "../testdata/iavl/exist_left.json",
-      "../testdata/iavl/exist_right.json",
-      "../testdata/iavl/exist_middle.json",
-      "../testdata/iavl/nonexist_left.json",
-      "../testdata/iavl/nonexist_right.json",
-      "../testdata/iavl/nonexist_middle.json",
+      "./ics23/testdata/iavl/exist_left.json",
+      "./ics23/testdata/iavl/exist_right.json",
+      "./ics23/testdata/iavl/exist_middle.json",
+      "./ics23/testdata/iavl/nonexist_left.json",
+      "./ics23/testdata/iavl/nonexist_right.json",
+      "./ics23/testdata/iavl/nonexist_middle.json",
     ]);
     const small = compress(proof);
 
@@ -230,48 +230,48 @@ describe("calculateExistenceRoot", () => {
 
   it("should validate tendermint batch exist", () => {
     const { proof, data } = loadBatch([
-      "../testdata/tendermint/exist_left.json",
-      "../testdata/tendermint/exist_right.json",
-      "../testdata/tendermint/exist_middle.json",
-      "../testdata/tendermint/nonexist_left.json",
-      "../testdata/tendermint/nonexist_right.json",
-      "../testdata/tendermint/nonexist_middle.json",
+      "./ics23/testdata/tendermint/exist_left.json",
+      "./ics23/testdata/tendermint/exist_right.json",
+      "./ics23/testdata/tendermint/exist_middle.json",
+      "./ics23/testdata/tendermint/nonexist_left.json",
+      "./ics23/testdata/tendermint/nonexist_right.json",
+      "./ics23/testdata/tendermint/nonexist_middle.json",
     ]);
     validateBatch(proof, tendermintSpec, data[2]);
   });
 
   it("should validate tendermint batch nonexist", () => {
     const { proof, data } = loadBatch([
-      "../testdata/tendermint/exist_left.json",
-      "../testdata/tendermint/exist_right.json",
-      "../testdata/tendermint/exist_middle.json",
-      "../testdata/tendermint/nonexist_left.json",
-      "../testdata/tendermint/nonexist_right.json",
-      "../testdata/tendermint/nonexist_middle.json",
+      "./ics23/testdata/tendermint/exist_left.json",
+      "./ics23/testdata/tendermint/exist_right.json",
+      "./ics23/testdata/tendermint/exist_middle.json",
+      "./ics23/testdata/tendermint/nonexist_left.json",
+      "./ics23/testdata/tendermint/nonexist_right.json",
+      "./ics23/testdata/tendermint/nonexist_middle.json",
     ]);
     validateBatch(proof, tendermintSpec, data[3]);
   });
 
   it("should validate smt batch exist", () => {
     const { proof, data } = loadBatch([
-      "../testdata/smt/exist_left.json",
-      "../testdata/smt/exist_right.json",
-      "../testdata/smt/exist_middle.json",
-      "../testdata/smt/nonexist_left.json",
-      "../testdata/smt/nonexist_right.json",
-      "../testdata/smt/nonexist_middle.json",
+      "./ics23/testdata/smt/exist_left.json",
+      "./ics23/testdata/smt/exist_right.json",
+      "./ics23/testdata/smt/exist_middle.json",
+      "./ics23/testdata/smt/nonexist_left.json",
+      "./ics23/testdata/smt/nonexist_right.json",
+      "./ics23/testdata/smt/nonexist_middle.json",
     ]);
     validateBatch(proof, smtSpec, data[2]);
   });
 
   it("should validate smt batch nonexist", () => {
     const { proof, data } = loadBatch([
-      "../testdata/smt/exist_left.json",
-      "../testdata/smt/exist_right.json",
-      "../testdata/smt/exist_middle.json",
-      "../testdata/smt/nonexist_left.json",
-      "../testdata/smt/nonexist_right.json",
-      "../testdata/smt/nonexist_middle.json",
+      "./ics23/testdata/smt/exist_left.json",
+      "./ics23/testdata/smt/exist_right.json",
+      "./ics23/testdata/smt/exist_middle.json",
+      "./ics23/testdata/smt/nonexist_left.json",
+      "./ics23/testdata/smt/nonexist_right.json",
+      "./ics23/testdata/smt/nonexist_middle.json",
     ]);
     validateBatch(proof, smtSpec, data[3]);
   });
