@@ -2,6 +2,7 @@ import { fromHex, toAscii } from "../encoding/index";
 import { Uint32, Uint53 } from "../math/index";
 import BN from "bn.js";
 import { secp256k1 } from "@noble/curves/secp256k1";
+import { bytesToNumberBE } from "@noble/curves/abstract/utils";
 
 import { Hmac } from "./hmac";
 import { Sha512 } from "./sha";
@@ -139,7 +140,9 @@ export class Slip10 {
   private static serializedPoint(curve: Slip10Curve, p: BN): Uint8Array {
     switch (curve) {
       case Slip10Curve.Secp256k1:
-        return fromHex(secp256k1.g.mul(p).encodeCompressed("hex"));
+        const g = secp256k1.ProjectivePoint.BASE;
+        const pn = bytesToNumberBE(Uint8Array.from(p.toArray()))
+        return fromHex(g.multiply(pn).toHex(true))
       default:
         throw new Error("curve not supported");
     }
