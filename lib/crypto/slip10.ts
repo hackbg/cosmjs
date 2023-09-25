@@ -1,7 +1,7 @@
 import { fromHex, toAscii } from "../encoding/index";
 import { Uint32, Uint53 } from "../math/index";
 import BN from "bn.js";
-import elliptic from "elliptic";
+import { secp256k1 } from "@noble/curves/secp256k1";
 
 import { Hmac } from "./hmac";
 import { Sha512 } from "./sha";
@@ -76,8 +76,6 @@ export class Slip10RawIndex extends Uint32 {
  * ```
  */
 export type HdPath = readonly Slip10RawIndex[];
-
-const secp256k1 = new elliptic.ec("secp256k1");
 
 // Universal private key derivation accoring to
 // https://github.com/satoshilabs/slips/blob/master/slip-0010.md
