@@ -1,6 +1,9 @@
 /* eslint-disable */
 import { CommitmentProof } from "../../../../cosmos/ics23/v1/proofs";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.core.commitment.v1";
@@ -43,13 +46,13 @@ function createBaseMerkleRoot(): MerkleRoot {
   };
 }
 export const MerkleRoot = {
-  encode(message: MerkleRoot, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MerkleRoot, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.hash.length !== 0) {
       writer.uint32(10).bytes(message.hash);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MerkleRoot {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MerkleRoot {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMerkleRoot();
@@ -89,13 +92,13 @@ function createBaseMerklePrefix(): MerklePrefix {
   };
 }
 export const MerklePrefix = {
-  encode(message: MerklePrefix, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MerklePrefix, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.keyPrefix.length !== 0) {
       writer.uint32(10).bytes(message.keyPrefix);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MerklePrefix {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MerklePrefix {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMerklePrefix();
@@ -137,13 +140,13 @@ function createBaseMerklePath(): MerklePath {
   };
 }
 export const MerklePath = {
-  encode(message: MerklePath, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MerklePath, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.keyPath) {
       writer.uint32(10).string(v!);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MerklePath {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MerklePath {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMerklePath();
@@ -186,13 +189,13 @@ function createBaseMerkleProof(): MerkleProof {
   };
 }
 export const MerkleProof = {
-  encode(message: MerkleProof, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MerkleProof, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.proofs) {
       CommitmentProof.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MerkleProof {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MerkleProof {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMerkleProof();

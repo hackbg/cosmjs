@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../helpers";
 import type { DeepPartial, Exact } from "../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "tendermint.p2p";
 export interface NetAddress {
   id: string;
@@ -35,7 +38,7 @@ function createBaseNetAddress(): NetAddress {
   };
 }
 export const NetAddress = {
-  encode(message: NetAddress, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: NetAddress, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
@@ -47,7 +50,7 @@ export const NetAddress = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): NetAddress {
+  decode(input: __m0.Reader | Uint8Array, length?: number): NetAddress {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseNetAddress();
@@ -100,7 +103,7 @@ function createBaseProtocolVersion(): ProtocolVersion {
   };
 }
 export const ProtocolVersion = {
-  encode(message: ProtocolVersion, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ProtocolVersion, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.p2p.isZero()) {
       writer.uint32(8).uint64(message.p2p);
     }
@@ -112,7 +115,7 @@ export const ProtocolVersion = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ProtocolVersion {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ProtocolVersion {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseProtocolVersion();
@@ -171,7 +174,7 @@ function createBaseDefaultNodeInfo(): DefaultNodeInfo {
   };
 }
 export const DefaultNodeInfo = {
-  encode(message: DefaultNodeInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: DefaultNodeInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.protocolVersion !== undefined) {
       ProtocolVersion.encode(message.protocolVersion, writer.uint32(10).fork()).ldelim();
     }
@@ -198,7 +201,7 @@ export const DefaultNodeInfo = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): DefaultNodeInfo {
+  decode(input: __m0.Reader | Uint8Array, length?: number): DefaultNodeInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseDefaultNodeInfo();
@@ -293,7 +296,7 @@ function createBaseDefaultNodeInfoOther(): DefaultNodeInfoOther {
   };
 }
 export const DefaultNodeInfoOther = {
-  encode(message: DefaultNodeInfoOther, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: DefaultNodeInfoOther, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.txIndex !== "") {
       writer.uint32(10).string(message.txIndex);
     }
@@ -302,7 +305,7 @@ export const DefaultNodeInfoOther = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): DefaultNodeInfoOther {
+  decode(input: __m0.Reader | Uint8Array, length?: number): DefaultNodeInfoOther {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseDefaultNodeInfoOther();

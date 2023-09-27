@@ -3,7 +3,10 @@ import { Any } from "../../../../google/protobuf/any";
 import { Event } from "../../../../tendermint/abci/types";
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmos.base.abci.v1beta1";
 /**
  * TxResponse defines a structure containing relevant tx data and metadata. The
@@ -173,7 +176,7 @@ function createBaseTxResponse(): TxResponse {
   };
 }
 export const TxResponse = {
-  encode(message: TxResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: TxResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.height.isZero()) {
       writer.uint32(8).int64(message.height);
     }
@@ -215,7 +218,7 @@ export const TxResponse = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): TxResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): TxResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseTxResponse();
@@ -341,7 +344,7 @@ function createBaseABCIMessageLog(): ABCIMessageLog {
   };
 }
 export const ABCIMessageLog = {
-  encode(message: ABCIMessageLog, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ABCIMessageLog, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.msgIndex !== 0) {
       writer.uint32(8).uint32(message.msgIndex);
     }
@@ -353,7 +356,7 @@ export const ABCIMessageLog = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ABCIMessageLog {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ABCIMessageLog {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseABCIMessageLog();
@@ -409,7 +412,7 @@ function createBaseStringEvent(): StringEvent {
   };
 }
 export const StringEvent = {
-  encode(message: StringEvent, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: StringEvent, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.type !== "") {
       writer.uint32(10).string(message.type);
     }
@@ -418,7 +421,7 @@ export const StringEvent = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): StringEvent {
+  decode(input: __m0.Reader | Uint8Array, length?: number): StringEvent {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseStringEvent();
@@ -470,7 +473,7 @@ function createBaseAttribute(): Attribute {
   };
 }
 export const Attribute = {
-  encode(message: Attribute, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Attribute, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.key !== "") {
       writer.uint32(10).string(message.key);
     }
@@ -479,7 +482,7 @@ export const Attribute = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Attribute {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Attribute {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAttribute();
@@ -525,7 +528,7 @@ function createBaseGasInfo(): GasInfo {
   };
 }
 export const GasInfo = {
-  encode(message: GasInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: GasInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.gasWanted.isZero()) {
       writer.uint32(8).uint64(message.gasWanted);
     }
@@ -534,7 +537,7 @@ export const GasInfo = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): GasInfo {
+  decode(input: __m0.Reader | Uint8Array, length?: number): GasInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseGasInfo();
@@ -586,7 +589,7 @@ function createBaseResult(): Result {
   };
 }
 export const Result = {
-  encode(message: Result, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Result, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.data.length !== 0) {
       writer.uint32(10).bytes(message.data);
     }
@@ -601,7 +604,7 @@ export const Result = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Result {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Result {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseResult();
@@ -670,7 +673,7 @@ function createBaseSimulationResponse(): SimulationResponse {
   };
 }
 export const SimulationResponse = {
-  encode(message: SimulationResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: SimulationResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.gasInfo !== undefined) {
       GasInfo.encode(message.gasInfo, writer.uint32(10).fork()).ldelim();
     }
@@ -679,7 +682,7 @@ export const SimulationResponse = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): SimulationResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): SimulationResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseSimulationResponse();
@@ -730,7 +733,7 @@ function createBaseMsgData(): MsgData {
   };
 }
 export const MsgData = {
-  encode(message: MsgData, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgData, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.msgType !== "") {
       writer.uint32(10).string(message.msgType);
     }
@@ -739,7 +742,7 @@ export const MsgData = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgData {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgData {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgData();
@@ -786,7 +789,7 @@ function createBaseTxMsgData(): TxMsgData {
   };
 }
 export const TxMsgData = {
-  encode(message: TxMsgData, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: TxMsgData, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.data) {
       MsgData.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -795,7 +798,7 @@ export const TxMsgData = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): TxMsgData {
+  decode(input: __m0.Reader | Uint8Array, length?: number): TxMsgData {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseTxMsgData();
@@ -855,7 +858,7 @@ function createBaseSearchTxsResult(): SearchTxsResult {
   };
 }
 export const SearchTxsResult = {
-  encode(message: SearchTxsResult, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: SearchTxsResult, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.totalCount.isZero()) {
       writer.uint32(8).uint64(message.totalCount);
     }
@@ -876,7 +879,7 @@ export const SearchTxsResult = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): SearchTxsResult {
+  decode(input: __m0.Reader | Uint8Array, length?: number): SearchTxsResult {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseSearchTxsResult();

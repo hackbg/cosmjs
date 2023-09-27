@@ -1,6 +1,9 @@
 /* eslint-disable */
 import { Coin } from "../../base/v1beta1/coin";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.staking.v1beta1";
@@ -89,7 +92,7 @@ function createBaseStakeAuthorization(): StakeAuthorization {
   };
 }
 export const StakeAuthorization = {
-  encode(message: StakeAuthorization, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: StakeAuthorization, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.maxTokens !== undefined) {
       Coin.encode(message.maxTokens, writer.uint32(10).fork()).ldelim();
     }
@@ -104,7 +107,7 @@ export const StakeAuthorization = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): StakeAuthorization {
+  decode(input: __m0.Reader | Uint8Array, length?: number): StakeAuthorization {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseStakeAuthorization();
@@ -180,13 +183,13 @@ function createBaseStakeAuthorization_Validators(): StakeAuthorization_Validator
   };
 }
 export const StakeAuthorization_Validators = {
-  encode(message: StakeAuthorization_Validators, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: StakeAuthorization_Validators, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.address) {
       writer.uint32(10).string(v!);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): StakeAuthorization_Validators {
+  decode(input: __m0.Reader | Uint8Array, length?: number): StakeAuthorization_Validators {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseStakeAuthorization_Validators();

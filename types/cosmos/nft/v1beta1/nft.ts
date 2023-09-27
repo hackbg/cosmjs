@@ -1,6 +1,9 @@
 /* eslint-disable */
 import { Any } from "../../../google/protobuf/any";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.nft.v1beta1";
@@ -46,7 +49,7 @@ function createBaseClass(): Class {
   };
 }
 export const Class = {
-  encode(message: Class, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Class, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
@@ -70,7 +73,7 @@ export const Class = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Class {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Class {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseClass();
@@ -150,7 +153,7 @@ function createBaseNFT(): NFT {
   };
 }
 export const NFT = {
-  encode(message: NFT, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: NFT, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.classId !== "") {
       writer.uint32(10).string(message.classId);
     }
@@ -168,7 +171,7 @@ export const NFT = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): NFT {
+  decode(input: __m0.Reader | Uint8Array, length?: number): NFT {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseNFT();

@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { Params as Params1 } from "../../controller/v1/controller";
 import { Params as Params2 } from "../../host/v1/host";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../../helpers";
 export const protobufPackage = "ibc.applications.interchain_accounts.genesis.v1";
@@ -47,7 +50,7 @@ function createBaseGenesisState(): GenesisState {
   };
 }
 export const GenesisState = {
-  encode(message: GenesisState, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: GenesisState, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.controllerGenesisState !== undefined) {
       ControllerGenesisState.encode(message.controllerGenesisState, writer.uint32(10).fork()).ldelim();
     }
@@ -56,7 +59,7 @@ export const GenesisState = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): GenesisState {
+  decode(input: __m0.Reader | Uint8Array, length?: number): GenesisState {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseGenesisState();
@@ -120,7 +123,7 @@ function createBaseControllerGenesisState(): ControllerGenesisState {
   };
 }
 export const ControllerGenesisState = {
-  encode(message: ControllerGenesisState, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ControllerGenesisState, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.activeChannels) {
       ActiveChannel.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -135,7 +138,7 @@ export const ControllerGenesisState = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ControllerGenesisState {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ControllerGenesisState {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseControllerGenesisState();
@@ -216,7 +219,7 @@ function createBaseHostGenesisState(): HostGenesisState {
   };
 }
 export const HostGenesisState = {
-  encode(message: HostGenesisState, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: HostGenesisState, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.activeChannels) {
       ActiveChannel.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -231,7 +234,7 @@ export const HostGenesisState = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): HostGenesisState {
+  decode(input: __m0.Reader | Uint8Array, length?: number): HostGenesisState {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseHostGenesisState();
@@ -308,7 +311,7 @@ function createBaseActiveChannel(): ActiveChannel {
   };
 }
 export const ActiveChannel = {
-  encode(message: ActiveChannel, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ActiveChannel, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.connectionId !== "") {
       writer.uint32(10).string(message.connectionId);
     }
@@ -323,7 +326,7 @@ export const ActiveChannel = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ActiveChannel {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ActiveChannel {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseActiveChannel();
@@ -382,7 +385,7 @@ function createBaseRegisteredInterchainAccount(): RegisteredInterchainAccount {
   };
 }
 export const RegisteredInterchainAccount = {
-  encode(message: RegisteredInterchainAccount, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: RegisteredInterchainAccount, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.connectionId !== "") {
       writer.uint32(10).string(message.connectionId);
     }
@@ -394,7 +397,7 @@ export const RegisteredInterchainAccount = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): RegisteredInterchainAccount {
+  decode(input: __m0.Reader | Uint8Array, length?: number): RegisteredInterchainAccount {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseRegisteredInterchainAccount();

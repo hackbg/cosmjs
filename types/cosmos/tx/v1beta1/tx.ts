@@ -5,7 +5,10 @@ import { CompactBitArray } from "../../crypto/multisig/v1beta1/multisig";
 import { Coin } from "../../base/v1beta1/coin";
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmos.tx.v1beta1";
 /** Tx is the standard type used for broadcasting transactions. */
 export interface Tx {
@@ -288,7 +291,7 @@ function createBaseTx(): Tx {
   };
 }
 export const Tx = {
-  encode(message: Tx, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Tx, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.body !== undefined) {
       TxBody.encode(message.body, writer.uint32(10).fork()).ldelim();
     }
@@ -300,7 +303,7 @@ export const Tx = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Tx {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Tx {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseTx();
@@ -364,7 +367,7 @@ function createBaseTxRaw(): TxRaw {
   };
 }
 export const TxRaw = {
-  encode(message: TxRaw, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: TxRaw, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.bodyBytes.length !== 0) {
       writer.uint32(10).bytes(message.bodyBytes);
     }
@@ -376,7 +379,7 @@ export const TxRaw = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): TxRaw {
+  decode(input: __m0.Reader | Uint8Array, length?: number): TxRaw {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseTxRaw();
@@ -442,7 +445,7 @@ function createBaseSignDoc(): SignDoc {
   };
 }
 export const SignDoc = {
-  encode(message: SignDoc, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: SignDoc, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.bodyBytes.length !== 0) {
       writer.uint32(10).bytes(message.bodyBytes);
     }
@@ -457,7 +460,7 @@ export const SignDoc = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): SignDoc {
+  decode(input: __m0.Reader | Uint8Array, length?: number): SignDoc {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseSignDoc();
@@ -529,7 +532,7 @@ function createBaseSignDocDirectAux(): SignDocDirectAux {
   };
 }
 export const SignDocDirectAux = {
-  encode(message: SignDocDirectAux, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: SignDocDirectAux, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.bodyBytes.length !== 0) {
       writer.uint32(10).bytes(message.bodyBytes);
     }
@@ -550,7 +553,7 @@ export const SignDocDirectAux = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): SignDocDirectAux {
+  decode(input: __m0.Reader | Uint8Array, length?: number): SignDocDirectAux {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseSignDocDirectAux();
@@ -637,7 +640,7 @@ function createBaseTxBody(): TxBody {
   };
 }
 export const TxBody = {
-  encode(message: TxBody, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: TxBody, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.messages) {
       Any.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -655,7 +658,7 @@ export const TxBody = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): TxBody {
+  decode(input: __m0.Reader | Uint8Array, length?: number): TxBody {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseTxBody();
@@ -743,7 +746,7 @@ function createBaseAuthInfo(): AuthInfo {
   };
 }
 export const AuthInfo = {
-  encode(message: AuthInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: AuthInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.signerInfos) {
       SignerInfo.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -755,7 +758,7 @@ export const AuthInfo = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): AuthInfo {
+  decode(input: __m0.Reader | Uint8Array, length?: number): AuthInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAuthInfo();
@@ -814,7 +817,7 @@ function createBaseSignerInfo(): SignerInfo {
   };
 }
 export const SignerInfo = {
-  encode(message: SignerInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: SignerInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.publicKey !== undefined) {
       Any.encode(message.publicKey, writer.uint32(10).fork()).ldelim();
     }
@@ -826,7 +829,7 @@ export const SignerInfo = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): SignerInfo {
+  decode(input: __m0.Reader | Uint8Array, length?: number): SignerInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseSignerInfo();
@@ -889,7 +892,7 @@ function createBaseModeInfo(): ModeInfo {
   };
 }
 export const ModeInfo = {
-  encode(message: ModeInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ModeInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.single !== undefined) {
       ModeInfo_Single.encode(message.single, writer.uint32(10).fork()).ldelim();
     }
@@ -898,7 +901,7 @@ export const ModeInfo = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ModeInfo {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ModeInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseModeInfo();
@@ -951,13 +954,13 @@ function createBaseModeInfo_Single(): ModeInfo_Single {
   };
 }
 export const ModeInfo_Single = {
-  encode(message: ModeInfo_Single, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ModeInfo_Single, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.mode !== 0) {
       writer.uint32(8).int32(message.mode);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ModeInfo_Single {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ModeInfo_Single {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseModeInfo_Single();
@@ -997,7 +1000,7 @@ function createBaseModeInfo_Multi(): ModeInfo_Multi {
   };
 }
 export const ModeInfo_Multi = {
-  encode(message: ModeInfo_Multi, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ModeInfo_Multi, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.bitarray !== undefined) {
       CompactBitArray.encode(message.bitarray, writer.uint32(10).fork()).ldelim();
     }
@@ -1006,7 +1009,7 @@ export const ModeInfo_Multi = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ModeInfo_Multi {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ModeInfo_Multi {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseModeInfo_Multi();
@@ -1064,7 +1067,7 @@ function createBaseFee(): Fee {
   };
 }
 export const Fee = {
-  encode(message: Fee, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Fee, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.amount) {
       Coin.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -1079,7 +1082,7 @@ export const Fee = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Fee {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Fee {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseFee();
@@ -1144,7 +1147,7 @@ function createBaseTip(): Tip {
   };
 }
 export const Tip = {
-  encode(message: Tip, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Tip, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.amount) {
       Coin.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -1153,7 +1156,7 @@ export const Tip = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Tip {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Tip {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseTip();
@@ -1205,7 +1208,7 @@ function createBaseAuxSignerData(): AuxSignerData {
   };
 }
 export const AuxSignerData = {
-  encode(message: AuxSignerData, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: AuxSignerData, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
@@ -1220,7 +1223,7 @@ export const AuxSignerData = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): AuxSignerData {
+  decode(input: __m0.Reader | Uint8Array, length?: number): AuxSignerData {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAuxSignerData();

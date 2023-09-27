@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { Long, isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmos.capability.v1beta1";
 /**
  * Capability defines an implementation of an object capability. The index
@@ -31,13 +34,13 @@ function createBaseCapability(): Capability {
   };
 }
 export const Capability = {
-  encode(message: Capability, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Capability, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.index.isZero()) {
       writer.uint32(8).uint64(message.index);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Capability {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Capability {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCapability();
@@ -78,7 +81,7 @@ function createBaseOwner(): Owner {
   };
 }
 export const Owner = {
-  encode(message: Owner, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Owner, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.module !== "") {
       writer.uint32(10).string(message.module);
     }
@@ -87,7 +90,7 @@ export const Owner = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Owner {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Owner {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseOwner();
@@ -132,13 +135,13 @@ function createBaseCapabilityOwners(): CapabilityOwners {
   };
 }
 export const CapabilityOwners = {
-  encode(message: CapabilityOwners, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: CapabilityOwners, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.owners) {
       Owner.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): CapabilityOwners {
+  decode(input: __m0.Reader | Uint8Array, length?: number): CapabilityOwners {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCapabilityOwners();

@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { Fee, PacketFee } from "./fee";
 import { PacketId } from "../../../core/channel/v1/channel";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.fee.v1";
@@ -71,7 +74,7 @@ function createBaseMsgRegisterPayee(): MsgRegisterPayee {
   };
 }
 export const MsgRegisterPayee = {
-  encode(message: MsgRegisterPayee, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgRegisterPayee, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.portId !== "") {
       writer.uint32(10).string(message.portId);
     }
@@ -86,7 +89,7 @@ export const MsgRegisterPayee = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgRegisterPayee {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgRegisterPayee {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgRegisterPayee();
@@ -141,10 +144,10 @@ function createBaseMsgRegisterPayeeResponse(): MsgRegisterPayeeResponse {
   return {};
 }
 export const MsgRegisterPayeeResponse = {
-  encode(_: MsgRegisterPayeeResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(_: MsgRegisterPayeeResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgRegisterPayeeResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgRegisterPayeeResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgRegisterPayeeResponse();
@@ -179,7 +182,7 @@ function createBaseMsgRegisterCounterpartyPayee(): MsgRegisterCounterpartyPayee 
   };
 }
 export const MsgRegisterCounterpartyPayee = {
-  encode(message: MsgRegisterCounterpartyPayee, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgRegisterCounterpartyPayee, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.portId !== "") {
       writer.uint32(10).string(message.portId);
     }
@@ -194,7 +197,7 @@ export const MsgRegisterCounterpartyPayee = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgRegisterCounterpartyPayee {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgRegisterCounterpartyPayee {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgRegisterCounterpartyPayee();
@@ -251,10 +254,10 @@ function createBaseMsgRegisterCounterpartyPayeeResponse(): MsgRegisterCounterpar
   return {};
 }
 export const MsgRegisterCounterpartyPayeeResponse = {
-  encode(_: MsgRegisterCounterpartyPayeeResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(_: MsgRegisterCounterpartyPayeeResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgRegisterCounterpartyPayeeResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgRegisterCounterpartyPayeeResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgRegisterCounterpartyPayeeResponse();
@@ -292,7 +295,7 @@ function createBaseMsgPayPacketFee(): MsgPayPacketFee {
   };
 }
 export const MsgPayPacketFee = {
-  encode(message: MsgPayPacketFee, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgPayPacketFee, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.fee !== undefined) {
       Fee.encode(message.fee, writer.uint32(10).fork()).ldelim();
     }
@@ -310,7 +313,7 @@ export const MsgPayPacketFee = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgPayPacketFee {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgPayPacketFee {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgPayPacketFee();
@@ -375,10 +378,10 @@ function createBaseMsgPayPacketFeeResponse(): MsgPayPacketFeeResponse {
   return {};
 }
 export const MsgPayPacketFeeResponse = {
-  encode(_: MsgPayPacketFeeResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(_: MsgPayPacketFeeResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgPayPacketFeeResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgPayPacketFeeResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgPayPacketFeeResponse();
@@ -411,7 +414,7 @@ function createBaseMsgPayPacketFeeAsync(): MsgPayPacketFeeAsync {
   };
 }
 export const MsgPayPacketFeeAsync = {
-  encode(message: MsgPayPacketFeeAsync, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgPayPacketFeeAsync, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.packetId !== undefined) {
       PacketId.encode(message.packetId, writer.uint32(10).fork()).ldelim();
     }
@@ -420,7 +423,7 @@ export const MsgPayPacketFeeAsync = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgPayPacketFeeAsync {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgPayPacketFeeAsync {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgPayPacketFeeAsync();
@@ -471,10 +474,10 @@ function createBaseMsgPayPacketFeeAsyncResponse(): MsgPayPacketFeeAsyncResponse 
   return {};
 }
 export const MsgPayPacketFeeAsyncResponse = {
-  encode(_: MsgPayPacketFeeAsyncResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(_: MsgPayPacketFeeAsyncResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgPayPacketFeeAsyncResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgPayPacketFeeAsyncResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgPayPacketFeeAsyncResponse();

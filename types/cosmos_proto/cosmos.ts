@@ -1,5 +1,8 @@
 /* eslint-disable */
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../helpers";
 import type { DeepPartial, Exact } from "../helpers";
 export const protobufPackage = "cosmos_proto";
@@ -95,7 +98,7 @@ function createBaseInterfaceDescriptor(): InterfaceDescriptor {
   };
 }
 export const InterfaceDescriptor = {
-  encode(message: InterfaceDescriptor, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: InterfaceDescriptor, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.name !== "") {
       writer.uint32(10).string(message.name);
     }
@@ -104,7 +107,7 @@ export const InterfaceDescriptor = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): InterfaceDescriptor {
+  decode(input: __m0.Reader | Uint8Array, length?: number): InterfaceDescriptor {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseInterfaceDescriptor();
@@ -151,7 +154,7 @@ function createBaseScalarDescriptor(): ScalarDescriptor {
   };
 }
 export const ScalarDescriptor = {
-  encode(message: ScalarDescriptor, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ScalarDescriptor, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.name !== "") {
       writer.uint32(10).string(message.name);
     }
@@ -165,7 +168,7 @@ export const ScalarDescriptor = {
     writer.ldelim();
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ScalarDescriptor {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ScalarDescriptor {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseScalarDescriptor();

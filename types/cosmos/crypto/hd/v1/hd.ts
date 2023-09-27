@@ -1,5 +1,8 @@
 /* eslint-disable */
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "cosmos.crypto.hd.v1";
@@ -29,7 +32,7 @@ function createBaseBIP44Params(): BIP44Params {
   };
 }
 export const BIP44Params = {
-  encode(message: BIP44Params, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: BIP44Params, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.purpose !== 0) {
       writer.uint32(8).uint32(message.purpose);
     }
@@ -47,7 +50,7 @@ export const BIP44Params = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): BIP44Params {
+  decode(input: __m0.Reader | Uint8Array, length?: number): BIP44Params {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseBIP44Params();

@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { PageRequest, PageResponse } from "../../base/query/v1beta1/pagination";
 import { Grant, GrantAuthorization } from "./authz";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../helpers";
 export const protobufPackage = "cosmos.authz.v1beta1";
@@ -56,7 +59,7 @@ function createBaseQueryGrantsRequest(): QueryGrantsRequest {
   };
 }
 export const QueryGrantsRequest = {
-  encode(message: QueryGrantsRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryGrantsRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.granter !== "") {
       writer.uint32(10).string(message.granter);
     }
@@ -71,7 +74,7 @@ export const QueryGrantsRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryGrantsRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryGrantsRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryGrantsRequest();
@@ -133,7 +136,7 @@ function createBaseQueryGrantsResponse(): QueryGrantsResponse {
   };
 }
 export const QueryGrantsResponse = {
-  encode(message: QueryGrantsResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryGrantsResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.grants) {
       Grant.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -142,7 +145,7 @@ export const QueryGrantsResponse = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryGrantsResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryGrantsResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryGrantsResponse();
@@ -196,7 +199,7 @@ function createBaseQueryGranterGrantsRequest(): QueryGranterGrantsRequest {
   };
 }
 export const QueryGranterGrantsRequest = {
-  encode(message: QueryGranterGrantsRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryGranterGrantsRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.granter !== "") {
       writer.uint32(10).string(message.granter);
     }
@@ -205,7 +208,7 @@ export const QueryGranterGrantsRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryGranterGrantsRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryGranterGrantsRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryGranterGrantsRequest();
@@ -257,7 +260,7 @@ function createBaseQueryGranterGrantsResponse(): QueryGranterGrantsResponse {
   };
 }
 export const QueryGranterGrantsResponse = {
-  encode(message: QueryGranterGrantsResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryGranterGrantsResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.grants) {
       GrantAuthorization.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -266,7 +269,7 @@ export const QueryGranterGrantsResponse = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryGranterGrantsResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryGranterGrantsResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryGranterGrantsResponse();
@@ -324,7 +327,7 @@ function createBaseQueryGranteeGrantsRequest(): QueryGranteeGrantsRequest {
   };
 }
 export const QueryGranteeGrantsRequest = {
-  encode(message: QueryGranteeGrantsRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryGranteeGrantsRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.grantee !== "") {
       writer.uint32(10).string(message.grantee);
     }
@@ -333,7 +336,7 @@ export const QueryGranteeGrantsRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryGranteeGrantsRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryGranteeGrantsRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryGranteeGrantsRequest();
@@ -385,7 +388,7 @@ function createBaseQueryGranteeGrantsResponse(): QueryGranteeGrantsResponse {
   };
 }
 export const QueryGranteeGrantsResponse = {
-  encode(message: QueryGranteeGrantsResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryGranteeGrantsResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.grants) {
       GrantAuthorization.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -394,7 +397,7 @@ export const QueryGranteeGrantsResponse = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryGranteeGrantsResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryGranteeGrantsResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryGranteeGrantsResponse();

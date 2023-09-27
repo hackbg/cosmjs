@@ -1,6 +1,9 @@
 /* eslint-disable */
 import { Any } from "../../../google/protobuf/any";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.app.v1alpha1";
@@ -64,7 +67,7 @@ function createBaseConfig(): Config {
   };
 }
 export const Config = {
-  encode(message: Config, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Config, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.modules) {
       ModuleConfig.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -73,7 +76,7 @@ export const Config = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Config {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Config {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseConfig();
@@ -130,7 +133,7 @@ function createBaseModuleConfig(): ModuleConfig {
   };
 }
 export const ModuleConfig = {
-  encode(message: ModuleConfig, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ModuleConfig, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.name !== "") {
       writer.uint32(10).string(message.name);
     }
@@ -142,7 +145,7 @@ export const ModuleConfig = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ModuleConfig {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ModuleConfig {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseModuleConfig();
@@ -201,7 +204,7 @@ function createBaseGolangBinding(): GolangBinding {
   };
 }
 export const GolangBinding = {
-  encode(message: GolangBinding, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: GolangBinding, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.interfaceType !== "") {
       writer.uint32(10).string(message.interfaceType);
     }
@@ -210,7 +213,7 @@ export const GolangBinding = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): GolangBinding {
+  decode(input: __m0.Reader | Uint8Array, length?: number): GolangBinding {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseGolangBinding();

@@ -1,5 +1,8 @@
 /* eslint-disable */
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../helpers";
 import type { DeepPartial, Exact } from "../../helpers";
 export const protobufPackage = "google.api";
@@ -362,7 +365,7 @@ function createBaseHttp(): Http {
   };
 }
 export const Http = {
-  encode(message: Http, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Http, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.rules) {
       HttpRule.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -371,7 +374,7 @@ export const Http = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Http {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Http {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseHttp();
@@ -432,7 +435,7 @@ function createBaseHttpRule(): HttpRule {
   };
 }
 export const HttpRule = {
-  encode(message: HttpRule, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: HttpRule, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.selector !== "") {
       writer.uint32(10).string(message.selector);
     }
@@ -465,7 +468,7 @@ export const HttpRule = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): HttpRule {
+  decode(input: __m0.Reader | Uint8Array, length?: number): HttpRule {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseHttpRule();
@@ -569,7 +572,7 @@ function createBaseCustomHttpPattern(): CustomHttpPattern {
   };
 }
 export const CustomHttpPattern = {
-  encode(message: CustomHttpPattern, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: CustomHttpPattern, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.kind !== "") {
       writer.uint32(10).string(message.kind);
     }
@@ -578,7 +581,7 @@ export const CustomHttpPattern = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): CustomHttpPattern {
+  decode(input: __m0.Reader | Uint8Array, length?: number): CustomHttpPattern {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCustomHttpPattern();

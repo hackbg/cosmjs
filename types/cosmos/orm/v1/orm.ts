@@ -1,5 +1,8 @@
 /* eslint-disable */
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.orm.v1";
@@ -98,7 +101,7 @@ function createBaseTableDescriptor(): TableDescriptor {
   };
 }
 export const TableDescriptor = {
-  encode(message: TableDescriptor, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: TableDescriptor, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.primaryKey !== undefined) {
       PrimaryKeyDescriptor.encode(message.primaryKey, writer.uint32(10).fork()).ldelim();
     }
@@ -110,7 +113,7 @@ export const TableDescriptor = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): TableDescriptor {
+  decode(input: __m0.Reader | Uint8Array, length?: number): TableDescriptor {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseTableDescriptor();
@@ -172,7 +175,7 @@ function createBasePrimaryKeyDescriptor(): PrimaryKeyDescriptor {
   };
 }
 export const PrimaryKeyDescriptor = {
-  encode(message: PrimaryKeyDescriptor, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: PrimaryKeyDescriptor, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.fields !== "") {
       writer.uint32(10).string(message.fields);
     }
@@ -181,7 +184,7 @@ export const PrimaryKeyDescriptor = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): PrimaryKeyDescriptor {
+  decode(input: __m0.Reader | Uint8Array, length?: number): PrimaryKeyDescriptor {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBasePrimaryKeyDescriptor();
@@ -228,7 +231,7 @@ function createBaseSecondaryIndexDescriptor(): SecondaryIndexDescriptor {
   };
 }
 export const SecondaryIndexDescriptor = {
-  encode(message: SecondaryIndexDescriptor, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: SecondaryIndexDescriptor, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.fields !== "") {
       writer.uint32(10).string(message.fields);
     }
@@ -240,7 +243,7 @@ export const SecondaryIndexDescriptor = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): SecondaryIndexDescriptor {
+  decode(input: __m0.Reader | Uint8Array, length?: number): SecondaryIndexDescriptor {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseSecondaryIndexDescriptor();
@@ -293,13 +296,13 @@ function createBaseSingletonDescriptor(): SingletonDescriptor {
   };
 }
 export const SingletonDescriptor = {
-  encode(message: SingletonDescriptor, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: SingletonDescriptor, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.id !== 0) {
       writer.uint32(8).uint32(message.id);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): SingletonDescriptor {
+  decode(input: __m0.Reader | Uint8Array, length?: number): SingletonDescriptor {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseSingletonDescriptor();

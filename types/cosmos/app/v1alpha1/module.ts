@@ -1,5 +1,8 @@
 /* eslint-disable */
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.app.v1alpha1";
@@ -91,7 +94,7 @@ function createBaseModuleDescriptor(): ModuleDescriptor {
   };
 }
 export const ModuleDescriptor = {
-  encode(message: ModuleDescriptor, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ModuleDescriptor, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.goImport !== "") {
       writer.uint32(10).string(message.goImport);
     }
@@ -103,7 +106,7 @@ export const ModuleDescriptor = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ModuleDescriptor {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ModuleDescriptor {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseModuleDescriptor();
@@ -167,7 +170,7 @@ function createBasePackageReference(): PackageReference {
   };
 }
 export const PackageReference = {
-  encode(message: PackageReference, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: PackageReference, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.name !== "") {
       writer.uint32(10).string(message.name);
     }
@@ -176,7 +179,7 @@ export const PackageReference = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): PackageReference {
+  decode(input: __m0.Reader | Uint8Array, length?: number): PackageReference {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBasePackageReference();
@@ -221,13 +224,13 @@ function createBaseMigrateFromInfo(): MigrateFromInfo {
   };
 }
 export const MigrateFromInfo = {
-  encode(message: MigrateFromInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MigrateFromInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.module !== "") {
       writer.uint32(10).string(message.module);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MigrateFromInfo {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MigrateFromInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMigrateFromInfo();

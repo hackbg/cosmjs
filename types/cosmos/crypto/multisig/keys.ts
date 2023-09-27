@@ -1,6 +1,9 @@
 /* eslint-disable */
 import { Any } from "../../../google/protobuf/any";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.crypto.multisig";
@@ -20,7 +23,7 @@ function createBaseLegacyAminoPubKey(): LegacyAminoPubKey {
   };
 }
 export const LegacyAminoPubKey = {
-  encode(message: LegacyAminoPubKey, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: LegacyAminoPubKey, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.threshold !== 0) {
       writer.uint32(8).uint32(message.threshold);
     }
@@ -29,7 +32,7 @@ export const LegacyAminoPubKey = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): LegacyAminoPubKey {
+  decode(input: __m0.Reader | Uint8Array, length?: number): LegacyAminoPubKey {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseLegacyAminoPubKey();

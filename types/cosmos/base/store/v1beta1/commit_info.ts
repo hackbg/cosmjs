@@ -9,7 +9,10 @@ import {
   base64FromBytes,
 } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmos.base.store.v1beta1";
 /**
  * CommitInfo defines commit information used by the multi-store when committing
@@ -44,7 +47,7 @@ function createBaseCommitInfo(): CommitInfo {
   };
 }
 export const CommitInfo = {
-  encode(message: CommitInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: CommitInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.version.isZero()) {
       writer.uint32(8).int64(message.version);
     }
@@ -56,7 +59,7 @@ export const CommitInfo = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): CommitInfo {
+  decode(input: __m0.Reader | Uint8Array, length?: number): CommitInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCommitInfo();
@@ -118,7 +121,7 @@ function createBaseStoreInfo(): StoreInfo {
   };
 }
 export const StoreInfo = {
-  encode(message: StoreInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: StoreInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.name !== "") {
       writer.uint32(10).string(message.name);
     }
@@ -127,7 +130,7 @@ export const StoreInfo = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): StoreInfo {
+  decode(input: __m0.Reader | Uint8Array, length?: number): StoreInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseStoreInfo();
@@ -177,7 +180,7 @@ function createBaseCommitID(): CommitID {
   };
 }
 export const CommitID = {
-  encode(message: CommitID, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: CommitID, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.version.isZero()) {
       writer.uint32(8).int64(message.version);
     }
@@ -186,7 +189,7 @@ export const CommitID = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): CommitID {
+  decode(input: __m0.Reader | Uint8Array, length?: number): CommitID {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCommitID();

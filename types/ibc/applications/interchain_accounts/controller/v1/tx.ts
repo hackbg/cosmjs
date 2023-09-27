@@ -2,7 +2,10 @@
 import { InterchainAccountPacketData } from "../../v1/packet";
 import { Long, isSet } from "../../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "ibc.applications.interchain_accounts.controller.v1";
 /** MsgRegisterInterchainAccount defines the payload for Msg/RegisterAccount */
 export interface MsgRegisterInterchainAccount {
@@ -37,7 +40,7 @@ function createBaseMsgRegisterInterchainAccount(): MsgRegisterInterchainAccount 
   };
 }
 export const MsgRegisterInterchainAccount = {
-  encode(message: MsgRegisterInterchainAccount, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgRegisterInterchainAccount, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.owner !== "") {
       writer.uint32(10).string(message.owner);
     }
@@ -49,7 +52,7 @@ export const MsgRegisterInterchainAccount = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgRegisterInterchainAccount {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgRegisterInterchainAccount {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgRegisterInterchainAccount();
@@ -104,14 +107,14 @@ function createBaseMsgRegisterInterchainAccountResponse(): MsgRegisterInterchain
 export const MsgRegisterInterchainAccountResponse = {
   encode(
     message: MsgRegisterInterchainAccountResponse,
-    writer: _m0.Writer = _m0.Writer.create(),
-  ): _m0.Writer {
+    writer: __m0.Writer = _m0.Writer.create(),
+  ): __m0.Writer {
     if (message.channelId !== "") {
       writer.uint32(10).string(message.channelId);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgRegisterInterchainAccountResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgRegisterInterchainAccountResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgRegisterInterchainAccountResponse();
@@ -155,7 +158,7 @@ function createBaseMsgSendTx(): MsgSendTx {
   };
 }
 export const MsgSendTx = {
-  encode(message: MsgSendTx, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgSendTx, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.owner !== "") {
       writer.uint32(10).string(message.owner);
     }
@@ -170,7 +173,7 @@ export const MsgSendTx = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgSendTx {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgSendTx {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgSendTx();
@@ -239,13 +242,13 @@ function createBaseMsgSendTxResponse(): MsgSendTxResponse {
   };
 }
 export const MsgSendTxResponse = {
-  encode(message: MsgSendTxResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgSendTxResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.sequence.isZero()) {
       writer.uint32(8).uint64(message.sequence);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgSendTxResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgSendTxResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgSendTxResponse();

@@ -1,6 +1,9 @@
 /* eslint-disable */
 import { Coin } from "../../../../cosmos/base/v1beta1/coin";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.transfer.v1";
@@ -32,7 +35,7 @@ function createBaseAllocation(): Allocation {
   };
 }
 export const Allocation = {
-  encode(message: Allocation, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Allocation, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.sourcePort !== "") {
       writer.uint32(10).string(message.sourcePort);
     }
@@ -47,7 +50,7 @@ export const Allocation = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Allocation {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Allocation {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAllocation();
@@ -114,13 +117,13 @@ function createBaseTransferAuthorization(): TransferAuthorization {
   };
 }
 export const TransferAuthorization = {
-  encode(message: TransferAuthorization, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: TransferAuthorization, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.allocations) {
       Allocation.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): TransferAuthorization {
+  decode(input: __m0.Reader | Uint8Array, length?: number): TransferAuthorization {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseTransferAuthorization();

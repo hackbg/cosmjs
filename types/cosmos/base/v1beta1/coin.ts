@@ -1,5 +1,8 @@
 /* eslint-disable */
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.base.v1beta1";
@@ -38,7 +41,7 @@ function createBaseCoin(): Coin {
   };
 }
 export const Coin = {
-  encode(message: Coin, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Coin, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.denom !== "") {
       writer.uint32(10).string(message.denom);
     }
@@ -47,7 +50,7 @@ export const Coin = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Coin {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Coin {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCoin();
@@ -93,7 +96,7 @@ function createBaseDecCoin(): DecCoin {
   };
 }
 export const DecCoin = {
-  encode(message: DecCoin, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: DecCoin, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.denom !== "") {
       writer.uint32(10).string(message.denom);
     }
@@ -102,7 +105,7 @@ export const DecCoin = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): DecCoin {
+  decode(input: __m0.Reader | Uint8Array, length?: number): DecCoin {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseDecCoin();
@@ -147,13 +150,13 @@ function createBaseIntProto(): IntProto {
   };
 }
 export const IntProto = {
-  encode(message: IntProto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: IntProto, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.int !== "") {
       writer.uint32(10).string(message.int);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): IntProto {
+  decode(input: __m0.Reader | Uint8Array, length?: number): IntProto {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseIntProto();
@@ -192,13 +195,13 @@ function createBaseDecProto(): DecProto {
   };
 }
 export const DecProto = {
-  encode(message: DecProto, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: DecProto, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.dec !== "") {
       writer.uint32(10).string(message.dec);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): DecProto {
+  decode(input: __m0.Reader | Uint8Array, length?: number): DecProto {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseDecProto();

@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { Long, isSet } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmos.gov.module.v1";
 /** Module is the config object of the gov module. */
 export interface Module {
@@ -20,7 +23,7 @@ function createBaseModule(): Module {
   };
 }
 export const Module = {
-  encode(message: Module, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Module, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.maxMetadataLen.isZero()) {
       writer.uint32(8).uint64(message.maxMetadataLen);
     }
@@ -29,7 +32,7 @@ export const Module = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Module {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Module {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseModule();

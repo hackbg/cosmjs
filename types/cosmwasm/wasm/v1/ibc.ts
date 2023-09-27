@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmwasm.wasm.v1";
 /** MsgIBCSend */
 export interface MsgIBCSend {
@@ -41,7 +44,7 @@ function createBaseMsgIBCSend(): MsgIBCSend {
   };
 }
 export const MsgIBCSend = {
-  encode(message: MsgIBCSend, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgIBCSend, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.channel !== "") {
       writer.uint32(18).string(message.channel);
     }
@@ -56,7 +59,7 @@ export const MsgIBCSend = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgIBCSend {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgIBCSend {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgIBCSend();
@@ -122,13 +125,13 @@ function createBaseMsgIBCSendResponse(): MsgIBCSendResponse {
   };
 }
 export const MsgIBCSendResponse = {
-  encode(message: MsgIBCSendResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgIBCSendResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.sequence.isZero()) {
       writer.uint32(8).uint64(message.sequence);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgIBCSendResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgIBCSendResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgIBCSendResponse();
@@ -170,13 +173,13 @@ function createBaseMsgIBCCloseChannel(): MsgIBCCloseChannel {
   };
 }
 export const MsgIBCCloseChannel = {
-  encode(message: MsgIBCCloseChannel, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MsgIBCCloseChannel, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.channel !== "") {
       writer.uint32(18).string(message.channel);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgIBCCloseChannel {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MsgIBCCloseChannel {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgIBCCloseChannel();

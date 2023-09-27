@@ -2,7 +2,10 @@
 import { Params, ValidatorSigningInfo } from "./slashing";
 import { Long, isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmos.slashing.v1beta1";
 /** GenesisState defines the slashing module's genesis state. */
 export interface GenesisState {
@@ -51,7 +54,7 @@ function createBaseGenesisState(): GenesisState {
   };
 }
 export const GenesisState = {
-  encode(message: GenesisState, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: GenesisState, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.params !== undefined) {
       Params.encode(message.params, writer.uint32(10).fork()).ldelim();
     }
@@ -63,7 +66,7 @@ export const GenesisState = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): GenesisState {
+  decode(input: __m0.Reader | Uint8Array, length?: number): GenesisState {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseGenesisState();
@@ -128,7 +131,7 @@ function createBaseSigningInfo(): SigningInfo {
   };
 }
 export const SigningInfo = {
-  encode(message: SigningInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: SigningInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
@@ -137,7 +140,7 @@ export const SigningInfo = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): SigningInfo {
+  decode(input: __m0.Reader | Uint8Array, length?: number): SigningInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseSigningInfo();
@@ -191,7 +194,7 @@ function createBaseValidatorMissedBlocks(): ValidatorMissedBlocks {
   };
 }
 export const ValidatorMissedBlocks = {
-  encode(message: ValidatorMissedBlocks, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ValidatorMissedBlocks, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
@@ -200,7 +203,7 @@ export const ValidatorMissedBlocks = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ValidatorMissedBlocks {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ValidatorMissedBlocks {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseValidatorMissedBlocks();
@@ -252,7 +255,7 @@ function createBaseMissedBlock(): MissedBlock {
   };
 }
 export const MissedBlock = {
-  encode(message: MissedBlock, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MissedBlock, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.index.isZero()) {
       writer.uint32(8).int64(message.index);
     }
@@ -261,7 +264,7 @@ export const MissedBlock = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MissedBlock {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MissedBlock {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMissedBlock();

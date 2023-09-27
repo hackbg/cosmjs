@@ -6,7 +6,10 @@ import { Coin } from "../../../../cosmos/base/v1beta1/coin";
 import { FeeEnabledChannel } from "./genesis";
 import { Long, isSet } from "../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "ibc.applications.fee.v1";
 /** QueryIncentivizedPacketsRequest defines the request type for the IncentivizedPackets rpc */
 export interface QueryIncentivizedPacketsRequest {
@@ -134,7 +137,7 @@ function createBaseQueryIncentivizedPacketsRequest(): QueryIncentivizedPacketsRe
   };
 }
 export const QueryIncentivizedPacketsRequest = {
-  encode(message: QueryIncentivizedPacketsRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryIncentivizedPacketsRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.pagination !== undefined) {
       PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
     }
@@ -143,7 +146,7 @@ export const QueryIncentivizedPacketsRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketsRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketsRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryIncentivizedPacketsRequest();
@@ -197,13 +200,13 @@ function createBaseQueryIncentivizedPacketsResponse(): QueryIncentivizedPacketsR
   };
 }
 export const QueryIncentivizedPacketsResponse = {
-  encode(message: QueryIncentivizedPacketsResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryIncentivizedPacketsResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.incentivizedPackets) {
       IdentifiedPacketFees.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketsResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketsResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryIncentivizedPacketsResponse();
@@ -254,7 +257,7 @@ function createBaseQueryIncentivizedPacketRequest(): QueryIncentivizedPacketRequ
   };
 }
 export const QueryIncentivizedPacketRequest = {
-  encode(message: QueryIncentivizedPacketRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryIncentivizedPacketRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.packetId !== undefined) {
       PacketId.encode(message.packetId, writer.uint32(10).fork()).ldelim();
     }
@@ -263,7 +266,7 @@ export const QueryIncentivizedPacketRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryIncentivizedPacketRequest();
@@ -317,13 +320,13 @@ function createBaseQueryIncentivizedPacketResponse(): QueryIncentivizedPacketRes
   };
 }
 export const QueryIncentivizedPacketResponse = {
-  encode(message: QueryIncentivizedPacketResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryIncentivizedPacketResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.incentivizedPacket !== undefined) {
       IdentifiedPacketFees.encode(message.incentivizedPacket, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryIncentivizedPacketResponse();
@@ -377,8 +380,8 @@ function createBaseQueryIncentivizedPacketsForChannelRequest(): QueryIncentivize
 export const QueryIncentivizedPacketsForChannelRequest = {
   encode(
     message: QueryIncentivizedPacketsForChannelRequest,
-    writer: _m0.Writer = _m0.Writer.create(),
-  ): _m0.Writer {
+    writer: __m0.Writer = _m0.Writer.create(),
+  ): __m0.Writer {
     if (message.pagination !== undefined) {
       PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
     }
@@ -393,7 +396,7 @@ export const QueryIncentivizedPacketsForChannelRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketsForChannelRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketsForChannelRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryIncentivizedPacketsForChannelRequest();
@@ -461,14 +464,14 @@ function createBaseQueryIncentivizedPacketsForChannelResponse(): QueryIncentiviz
 export const QueryIncentivizedPacketsForChannelResponse = {
   encode(
     message: QueryIncentivizedPacketsForChannelResponse,
-    writer: _m0.Writer = _m0.Writer.create(),
-  ): _m0.Writer {
+    writer: __m0.Writer = _m0.Writer.create(),
+  ): __m0.Writer {
     for (const v of message.incentivizedPackets) {
       IdentifiedPacketFees.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketsForChannelResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryIncentivizedPacketsForChannelResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryIncentivizedPacketsForChannelResponse();
@@ -518,13 +521,13 @@ function createBaseQueryTotalRecvFeesRequest(): QueryTotalRecvFeesRequest {
   };
 }
 export const QueryTotalRecvFeesRequest = {
-  encode(message: QueryTotalRecvFeesRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryTotalRecvFeesRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.packetId !== undefined) {
       PacketId.encode(message.packetId, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryTotalRecvFeesRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryTotalRecvFeesRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryTotalRecvFeesRequest();
@@ -569,13 +572,13 @@ function createBaseQueryTotalRecvFeesResponse(): QueryTotalRecvFeesResponse {
   };
 }
 export const QueryTotalRecvFeesResponse = {
-  encode(message: QueryTotalRecvFeesResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryTotalRecvFeesResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.recvFees) {
       Coin.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryTotalRecvFeesResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryTotalRecvFeesResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryTotalRecvFeesResponse();
@@ -620,13 +623,13 @@ function createBaseQueryTotalAckFeesRequest(): QueryTotalAckFeesRequest {
   };
 }
 export const QueryTotalAckFeesRequest = {
-  encode(message: QueryTotalAckFeesRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryTotalAckFeesRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.packetId !== undefined) {
       PacketId.encode(message.packetId, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryTotalAckFeesRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryTotalAckFeesRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryTotalAckFeesRequest();
@@ -671,13 +674,13 @@ function createBaseQueryTotalAckFeesResponse(): QueryTotalAckFeesResponse {
   };
 }
 export const QueryTotalAckFeesResponse = {
-  encode(message: QueryTotalAckFeesResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryTotalAckFeesResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.ackFees) {
       Coin.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryTotalAckFeesResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryTotalAckFeesResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryTotalAckFeesResponse();
@@ -722,13 +725,13 @@ function createBaseQueryTotalTimeoutFeesRequest(): QueryTotalTimeoutFeesRequest 
   };
 }
 export const QueryTotalTimeoutFeesRequest = {
-  encode(message: QueryTotalTimeoutFeesRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryTotalTimeoutFeesRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.packetId !== undefined) {
       PacketId.encode(message.packetId, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryTotalTimeoutFeesRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryTotalTimeoutFeesRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryTotalTimeoutFeesRequest();
@@ -773,13 +776,13 @@ function createBaseQueryTotalTimeoutFeesResponse(): QueryTotalTimeoutFeesRespons
   };
 }
 export const QueryTotalTimeoutFeesResponse = {
-  encode(message: QueryTotalTimeoutFeesResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryTotalTimeoutFeesResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.timeoutFees) {
       Coin.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryTotalTimeoutFeesResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryTotalTimeoutFeesResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryTotalTimeoutFeesResponse();
@@ -827,7 +830,7 @@ function createBaseQueryPayeeRequest(): QueryPayeeRequest {
   };
 }
 export const QueryPayeeRequest = {
-  encode(message: QueryPayeeRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryPayeeRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.channelId !== "") {
       writer.uint32(10).string(message.channelId);
     }
@@ -836,7 +839,7 @@ export const QueryPayeeRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryPayeeRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryPayeeRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryPayeeRequest();
@@ -881,13 +884,13 @@ function createBaseQueryPayeeResponse(): QueryPayeeResponse {
   };
 }
 export const QueryPayeeResponse = {
-  encode(message: QueryPayeeResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryPayeeResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.payeeAddress !== "") {
       writer.uint32(10).string(message.payeeAddress);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryPayeeResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryPayeeResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryPayeeResponse();
@@ -927,7 +930,7 @@ function createBaseQueryCounterpartyPayeeRequest(): QueryCounterpartyPayeeReques
   };
 }
 export const QueryCounterpartyPayeeRequest = {
-  encode(message: QueryCounterpartyPayeeRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryCounterpartyPayeeRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.channelId !== "") {
       writer.uint32(10).string(message.channelId);
     }
@@ -936,7 +939,7 @@ export const QueryCounterpartyPayeeRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryCounterpartyPayeeRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryCounterpartyPayeeRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryCounterpartyPayeeRequest();
@@ -983,13 +986,13 @@ function createBaseQueryCounterpartyPayeeResponse(): QueryCounterpartyPayeeRespo
   };
 }
 export const QueryCounterpartyPayeeResponse = {
-  encode(message: QueryCounterpartyPayeeResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryCounterpartyPayeeResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.counterpartyPayee !== "") {
       writer.uint32(10).string(message.counterpartyPayee);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryCounterpartyPayeeResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryCounterpartyPayeeResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryCounterpartyPayeeResponse();
@@ -1031,7 +1034,7 @@ function createBaseQueryFeeEnabledChannelsRequest(): QueryFeeEnabledChannelsRequ
   };
 }
 export const QueryFeeEnabledChannelsRequest = {
-  encode(message: QueryFeeEnabledChannelsRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryFeeEnabledChannelsRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.pagination !== undefined) {
       PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
     }
@@ -1040,7 +1043,7 @@ export const QueryFeeEnabledChannelsRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryFeeEnabledChannelsRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryFeeEnabledChannelsRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryFeeEnabledChannelsRequest();
@@ -1094,13 +1097,13 @@ function createBaseQueryFeeEnabledChannelsResponse(): QueryFeeEnabledChannelsRes
   };
 }
 export const QueryFeeEnabledChannelsResponse = {
-  encode(message: QueryFeeEnabledChannelsResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryFeeEnabledChannelsResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.feeEnabledChannels) {
       FeeEnabledChannel.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryFeeEnabledChannelsResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryFeeEnabledChannelsResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryFeeEnabledChannelsResponse();
@@ -1151,7 +1154,7 @@ function createBaseQueryFeeEnabledChannelRequest(): QueryFeeEnabledChannelReques
   };
 }
 export const QueryFeeEnabledChannelRequest = {
-  encode(message: QueryFeeEnabledChannelRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryFeeEnabledChannelRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.portId !== "") {
       writer.uint32(10).string(message.portId);
     }
@@ -1160,7 +1163,7 @@ export const QueryFeeEnabledChannelRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryFeeEnabledChannelRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryFeeEnabledChannelRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryFeeEnabledChannelRequest();
@@ -1207,13 +1210,13 @@ function createBaseQueryFeeEnabledChannelResponse(): QueryFeeEnabledChannelRespo
   };
 }
 export const QueryFeeEnabledChannelResponse = {
-  encode(message: QueryFeeEnabledChannelResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: QueryFeeEnabledChannelResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.feeEnabled === true) {
       writer.uint32(8).bool(message.feeEnabled);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryFeeEnabledChannelResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): QueryFeeEnabledChannelResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryFeeEnabledChannelResponse();

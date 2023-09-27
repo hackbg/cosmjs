@@ -1,5 +1,8 @@
 /* eslint-disable */
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
 export const protobufPackage = "cosmos.nft.v1beta1";
@@ -41,7 +44,7 @@ function createBaseEventSend(): EventSend {
   };
 }
 export const EventSend = {
-  encode(message: EventSend, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: EventSend, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.classId !== "") {
       writer.uint32(10).string(message.classId);
     }
@@ -56,7 +59,7 @@ export const EventSend = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): EventSend {
+  decode(input: __m0.Reader | Uint8Array, length?: number): EventSend {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseEventSend();
@@ -115,7 +118,7 @@ function createBaseEventMint(): EventMint {
   };
 }
 export const EventMint = {
-  encode(message: EventMint, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: EventMint, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.classId !== "") {
       writer.uint32(10).string(message.classId);
     }
@@ -127,7 +130,7 @@ export const EventMint = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): EventMint {
+  decode(input: __m0.Reader | Uint8Array, length?: number): EventMint {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseEventMint();
@@ -180,7 +183,7 @@ function createBaseEventBurn(): EventBurn {
   };
 }
 export const EventBurn = {
-  encode(message: EventBurn, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: EventBurn, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.classId !== "") {
       writer.uint32(10).string(message.classId);
     }
@@ -192,7 +195,7 @@ export const EventBurn = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): EventBurn {
+  decode(input: __m0.Reader | Uint8Array, length?: number): EventBurn {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseEventBurn();

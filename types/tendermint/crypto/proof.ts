@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../helpers";
 import type { DeepPartial, Exact } from "../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "tendermint.crypto";
 export interface Proof {
   total: Long;
@@ -43,7 +46,7 @@ function createBaseProof(): Proof {
   };
 }
 export const Proof = {
-  encode(message: Proof, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Proof, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.total.isZero()) {
       writer.uint32(8).int64(message.total);
     }
@@ -58,7 +61,7 @@ export const Proof = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Proof {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Proof {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseProof();
@@ -123,7 +126,7 @@ function createBaseValueOp(): ValueOp {
   };
 }
 export const ValueOp = {
-  encode(message: ValueOp, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ValueOp, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.key.length !== 0) {
       writer.uint32(10).bytes(message.key);
     }
@@ -132,7 +135,7 @@ export const ValueOp = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ValueOp {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ValueOp {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseValueOp();
@@ -181,7 +184,7 @@ function createBaseDominoOp(): DominoOp {
   };
 }
 export const DominoOp = {
-  encode(message: DominoOp, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: DominoOp, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.key !== "") {
       writer.uint32(10).string(message.key);
     }
@@ -193,7 +196,7 @@ export const DominoOp = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): DominoOp {
+  decode(input: __m0.Reader | Uint8Array, length?: number): DominoOp {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseDominoOp();
@@ -246,7 +249,7 @@ function createBaseProofOp(): ProofOp {
   };
 }
 export const ProofOp = {
-  encode(message: ProofOp, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ProofOp, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.type !== "") {
       writer.uint32(10).string(message.type);
     }
@@ -258,7 +261,7 @@ export const ProofOp = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ProofOp {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ProofOp {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseProofOp();
@@ -311,13 +314,13 @@ function createBaseProofOps(): ProofOps {
   };
 }
 export const ProofOps = {
-  encode(message: ProofOps, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ProofOps, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.ops) {
       ProofOp.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ProofOps {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ProofOps {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseProofOps();

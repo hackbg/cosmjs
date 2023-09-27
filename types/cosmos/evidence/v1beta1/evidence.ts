@@ -2,7 +2,10 @@
 import { Timestamp } from "../../../google/protobuf/timestamp";
 import { Long, isSet, fromJsonTimestamp, fromTimestamp } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmos.evidence.v1beta1";
 /**
  * Equivocation implements the Evidence interface and defines evidence of double
@@ -27,7 +30,7 @@ function createBaseEquivocation(): Equivocation {
   };
 }
 export const Equivocation = {
-  encode(message: Equivocation, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Equivocation, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.height.isZero()) {
       writer.uint32(8).int64(message.height);
     }
@@ -42,7 +45,7 @@ export const Equivocation = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Equivocation {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Equivocation {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseEquivocation();

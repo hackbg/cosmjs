@@ -1,5 +1,8 @@
 /* eslint-disable */
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet, bytesFromBase64, base64FromBytes } from "../../helpers";
 import type { DeepPartial, Exact } from "../../helpers";
 export const protobufPackage = "tendermint.crypto";
@@ -15,7 +18,7 @@ function createBasePublicKey(): PublicKey {
   };
 }
 export const PublicKey = {
-  encode(message: PublicKey, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: PublicKey, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.ed25519 !== undefined) {
       writer.uint32(10).bytes(message.ed25519);
     }
@@ -24,7 +27,7 @@ export const PublicKey = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): PublicKey {
+  decode(input: __m0.Reader | Uint8Array, length?: number): PublicKey {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBasePublicKey();

@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { IdentifiedPacketFees } from "./fee";
 import { PacketId } from "../../../core/channel/v1/channel";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../../helpers";
 import type { DeepPartial, Exact } from "../../../../helpers";
 export const protobufPackage = "ibc.applications.fee.v1";
@@ -63,7 +66,7 @@ function createBaseGenesisState(): GenesisState {
   };
 }
 export const GenesisState = {
-  encode(message: GenesisState, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: GenesisState, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.identifiedFees) {
       IdentifiedPacketFees.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -81,7 +84,7 @@ export const GenesisState = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): GenesisState {
+  decode(input: __m0.Reader | Uint8Array, length?: number): GenesisState {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseGenesisState();
@@ -187,7 +190,7 @@ function createBaseFeeEnabledChannel(): FeeEnabledChannel {
   };
 }
 export const FeeEnabledChannel = {
-  encode(message: FeeEnabledChannel, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: FeeEnabledChannel, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.portId !== "") {
       writer.uint32(10).string(message.portId);
     }
@@ -196,7 +199,7 @@ export const FeeEnabledChannel = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): FeeEnabledChannel {
+  decode(input: __m0.Reader | Uint8Array, length?: number): FeeEnabledChannel {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseFeeEnabledChannel();
@@ -243,7 +246,7 @@ function createBaseRegisteredPayee(): RegisteredPayee {
   };
 }
 export const RegisteredPayee = {
-  encode(message: RegisteredPayee, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: RegisteredPayee, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.channelId !== "") {
       writer.uint32(10).string(message.channelId);
     }
@@ -255,7 +258,7 @@ export const RegisteredPayee = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): RegisteredPayee {
+  decode(input: __m0.Reader | Uint8Array, length?: number): RegisteredPayee {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseRegisteredPayee();
@@ -308,7 +311,7 @@ function createBaseRegisteredCounterpartyPayee(): RegisteredCounterpartyPayee {
   };
 }
 export const RegisteredCounterpartyPayee = {
-  encode(message: RegisteredCounterpartyPayee, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: RegisteredCounterpartyPayee, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.channelId !== "") {
       writer.uint32(10).string(message.channelId);
     }
@@ -320,7 +323,7 @@ export const RegisteredCounterpartyPayee = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): RegisteredCounterpartyPayee {
+  decode(input: __m0.Reader | Uint8Array, length?: number): RegisteredCounterpartyPayee {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseRegisteredCounterpartyPayee();
@@ -374,7 +377,7 @@ function createBaseForwardRelayerAddress(): ForwardRelayerAddress {
   };
 }
 export const ForwardRelayerAddress = {
-  encode(message: ForwardRelayerAddress, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ForwardRelayerAddress, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
@@ -383,7 +386,7 @@ export const ForwardRelayerAddress = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ForwardRelayerAddress {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ForwardRelayerAddress {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseForwardRelayerAddress();

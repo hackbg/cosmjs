@@ -1,7 +1,10 @@
 /* eslint-disable */
 import { Long, isSet } from "../../helpers";
 import type { DeepPartial, Exact } from "../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "tendermint.version";
 /**
  * App includes the protocol and software version for the application.
@@ -28,7 +31,7 @@ function createBaseApp(): App {
   };
 }
 export const App = {
-  encode(message: App, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: App, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.protocol.isZero()) {
       writer.uint32(8).uint64(message.protocol);
     }
@@ -37,7 +40,7 @@ export const App = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): App {
+  decode(input: __m0.Reader | Uint8Array, length?: number): App {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseApp();
@@ -86,7 +89,7 @@ function createBaseConsensus(): Consensus {
   };
 }
 export const Consensus = {
-  encode(message: Consensus, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: Consensus, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.block.isZero()) {
       writer.uint32(8).uint64(message.block);
     }
@@ -95,7 +98,7 @@ export const Consensus = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): Consensus {
+  decode(input: __m0.Reader | Uint8Array, length?: number): Consensus {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseConsensus();

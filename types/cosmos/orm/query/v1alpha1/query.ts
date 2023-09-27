@@ -12,7 +12,10 @@ import {
   fromTimestamp,
 } from "../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmos.orm.query.v1alpha1";
 /** GetRequest is the Query/Get request type. */
 export interface GetRequest {
@@ -119,7 +122,7 @@ function createBaseGetRequest(): GetRequest {
   };
 }
 export const GetRequest = {
-  encode(message: GetRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: GetRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.messageName !== "") {
       writer.uint32(10).string(message.messageName);
     }
@@ -131,7 +134,7 @@ export const GetRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): GetRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): GetRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseGetRequest();
@@ -186,13 +189,13 @@ function createBaseGetResponse(): GetResponse {
   };
 }
 export const GetResponse = {
-  encode(message: GetResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: GetResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.result !== undefined) {
       Any.encode(message.result, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): GetResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): GetResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseGetResponse();
@@ -236,7 +239,7 @@ function createBaseListRequest(): ListRequest {
   };
 }
 export const ListRequest = {
-  encode(message: ListRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ListRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.messageName !== "") {
       writer.uint32(10).string(message.messageName);
     }
@@ -254,7 +257,7 @@ export const ListRequest = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ListRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ListRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseListRequest();
@@ -329,13 +332,13 @@ function createBaseListRequest_Prefix(): ListRequest_Prefix {
   };
 }
 export const ListRequest_Prefix = {
-  encode(message: ListRequest_Prefix, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ListRequest_Prefix, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.values) {
       IndexValue.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ListRequest_Prefix {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ListRequest_Prefix {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseListRequest_Prefix();
@@ -379,7 +382,7 @@ function createBaseListRequest_Range(): ListRequest_Range {
   };
 }
 export const ListRequest_Range = {
-  encode(message: ListRequest_Range, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ListRequest_Range, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.start) {
       IndexValue.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -388,7 +391,7 @@ export const ListRequest_Range = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ListRequest_Range {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ListRequest_Range {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseListRequest_Range();
@@ -442,7 +445,7 @@ function createBaseListResponse(): ListResponse {
   };
 }
 export const ListResponse = {
-  encode(message: ListResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ListResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.results) {
       Any.encode(v!, writer.uint32(10).fork()).ldelim();
     }
@@ -451,7 +454,7 @@ export const ListResponse = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ListResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ListResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseListResponse();
@@ -511,7 +514,7 @@ function createBaseIndexValue(): IndexValue {
   };
 }
 export const IndexValue = {
-  encode(message: IndexValue, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: IndexValue, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.uint !== undefined) {
       writer.uint32(8).uint64(message.uint);
     }
@@ -538,7 +541,7 @@ export const IndexValue = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): IndexValue {
+  decode(input: __m0.Reader | Uint8Array, length?: number): IndexValue {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseIndexValue();

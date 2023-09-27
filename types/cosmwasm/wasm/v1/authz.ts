@@ -3,7 +3,10 @@ import { Any } from "../../../google/protobuf/any";
 import { Coin } from "../../../cosmos/base/v1beta1/coin";
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmwasm.wasm.v1";
 /**
  * ContractExecutionAuthorization defines authorization for wasm execute.
@@ -97,13 +100,13 @@ function createBaseContractExecutionAuthorization(): ContractExecutionAuthorizat
   };
 }
 export const ContractExecutionAuthorization = {
-  encode(message: ContractExecutionAuthorization, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ContractExecutionAuthorization, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.grants) {
       ContractGrant.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ContractExecutionAuthorization {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ContractExecutionAuthorization {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseContractExecutionAuthorization();
@@ -148,13 +151,13 @@ function createBaseContractMigrationAuthorization(): ContractMigrationAuthorizat
   };
 }
 export const ContractMigrationAuthorization = {
-  encode(message: ContractMigrationAuthorization, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ContractMigrationAuthorization, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.grants) {
       ContractGrant.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ContractMigrationAuthorization {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ContractMigrationAuthorization {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseContractMigrationAuthorization();
@@ -201,7 +204,7 @@ function createBaseContractGrant(): ContractGrant {
   };
 }
 export const ContractGrant = {
-  encode(message: ContractGrant, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ContractGrant, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.contract !== "") {
       writer.uint32(10).string(message.contract);
     }
@@ -213,7 +216,7 @@ export const ContractGrant = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ContractGrant {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ContractGrant {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseContractGrant();
@@ -266,13 +269,13 @@ function createBaseMaxCallsLimit(): MaxCallsLimit {
   };
 }
 export const MaxCallsLimit = {
-  encode(message: MaxCallsLimit, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MaxCallsLimit, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.remaining.isZero()) {
       writer.uint32(8).uint64(message.remaining);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MaxCallsLimit {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MaxCallsLimit {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMaxCallsLimit();
@@ -314,13 +317,13 @@ function createBaseMaxFundsLimit(): MaxFundsLimit {
   };
 }
 export const MaxFundsLimit = {
-  encode(message: MaxFundsLimit, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MaxFundsLimit, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.amounts) {
       Coin.encode(v!, writer.uint32(10).fork()).ldelim();
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MaxFundsLimit {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MaxFundsLimit {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMaxFundsLimit();
@@ -364,7 +367,7 @@ function createBaseCombinedLimit(): CombinedLimit {
   };
 }
 export const CombinedLimit = {
-  encode(message: CombinedLimit, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: CombinedLimit, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.callsRemaining.isZero()) {
       writer.uint32(8).uint64(message.callsRemaining);
     }
@@ -373,7 +376,7 @@ export const CombinedLimit = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): CombinedLimit {
+  decode(input: __m0.Reader | Uint8Array, length?: number): CombinedLimit {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCombinedLimit();
@@ -424,10 +427,10 @@ function createBaseAllowAllMessagesFilter(): AllowAllMessagesFilter {
   return {};
 }
 export const AllowAllMessagesFilter = {
-  encode(_: AllowAllMessagesFilter, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(_: AllowAllMessagesFilter, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): AllowAllMessagesFilter {
+  decode(input: __m0.Reader | Uint8Array, length?: number): AllowAllMessagesFilter {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAllowAllMessagesFilter();
@@ -459,13 +462,13 @@ function createBaseAcceptedMessageKeysFilter(): AcceptedMessageKeysFilter {
   };
 }
 export const AcceptedMessageKeysFilter = {
-  encode(message: AcceptedMessageKeysFilter, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: AcceptedMessageKeysFilter, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.keys) {
       writer.uint32(10).string(v!);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): AcceptedMessageKeysFilter {
+  decode(input: __m0.Reader | Uint8Array, length?: number): AcceptedMessageKeysFilter {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAcceptedMessageKeysFilter();
@@ -510,13 +513,13 @@ function createBaseAcceptedMessagesFilter(): AcceptedMessagesFilter {
   };
 }
 export const AcceptedMessagesFilter = {
-  encode(message: AcceptedMessagesFilter, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: AcceptedMessagesFilter, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.messages) {
       writer.uint32(10).bytes(v!);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): AcceptedMessagesFilter {
+  decode(input: __m0.Reader | Uint8Array, length?: number): AcceptedMessagesFilter {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAcceptedMessagesFilter();

@@ -3,7 +3,10 @@ import { AccessConfig } from "./types";
 import { Coin } from "../../../cosmos/base/v1beta1/coin";
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 export const protobufPackage = "cosmwasm.wasm.v1";
 /** StoreCodeProposal gov proposal content type to submit WASM code to the system */
 export interface StoreCodeProposal {
@@ -249,7 +252,7 @@ function createBaseStoreCodeProposal(): StoreCodeProposal {
   };
 }
 export const StoreCodeProposal = {
-  encode(message: StoreCodeProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: StoreCodeProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -279,7 +282,7 @@ export const StoreCodeProposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): StoreCodeProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): StoreCodeProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseStoreCodeProposal();
@@ -385,7 +388,7 @@ function createBaseInstantiateContractProposal(): InstantiateContractProposal {
   };
 }
 export const InstantiateContractProposal = {
-  encode(message: InstantiateContractProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: InstantiateContractProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -412,7 +415,7 @@ export const InstantiateContractProposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): InstantiateContractProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): InstantiateContractProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseInstantiateContractProposal();
@@ -510,7 +513,7 @@ function createBaseInstantiateContract2Proposal(): InstantiateContract2Proposal 
   };
 }
 export const InstantiateContract2Proposal = {
-  encode(message: InstantiateContract2Proposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: InstantiateContract2Proposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -543,7 +546,7 @@ export const InstantiateContract2Proposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): InstantiateContract2Proposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): InstantiateContract2Proposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseInstantiateContract2Proposal();
@@ -649,7 +652,7 @@ function createBaseMigrateContractProposal(): MigrateContractProposal {
   };
 }
 export const MigrateContractProposal = {
-  encode(message: MigrateContractProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: MigrateContractProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -667,7 +670,7 @@ export const MigrateContractProposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): MigrateContractProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): MigrateContractProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMigrateContractProposal();
@@ -735,7 +738,7 @@ function createBaseSudoContractProposal(): SudoContractProposal {
   };
 }
 export const SudoContractProposal = {
-  encode(message: SudoContractProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: SudoContractProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -750,7 +753,7 @@ export const SudoContractProposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): SudoContractProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): SudoContractProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseSudoContractProposal();
@@ -813,7 +816,7 @@ function createBaseExecuteContractProposal(): ExecuteContractProposal {
   };
 }
 export const ExecuteContractProposal = {
-  encode(message: ExecuteContractProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ExecuteContractProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -834,7 +837,7 @@ export const ExecuteContractProposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ExecuteContractProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ExecuteContractProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseExecuteContractProposal();
@@ -911,7 +914,7 @@ function createBaseUpdateAdminProposal(): UpdateAdminProposal {
   };
 }
 export const UpdateAdminProposal = {
-  encode(message: UpdateAdminProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: UpdateAdminProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -926,7 +929,7 @@ export const UpdateAdminProposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): UpdateAdminProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): UpdateAdminProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseUpdateAdminProposal();
@@ -985,7 +988,7 @@ function createBaseClearAdminProposal(): ClearAdminProposal {
   };
 }
 export const ClearAdminProposal = {
-  encode(message: ClearAdminProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ClearAdminProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -997,7 +1000,7 @@ export const ClearAdminProposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ClearAdminProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ClearAdminProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseClearAdminProposal();
@@ -1050,7 +1053,7 @@ function createBasePinCodesProposal(): PinCodesProposal {
   };
 }
 export const PinCodesProposal = {
-  encode(message: PinCodesProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: PinCodesProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -1064,7 +1067,7 @@ export const PinCodesProposal = {
     writer.ldelim();
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): PinCodesProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): PinCodesProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBasePinCodesProposal();
@@ -1128,7 +1131,7 @@ function createBaseUnpinCodesProposal(): UnpinCodesProposal {
   };
 }
 export const UnpinCodesProposal = {
-  encode(message: UnpinCodesProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: UnpinCodesProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -1142,7 +1145,7 @@ export const UnpinCodesProposal = {
     writer.ldelim();
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): UnpinCodesProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): UnpinCodesProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseUnpinCodesProposal();
@@ -1205,7 +1208,7 @@ function createBaseAccessConfigUpdate(): AccessConfigUpdate {
   };
 }
 export const AccessConfigUpdate = {
-  encode(message: AccessConfigUpdate, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: AccessConfigUpdate, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (!message.codeId.isZero()) {
       writer.uint32(8).uint64(message.codeId);
     }
@@ -1214,7 +1217,7 @@ export const AccessConfigUpdate = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): AccessConfigUpdate {
+  decode(input: __m0.Reader | Uint8Array, length?: number): AccessConfigUpdate {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAccessConfigUpdate();
@@ -1270,7 +1273,7 @@ function createBaseUpdateInstantiateConfigProposal(): UpdateInstantiateConfigPro
   };
 }
 export const UpdateInstantiateConfigProposal = {
-  encode(message: UpdateInstantiateConfigProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: UpdateInstantiateConfigProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -1282,7 +1285,7 @@ export const UpdateInstantiateConfigProposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): UpdateInstantiateConfigProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): UpdateInstantiateConfigProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseUpdateInstantiateConfigProposal();
@@ -1356,7 +1359,7 @@ function createBaseStoreAndInstantiateContractProposal(): StoreAndInstantiateCon
   };
 }
 export const StoreAndInstantiateContractProposal = {
-  encode(message: StoreAndInstantiateContractProposal, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: StoreAndInstantiateContractProposal, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.title !== "") {
       writer.uint32(10).string(message.title);
     }
@@ -1398,7 +1401,7 @@ export const StoreAndInstantiateContractProposal = {
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): StoreAndInstantiateContractProposal {
+  decode(input: __m0.Reader | Uint8Array, length?: number): StoreAndInstantiateContractProposal {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseStoreAndInstantiateContractProposal();

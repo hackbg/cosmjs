@@ -1,5 +1,8 @@
 /* eslint-disable */
-import * as _m0 from "@hackbg/protobufjs-esm/minimal";
+import * as ___m0 from "@hackbg/protobufjs-esm/minimal";
+import type * as __m0 from "@hackbg/protobufjs-esm/minimal"
+//@ts-ignore
+const _m0 = ___m0['default']
 import { isSet } from "../../../../helpers";
 import type { DeepPartial, Exact, Rpc } from "../../../../helpers";
 export const protobufPackage = "cosmos.base.reflection.v1beta1";
@@ -29,10 +32,10 @@ function createBaseListAllInterfacesRequest(): ListAllInterfacesRequest {
   return {};
 }
 export const ListAllInterfacesRequest = {
-  encode(_: ListAllInterfacesRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(_: ListAllInterfacesRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ListAllInterfacesRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ListAllInterfacesRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseListAllInterfacesRequest();
@@ -64,13 +67,13 @@ function createBaseListAllInterfacesResponse(): ListAllInterfacesResponse {
   };
 }
 export const ListAllInterfacesResponse = {
-  encode(message: ListAllInterfacesResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ListAllInterfacesResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.interfaceNames) {
       writer.uint32(10).string(v!);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ListAllInterfacesResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ListAllInterfacesResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseListAllInterfacesResponse();
@@ -117,13 +120,13 @@ function createBaseListImplementationsRequest(): ListImplementationsRequest {
   };
 }
 export const ListImplementationsRequest = {
-  encode(message: ListImplementationsRequest, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ListImplementationsRequest, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     if (message.interfaceName !== "") {
       writer.uint32(10).string(message.interfaceName);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ListImplementationsRequest {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ListImplementationsRequest {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseListImplementationsRequest();
@@ -164,13 +167,13 @@ function createBaseListImplementationsResponse(): ListImplementationsResponse {
   };
 }
 export const ListImplementationsResponse = {
-  encode(message: ListImplementationsResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(message: ListImplementationsResponse, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
     for (const v of message.implementationMessageNames) {
       writer.uint32(10).string(v!);
     }
     return writer;
   },
-  decode(input: _m0.Reader | Uint8Array, length?: number): ListImplementationsResponse {
+  decode(input: __m0.Reader | Uint8Array, length?: number): ListImplementationsResponse {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseListImplementationsResponse();
