@@ -2,9 +2,7 @@
 import { Any } from "../../../google/protobuf/any";
 import { Long, isSet, bytesFromBase64, base64FromBytes } from "../../../helpers";
 import type { DeepPartial, Exact } from "../../../helpers";
-import * as __m0 from "@hackbg/protobufjs-esm/minimal";
-//@ts-ignore
-const _m0 = __m0.default
+import * as _m0 from "@hackbg/protobufjs-esm/minimal";
 export const protobufPackage = "cosmwasm.wasm.v1";
 /** AccessType permission types */
 export enum AccessType {
@@ -192,13 +190,13 @@ function createBaseAccessTypeParam(): AccessTypeParam {
   };
 }
 export const AccessTypeParam = {
-  encode(message: AccessTypeParam, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
+  encode(message: AccessTypeParam, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.value !== 0) {
       writer.uint32(8).int32(message.value);
     }
     return writer;
   },
-  decode(input: __m0.Reader | Uint8Array, length?: number): AccessTypeParam {
+  decode(input: _m0.Reader | Uint8Array, length?: number): AccessTypeParam {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAccessTypeParam();
@@ -239,7 +237,7 @@ function createBaseAccessConfig(): AccessConfig {
   };
 }
 export const AccessConfig = {
-  encode(message: AccessConfig, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
+  encode(message: AccessConfig, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.permission !== 0) {
       writer.uint32(8).int32(message.permission);
     }
@@ -251,7 +249,7 @@ export const AccessConfig = {
     }
     return writer;
   },
-  decode(input: __m0.Reader | Uint8Array, length?: number): AccessConfig {
+  decode(input: _m0.Reader | Uint8Array, length?: number): AccessConfig {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAccessConfig();
@@ -307,7 +305,7 @@ function createBaseParams(): Params {
   };
 }
 export const Params = {
-  encode(message: Params, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
+  encode(message: Params, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.codeUploadAccess !== undefined) {
       AccessConfig.encode(message.codeUploadAccess, writer.uint32(10).fork()).ldelim();
     }
@@ -316,7 +314,7 @@ export const Params = {
     }
     return writer;
   },
-  decode(input: __m0.Reader | Uint8Array, length?: number): Params {
+  decode(input: _m0.Reader | Uint8Array, length?: number): Params {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseParams();
@@ -374,7 +372,7 @@ function createBaseCodeInfo(): CodeInfo {
   };
 }
 export const CodeInfo = {
-  encode(message: CodeInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
+  encode(message: CodeInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.codeHash.length !== 0) {
       writer.uint32(10).bytes(message.codeHash);
     }
@@ -386,7 +384,7 @@ export const CodeInfo = {
     }
     return writer;
   },
-  decode(input: __m0.Reader | Uint8Array, length?: number): CodeInfo {
+  decode(input: _m0.Reader | Uint8Array, length?: number): CodeInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCodeInfo();
@@ -452,7 +450,7 @@ function createBaseContractInfo(): ContractInfo {
   };
 }
 export const ContractInfo = {
-  encode(message: ContractInfo, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
+  encode(message: ContractInfo, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (!message.codeId.isZero()) {
       writer.uint32(8).uint64(message.codeId);
     }
@@ -476,7 +474,7 @@ export const ContractInfo = {
     }
     return writer;
   },
-  decode(input: __m0.Reader | Uint8Array, length?: number): ContractInfo {
+  decode(input: _m0.Reader | Uint8Array, length?: number): ContractInfo {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseContractInfo();
@@ -563,7 +561,7 @@ function createBaseContractCodeHistoryEntry(): ContractCodeHistoryEntry {
   };
 }
 export const ContractCodeHistoryEntry = {
-  encode(message: ContractCodeHistoryEntry, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
+  encode(message: ContractCodeHistoryEntry, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.operation !== 0) {
       writer.uint32(8).int32(message.operation);
     }
@@ -578,7 +576,7 @@ export const ContractCodeHistoryEntry = {
     }
     return writer;
   },
-  decode(input: __m0.Reader | Uint8Array, length?: number): ContractCodeHistoryEntry {
+  decode(input: _m0.Reader | Uint8Array, length?: number): ContractCodeHistoryEntry {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseContractCodeHistoryEntry();
@@ -645,7 +643,7 @@ function createBaseAbsoluteTxPosition(): AbsoluteTxPosition {
   };
 }
 export const AbsoluteTxPosition = {
-  encode(message: AbsoluteTxPosition, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
+  encode(message: AbsoluteTxPosition, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (!message.blockHeight.isZero()) {
       writer.uint32(8).uint64(message.blockHeight);
     }
@@ -654,7 +652,7 @@ export const AbsoluteTxPosition = {
     }
     return writer;
   },
-  decode(input: __m0.Reader | Uint8Array, length?: number): AbsoluteTxPosition {
+  decode(input: _m0.Reader | Uint8Array, length?: number): AbsoluteTxPosition {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAbsoluteTxPosition();
@@ -704,7 +702,7 @@ function createBaseModel(): Model {
   };
 }
 export const Model = {
-  encode(message: Model, writer: __m0.Writer = _m0.Writer.create()): __m0.Writer {
+  encode(message: Model, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
     if (message.key.length !== 0) {
       writer.uint32(10).bytes(message.key);
     }
@@ -713,7 +711,7 @@ export const Model = {
     }
     return writer;
   },
-  decode(input: __m0.Reader | Uint8Array, length?: number): Model {
+  decode(input: _m0.Reader | Uint8Array, length?: number): Model {
     const reader = input instanceof _m0.Reader ? input : new _m0.Reader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseModel();
