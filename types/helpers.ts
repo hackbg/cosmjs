@@ -14,12 +14,9 @@ import * as _Long from "long";
 // @ts-ignore
 const Long = _Long.default
 
-// @ts-ignore
-if (_m0.default.util.Long !== Long) {
-  // @ts-ignore
-  _m0.default.util.Long = Long as any;
-  // @ts-ignore
-  _m0.default.configure();
+if (_m0.util.Long !== Long) {
+  _m0.util.Long = Long as any;
+  _m0.configure();
 }
 
 export { Long };
