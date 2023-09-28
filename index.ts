@@ -31,6 +31,7 @@ export { assertIsDeliverTxFailure, assertIsDeliverTxSuccess, BroadcastTxError, i
 export type { Block, BlockHeader, DeliverTxResponse, IndexedTx, SequenceResponse, StargateClientOptions } from "./api/stargateclient";
 export type { StdFee } from "./lib/amino/index";
 export { coin, coins, makeCosmoshubPath, parseCoins } from "./lib/proto-signing/index";
+export type { OfflineSigner } from "./lib/proto-signing/index";
 
 // Re-exported because this is part of the StargateClient/SigningStargateClient APIs
 export type { Coin } from "./lib/proto-signing/index";
