@@ -35,3 +35,5 @@ export type { OfflineSigner } from "./lib/proto-signing/index";
 
 // Re-exported because this is part of the StargateClient/SigningStargateClient APIs
 export type { Coin } from "./lib/proto-signing/index";
+
+export { serializeSignDoc } from "./lib/amino/index";
