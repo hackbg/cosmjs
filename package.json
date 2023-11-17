@@ -2,7 +2,7 @@
   "name": "@hackbg/cosmjs-esm",
   "type": "module",
   "description": "Cosmos/CosmWasm SDKs as a monolithic ESM package",
-  "version": "1.0.0-rc.32",
+  "version": "1.0.0-rc.33",
   "license": "AGPL-3.0",
   "main": "index.ts",
   "contributors": [
@@ -48,7 +48,7 @@
     "test-firefox": "pnpm pack-web && karma start --single-run --browsers Firefox",
     "test-node": "ganesha-run jasmine-testrunner.cjs",
     "test-safari": "pnpm pack-web && karma start --single-run --browsers Safari",
-    "ubik": "ubik"
+    "release": "pnpm check && pnpm ubik release --access public --otp 000000"
   },
   "dependencies": {
     "@hackbg/protobufjs-esm": "workspace:./protobuf.js",
@@ -66,7 +66,7 @@
   },
   "devDependencies": {
     "@hackbg/ganesha": "^4.2.0",
-    "@hackbg/ubik": "2.0.0-rc.2",
+    "@hackbg/ubik": "^2.0.8",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@types/bn.js": "^5.1.5",
     "@types/eslint-plugin-prettier": "^3.1.3",
