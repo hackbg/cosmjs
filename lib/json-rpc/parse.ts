@@ -104,7 +104,7 @@ export function parseJsonRpcErrorResponse(data: unknown): JsonRpcErrorResponse {
 
   return {
     jsonrpc: "2.0",
-    id: id,
+    id: id as any,
     error: parseError(data.error),
   };
 }
