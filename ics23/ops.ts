@@ -2,7 +2,7 @@ import { ripemd160 } from "@noble/hashes/ripemd160";
 import { sha256 } from "@noble/hashes/sha256";
 import { sha512, sha512_256 } from "@noble/hashes/sha512";
 
-import { ics23 } from "./generated/codecimpl";
+import { ics23 } from "./generated/codecimpl.js";
 
 export function applyLeaf(
   leaf: ics23.ILeafOp,

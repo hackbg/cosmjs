@@ -1,5 +1,5 @@
 import { decompress } from "./compress";
-import { ics23 } from "./generated/codecimpl";
+import { ics23 } from "./generated/codecimpl.js";
 import { CommitmentRoot, verifyExistence, verifyNonExistence } from "./proofs";
 import { keyForComparison } from "./proofs";
 import { bytesBefore, bytesEqual } from "./specs";

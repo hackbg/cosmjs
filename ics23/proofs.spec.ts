@@ -1,4 +1,4 @@
-import { ics23 } from "./generated/codecimpl";
+import { ics23 } from "./generated/codecimpl.js";
 import { calculateExistenceRoot, ensureSpec, iavlSpec } from "./proofs";
 import { fromHex, toAscii } from "./testhelpers.spec";
 

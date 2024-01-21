@@ -1,4 +1,4 @@
-export { ics23 } from "./generated/codecimpl";
+export { ics23 } from "./generated/codecimpl.js";
 export { verifyMembership, verifyNonMembership } from "./ics23";
 export {
   calculateExistenceRoot,

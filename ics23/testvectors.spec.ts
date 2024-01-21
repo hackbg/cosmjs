@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 
 import { compress } from "./compress";
-import { ics23 } from "./generated/codecimpl";
+import { ics23 } from "./generated/codecimpl.js";
 import {
   batchVerifyMembership,
   batchVerifyNonMembership,
