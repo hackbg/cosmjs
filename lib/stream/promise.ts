@@ -1,4 +1,5 @@
-import { Producer, Stream } from "xstream";
+import type { Producer } from "xstream";
+import { Stream } from "xstream";
 
 /**
  * Emits one event for each list element as soon as the promise resolves

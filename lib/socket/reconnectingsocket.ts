@@ -1,5 +1,6 @@
 import { ValueAndUpdates } from "../stream/index";
-import { Listener, Producer, Stream } from "xstream";
+import { Stream } from "xstream";
+import type { Listener, Producer } from "xstream";
 
 import { ConnectionStatus, QueueingStreamingSocket } from "./queueingstreamingsocket";
 import type { SocketWrapperMessageEvent } from "./socketwrapper";

@@ -1,6 +1,7 @@
 import { decompress } from "./compress";
 import { ics23 } from "./generated/codecimpl.js";
-import { CommitmentRoot, verifyExistence, verifyNonExistence } from "./proofs";
+import type { CommitmentRoot } from "./proofs";
+import { verifyExistence, verifyNonExistence } from "./proofs";
 import { keyForComparison } from "./proofs";
 import { bytesBefore, bytesEqual } from "./specs";
 /*

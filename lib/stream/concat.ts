@@ -1,4 +1,5 @@
-import { Producer, Stream, Subscription } from "xstream";
+import type { Producer, Subscription } from "xstream";
+import { Stream } from "xstream";
 
 /**
  * An implementation of concat that buffers all source stream events

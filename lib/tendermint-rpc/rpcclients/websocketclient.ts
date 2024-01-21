@@ -3,7 +3,8 @@ import type { JsonRpcId, JsonRpcRequest, JsonRpcResponse, JsonRpcSuccessResponse
 import { ConnectionStatus, ReconnectingSocket } from "../../socket/index";
 import type { SocketWrapperMessageEvent } from "../../socket/index";
 import { firstEvent } from "../../stream/index";
-import { Listener, Producer, Stream, Subscription } from "xstream";
+import { Stream } from "xstream";
+import type { Listener, Producer, Subscription } from "xstream";
 
 import { hasProtocol } from "./rpcclient";
 

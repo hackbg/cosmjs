@@ -1,4 +1,4 @@
-import { Listener, Producer } from "xstream";
+import type { Listener, Producer } from "xstream";
 
 export interface DefaultValueProducerCallsbacks {
   readonly onStarted: () => void;
