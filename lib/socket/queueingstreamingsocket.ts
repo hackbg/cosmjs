@@ -1,6 +1,6 @@
 import { DefaultValueProducer, ValueAndUpdates } from "../stream/index";
 import { Stream } from "xstream";
-import type { Listener, Producer, Stream } from "xstream";
+import type { Listener, Producer } from "xstream";
 
 import type { SocketWrapperMessageEvent } from "./socketwrapper";
 import { StreamingSocket } from "./streamingsocket";
