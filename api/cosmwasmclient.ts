@@ -8,13 +8,26 @@ import {
   QueryClient,
   setupAuthExtension,
   setupBankExtension,
+  setupStakingExtension,
   setupTxExtension,
   TimeoutError,
 } from "../index";
 
 import type { Coin } from "../index";
 
-import type { AuthExtension, BankExtension, TxExtension } from "../index";
+import type {
+  AuthExtension,
+  BankExtension,
+  StakingExtension,
+  TxExtension,
+} from "../index";
+
+type ExtendedQueryClient = QueryClient
+  & AuthExtension
+  & BankExtension
+  & StakingExtension
+  & TxExtension
+  & WasmExtension
 
 import type {
   Account,
@@ -24,6 +37,8 @@ import type {
   SearchTxQuery,
   SequenceResponse,
 } from "../index";
+import type { Validator } from '../types/cosmos/staking/v1beta1/staking'
+import type { BondStatusString } from './modules/staking/queries'
 
 import { Tendermint34Client, Tendermint37Client, toRfc3339WithNanoseconds } from "../lib/tendermint-rpc/index";
 import type { HttpEndpoint } from "../lib/tendermint-rpc/index";
@@ -36,6 +51,9 @@ import {
   QueryContractsByCodeResponse,
   QueryContractsByCreatorResponse,
 } from "../types/cosmwasm/wasm/v1/query";
+import {
+  QueryValidatorsResponse
+} from "../types/cosmos/staking/v1beta1/query";
 import { ContractCodeHistoryOperationType } from "../types/cosmwasm/wasm/v1/types";
 
 import { setupWasmExtension } from "./modules/index";
@@ -84,16 +102,12 @@ export interface ContractCodeHistoryEntry {
 /** Use for testing only */
 export interface PrivateCosmWasmClient {
   readonly tmClient: TendermintClient | undefined;
-  readonly queryClient:
-    | (QueryClient & AuthExtension & BankExtension & TxExtension & WasmExtension)
-    | undefined;
+  readonly queryClient: ExtendedQueryClient | undefined;
 }
 
 export class CosmWasmClient {
   private readonly tmClient: TendermintClient | undefined;
-  private readonly queryClient:
-    | (QueryClient & AuthExtension & BankExtension & TxExtension & WasmExtension)
-    | undefined;
+  private readonly queryClient: ExtendedQueryClient | undefined;
   private readonly codesCache = new Map<number, CodeDetails>();
   private chainId: string | undefined;
 
@@ -136,6 +150,7 @@ export class CosmWasmClient {
         setupBankExtension,
         setupWasmExtension,
         setupTxExtension,
+        setupStakingExtension
       );
     }
   }
@@ -153,13 +168,11 @@ export class CosmWasmClient {
     return this.tmClient;
   }
 
-  protected getQueryClient():
-    | (QueryClient & AuthExtension & BankExtension & TxExtension & WasmExtension)
-    | undefined {
+  protected getQueryClient(): ExtendedQueryClient | undefined {
     return this.queryClient;
   }
 
-  protected forceGetQueryClient(): QueryClient & AuthExtension & BankExtension & TxExtension & WasmExtension {
+  protected forceGetQueryClient(): ExtendedQueryClient {
     if (!this.queryClient) {
       throw new Error("Query client not available. You cannot use online functionality in offline mode.");
     }
@@ -518,4 +531,5 @@ export class CosmWasmClient {
       };
     });
   }
+
 }
