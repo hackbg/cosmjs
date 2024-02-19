@@ -617,7 +617,7 @@ export class QueryClient {
     });
 
     if (response.code) {
-      throw new Error(`Query failed with (${response.code}): ${response.log}`);
+      throw new Error(`Query ${path} (${request}) failed with (${response.code}): ${response.log}`);
     }
 
     if (!response.height) {
