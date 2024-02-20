@@ -7,13 +7,19 @@ import { DirectSecp256k1HdWallet, makeAuthInfoBytes } from "../lib/proto-signing
 import type { DirectSecp256k1HdWalletOptions, DirectSignResponse } from "../lib/proto-signing/index";
 import {
   calculateFee,
-  coins,
   GasPrice,
+} from "../api/fee";
+import {
+  coins,
+} from "../lib/amino/index";
+import {
   QueryClient,
+} from "../api/queryclient/index";
+import {
   setupAuthExtension,
   setupBankExtension,
-} from "../index";
-import type { AuthExtension, BankExtension } from "../index";
+} from "../api/modules/index";
+import type { AuthExtension, BankExtension } from "../api/modules/index";
 import { Tendermint34Client } from "../lib/tendermint-rpc/index";
 import { SignMode } from "../types/cosmos/tx/signing/v1beta1/signing";
 import { AuthInfo, SignDoc, TxBody } from "../types/cosmos/tx/v1beta1/tx";

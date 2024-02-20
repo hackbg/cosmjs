@@ -3,3 +3,5 @@
 // Exports we want to provide at the root of the "cosmjs-types" package
 
 export type { DeepPartial, Exact } from "./helpers";
+
+export * as Cosmos from './cosmos/_index'
