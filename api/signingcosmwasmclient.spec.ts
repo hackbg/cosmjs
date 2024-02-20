@@ -5,12 +5,22 @@ import { toHex, toUtf8 } from "../lib/encoding/index";
 import { decodeTxRaw, DirectSecp256k1HdWallet, Registry } from "../lib/proto-signing/index";
 import {
   AminoTypes,
+} from "./aminotypes";
+import {
   assertIsDeliverTxSuccess,
+} from "./stargateclient";
+import {
   coin,
   coins,
+} from "../lib/proto-signing/index";
+import {
   createStakingAminoConverters,
-} from "../index";
-import type { AminoMsgDelegate, MsgDelegateEncodeObject, MsgSendEncodeObject } from "../index";
+} from "./modules/index";
+import type {
+  AminoMsgDelegate,
+  MsgDelegateEncodeObject,
+  MsgSendEncodeObject
+} from "./modules/index";
 import { assert, sleep } from "../lib/utils/index";
 import { DeepPartial } from "../types";
 import { MsgSend } from "../types/cosmos/bank/v1beta1/tx";

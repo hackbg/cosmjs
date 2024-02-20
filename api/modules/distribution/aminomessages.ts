@@ -6,8 +6,7 @@ import {
   MsgWithdrawDelegatorReward,
   MsgWithdrawValidatorCommission,
 } from "../../../types/cosmos/distribution/v1beta1/tx";
-
-import type { AminoConverter } from "../../../index";
+import type { AminoConverter } from "../../../api/aminotypes";
 
 /** Changes the withdraw address for a delegator (or validator self-delegation) */
 export interface AminoMsgSetWithdrawAddress extends AminoMsg {

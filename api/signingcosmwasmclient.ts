@@ -27,17 +27,17 @@ import {
 } from "./stargateclient";
 import * as logs from "./logs";
 
-import type { Coin } from "../index";
-
+import type { Coin, StdFee } from "../lib/amino";
 import type {
   MsgDelegateEncodeObject,
   MsgSendEncodeObject,
   MsgUndelegateEncodeObject,
   MsgWithdrawDelegatorRewardEncodeObject,
-  StdFee,
-} from "../index";
+} from "./modules/index";
 
-import type { DeliverTxResponse, Event, SignerData } from "../index";
+import type { DeliverTxResponse } from "./stargateclient";
+import type { Event } from "./events";
+import type { SignerData } from "./signingstargateclient";
 import { Tendermint34Client, Tendermint37Client } from "../lib/tendermint-rpc/index";
 import type { HttpEndpoint } from "../lib/tendermint-rpc/index";
 import type { TendermintClient } from "../lib/tendermint-rpc/index";

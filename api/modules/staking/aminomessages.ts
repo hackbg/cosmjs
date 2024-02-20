@@ -10,8 +10,7 @@ import {
   MsgEditValidator,
   MsgUndelegate,
 } from "../../../types/cosmos/staking/v1beta1/tx";
-
-import type { AminoConverter } from "../../../index";
+import type { AminoConverter } from "../../../api/aminotypes";
 
 /** The initial commission rates to be used for creating a validator */
 interface CommissionRates {

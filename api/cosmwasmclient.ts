@@ -1,26 +1,25 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { fromUtf8, toHex } from "../lib/encoding/index";
 import { Uint53 } from "../lib/math/index";
+import { BroadcastTxError, TimeoutError } from './stargateclient';
+import { fromTendermintEvent } from './events';
+import { QueryClient } from './queryclient/index';
+import { accountFromAny } from "./accounts";
+
+import type { Coin } from "../lib/amino/index";
+
 import {
-  accountFromAny,
-  BroadcastTxError,
-  fromTendermintEvent,
-  QueryClient,
   setupAuthExtension,
   setupBankExtension,
   setupStakingExtension,
   setupTxExtension,
-  TimeoutError,
-} from "../index";
-
-import type { Coin } from "../index";
-
+} from "./modules/index";
 import type {
   AuthExtension,
   BankExtension,
   StakingExtension,
   TxExtension,
-} from "../index";
+} from "./modules/index";
 
 type ExtendedQueryClient = QueryClient
   & AuthExtension
@@ -29,14 +28,9 @@ type ExtendedQueryClient = QueryClient
   & TxExtension
   & WasmExtension
 
-import type {
-  Account,
-  Block,
-  DeliverTxResponse,
-  IndexedTx,
-  SearchTxQuery,
-  SequenceResponse,
-} from "../index";
+import type { Account } from './accounts'
+import type { Block, DeliverTxResponse, IndexedTx, SequenceResponse } from './stargateclient'
+import { SearchTxQuery } from "./search";
 import type { Validator } from '../types/cosmos/staking/v1beta1/staking'
 import type { BondStatusString } from './modules/staking/queries'
 
