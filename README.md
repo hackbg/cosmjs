@@ -1,15 +1,19 @@
-# CosmJS-ESM
+<div align="center">
 
-## About this package
+# Fadroma CosmJS-ESM
+
+[![](https://img.shields.io/npm/v/@hackbg/cosmjs-esm?color=%2365b34c&label=%40hackbg%2Fcosmjs-esm&style=for-the-badge)](https://www.npmjs.com/package/@hackbg/cosmjs-esm)
 
 This library powers [`@fadroma/cw`](https://www.npmjs.com/package/@fadroma/cw),
-the generic Cosmos client library.
+the generic Cosmos client library that is part of [`@hackbg/fadroma`](https://fadroma.tech),
+the portable full-stack groundwork for decentralized applications.
 
-It is part of [`@hackbg/fadroma`](https://fadroma.tech), the portable
-full-stack groundwork for decentralized applications that is maintained
-by [Hack.bg](https://hack.bg).
+It is maintained by [Hack.bg](https://hack.bg). Contact us at `hello at hack dot bg`
+if you need a hand with CosmWasm development!
 
-Contact us at `hello at fadroma dot tech` if you need a hand with CosmWasm development!
+</div>
+
+## About this package
 
 This package contains a fork of [`cosmos/cosmjs`](https://github.com/cosmos/cosmjs)
 and [`confio/cosmjs-types`](https://github.com/confio/cosmjs-types).
