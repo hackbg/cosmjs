@@ -10,8 +10,11 @@ import {
   Registry,
 } from "../lib/proto-signing/index";
 import type { TxBodyEncodeObject } from "../lib/proto-signing/index";
-import { assertIsDeliverTxSuccess, coins, logs } from "../index";
-import type { MsgSendEncodeObject, StdFee } from "../index";
+import { assertIsDeliverTxSuccess } from "./stargateclient";
+import { coins } from '../lib/amino/index';
+import * as logs from './logs';
+import type { MsgSendEncodeObject } from "./modules/index";
+import type { StdFee } from "../lib/amino/index";
 import { assert, sleep } from "../lib/utils/index";
 import { TxRaw } from "../types/cosmos/tx/v1beta1/tx";
 import { ReadonlyDate } from "readonly-date";
