@@ -1,7 +1,22 @@
+export * as Logs from "./logs";
+export * as Modules from './modules';
+
+export {
+  createPagination,
+  createProtobufRpcClient,
+  decodeCosmosSdkDecFromProto,
+  QueryClient
+} from "./queryclient/index";
+
+export type {
+  ProtobufRpcClient,
+  QueryAbciResponse,
+  QueryStoreResponse
+} from "./queryclient/index";
+
 export {
   CosmWasmClient
 } from "./cosmwasmclient";
-
 export type {
   Code,
   CodeDetails,
@@ -10,44 +25,26 @@ export type {
 } from "./cosmwasmclient";
 
 export {
-  fromBinary,
-  toBinary
-} from "./encoding";
-
-export {
-  _instantiate2AddressIntermediate,
-  instantiate2Address
-} from "./instantiate2";
-
-export {
-  createWasmAminoConverters,
-  isMsgClearAdminEncodeObject,
-  isMsgExecuteEncodeObject,
-  isMsgInstantiateContract2EncodeObject,
-  isMsgInstantiateContractEncodeObject,
-  isMsgMigrateEncodeObject,
-  isMsgStoreCodeEncodeObject,
-  isMsgUpdateAdminEncodeObject,
-  setupWasmExtension,
-  wasmTypes
-} from "./modules/index";
-
+  StargateClient,
+  assertIsDeliverTxFailure,
+  assertIsDeliverTxSuccess,
+  BroadcastTxError,
+  isDeliverTxFailure,
+  isDeliverTxSuccess,
+  TimeoutError
+} from "./stargateclient";
 export type {
-  JsonObject,
-  MsgClearAdminEncodeObject,
-  MsgExecuteContractEncodeObject,
-  MsgInstantiateContract2EncodeObject,
-  MsgInstantiateContractEncodeObject,
-  MsgMigrateContractEncodeObject,
-  MsgStoreCodeEncodeObject,
-  MsgUpdateAdminEncodeObject,
-  WasmExtension
-} from "./modules/index";
+  Block,
+  BlockHeader,
+  DeliverTxResponse,
+  IndexedTx,
+  SequenceResponse,
+  StargateClientOptions
+} from "./stargateclient";
 
-export { SigningCosmWasmClient
+export {
+  SigningCosmWasmClient
 } from "./signingcosmwasmclient";
-
-
 export type {
   ChangeAdminResult,
   ExecuteInstruction,
@@ -59,6 +56,25 @@ export type {
   UploadResult
 } from "./signingcosmwasmclient";
 
+export {
+  SigningStargateClient,
+  createDefaultAminoConverters,
+  defaultRegistryTypes,
+} from "./signingstargateclient";
+export type {
+  SigningStargateClientOptions,
+  SignerData
+} from "./signingstargateclient";
+
+export {
+  fromBinary,
+  toBinary
+} from "./encoding";
+
+export {
+  _instantiate2AddressIntermediate,
+  instantiate2Address
+} from "./instantiate2";
 
 export {
   accountFromAny
@@ -92,162 +108,13 @@ export {
   GasPrice
 } from "./fee";
 
-export * as logs from "./logs";
-
-export {
-  createAuthzAminoConverters,
-  createBankAminoConverters,
-  createCrysisAminoConverters,
-  createDistributionAminoConverters,
-  createEvidenceAminoConverters,
-  createFeegrantAminoConverters,
-  createGovAminoConverters,
-  createGroupAminoConverters,
-  createIbcAminoConverters,
-  createSlashingAminoConverters,
-  createStakingAminoConverters,
-  createVestingAminoConverters,
-  isAminoMsgBeginRedelegate,
-  isAminoMsgCreateValidator,
-  isAminoMsgCreateVestingAccount,
-  isAminoMsgDelegate,
-  isAminoMsgDeposit,
-  isAminoMsgEditValidator,
-  isAminoMsgFundCommunityPool,
-  isAminoMsgMultiSend,
-  isAminoMsgSend,
-  isAminoMsgSetWithdrawAddress,
-  isAminoMsgSubmitEvidence,
-  isAminoMsgSubmitProposal,
-  isAminoMsgTransfer,
-  isAminoMsgUndelegate,
-  isAminoMsgUnjail,
-  isAminoMsgVerifyInvariant,
-  isAminoMsgVote,
-  isAminoMsgVoteWeighted,
-  isAminoMsgWithdrawDelegatorReward,
-  isAminoMsgWithdrawValidatorCommission,
-  isMsgBeginRedelegateEncodeObject,
-  isMsgCreateValidatorEncodeObject,
-  isMsgDelegateEncodeObject,
-  isMsgDepositEncodeObject,
-  isMsgEditValidatorEncodeObject,
-  isMsgSendEncodeObject,
-  isMsgSubmitProposalEncodeObject,
-  isMsgTransferEncodeObject,
-  isMsgUndelegateEncodeObject,
-  isMsgVoteEncodeObject,
-  isMsgVoteWeightedEncodeObject,
-  isMsgWithdrawDelegatorRewardEncodeObject,
-  setupAuthExtension,
-  setupAuthzExtension,
-  setupBankExtension,
-  setupDistributionExtension,
-  setupFeegrantExtension,
-  setupGovExtension,
-  setupIbcExtension,
-  setupMintExtension,
-  setupSlashingExtension,
-  setupStakingExtension,
-  setupTxExtension
-} from "./modules/index";
-
-export type {
-  AminoMsgBeginRedelegate,
-  AminoMsgCreateValidator,
-  AminoMsgCreateVestingAccount,
-  AminoMsgDelegate,
-  AminoMsgDeposit,
-  AminoMsgEditValidator,
-  AminoMsgFundCommunityPool,
-  AminoMsgMultiSend,
-  AminoMsgSend,
-  AminoMsgSetWithdrawAddress,
-  AminoMsgSubmitEvidence,
-  AminoMsgSubmitProposal,
-  AminoMsgTransfer,
-  AminoMsgUndelegate,
-  AminoMsgUnjail,
-  AminoMsgVerifyInvariant,
-  AminoMsgVote,
-  AminoMsgVoteWeighted,
-  AminoMsgWithdrawDelegatorReward,
-  AminoMsgWithdrawValidatorCommission,
-  AuthExtension,
-  BankExtension,
-  DistributionExtension,
-  GovExtension,
-  GovParamsType,
-  GovProposalId,
-  IbcExtension,
-  MintExtension,
-  MintParams,
-  MsgBeginRedelegateEncodeObject,
-  MsgCreateValidatorEncodeObject,
-  MsgDelegateEncodeObject,
-  MsgDepositEncodeObject,
-  MsgEditValidatorEncodeObject,
-  MsgSendEncodeObject,
-  MsgSubmitProposalEncodeObject,
-  MsgTransferEncodeObject,
-  MsgUndelegateEncodeObject,
-  MsgVoteEncodeObject,
-  MsgVoteWeightedEncodeObject,
-  MsgWithdrawDelegatorRewardEncodeObject,
-  StakingExtension,
-  TxExtension
-} from "./modules/index";
-
 export {
   makeMultisignedTx,
   makeMultisignedTxBytes
 } from "./multisignature";
-
-export {
-  createPagination,
-  createProtobufRpcClient,
-  decodeCosmosSdkDecFromProto,
-  QueryClient
-} from "./queryclient/index";
-
-export type {
-  ProtobufRpcClient,
-  QueryAbciResponse,
-  QueryStoreResponse
-} from "./queryclient/index";
 
 export type {
   SearchByHeightQuery,
   SearchBySentFromOrToQuery,
   SearchTxQuery
 } from "./search";
-
-export {
-  createDefaultAminoConverters,
-  defaultRegistryTypes,
-  SigningStargateClient
-} from "./signingstargateclient";
-
-export type {
-  SignerData,
-  SigningStargateClientOptions
-} from "./signingstargateclient";
-
-export {
-  assertIsDeliverTxFailure,
-  assertIsDeliverTxSuccess,
-  BroadcastTxError,
-  isDeliverTxFailure,
-  isDeliverTxSuccess,
-  StargateClient,
-  TimeoutError
-} from "./stargateclient";
-
-export type {
-  Block,
-  BlockHeader,
-  DeliverTxResponse,
-  IndexedTx,
-  SequenceResponse,
-  StargateClientOptions
-} from "./stargateclient";
