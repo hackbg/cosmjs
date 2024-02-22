@@ -1,5 +1,5 @@
 export * as Logs from "./logs";
-export * as Modules from './modules';
+export * as Modules from './modules/index';
 
 export {
   createPagination,
