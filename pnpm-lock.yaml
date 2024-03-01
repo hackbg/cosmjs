@@ -49,8 +49,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0(typescript@5.3.3)
       '@hackbg/ubik':
-        specifier: ^2.0.8
-        version: 2.0.8
+        specifier: ^4.0.0-rc.1
+        version: 4.0.0-rc.1
       '@istanbuljs/nyc-config-typescript':
         specifier: ^1.0.2
         version: 1.0.2(nyc@15.1.0)
@@ -838,20 +838,20 @@ packages:
     resolution: {integrity: sha512-iW54b4gibkZrzwAMsd0Qc3xDb9QwsYvLCNvdHl1EgLfgod0ZLfanjPxwYybfXEqNBAvUZ+w00FTQv4vSvBfp4A==}
     dev: true
 
-  /@hackbg/logs@2.0.8:
-    resolution: {integrity: sha512-bf5hfuUjWgwBdgv5eY9vVPVazYyWKQlvH0KHnlW8qBNYIuPP67/aL7/uIrp39JI8EYvVsPiF9+IoVAj3wp/dJA==}
+  /@hackbg/logs@2.3.0:
+    resolution: {integrity: sha512-VGBKlZwV9TsLM/dXl+vw8JE4OlJ0LvkeygcBIvQh9iuwQzqVH1pXcMOmYTVF03tjxwULwudfhfweZNNctEumDA==}
     dependencies:
       '@hackbg/allo': 1.0.2
       '@hackbg/hide': 1.0.3
       chalk: 4.1.2
     dev: true
 
-  /@hackbg/ubik@2.0.8:
-    resolution: {integrity: sha512-n08ZLscEXeuMUdZDqu3+lUTAzh0sZ7HH1uey10A8zA77ekVFfXCPYzU9Ir1zf7jqAdFSZbJ0QGrclJIepzdLZA==}
+  /@hackbg/ubik@4.0.0-rc.1:
+    resolution: {integrity: sha512-lnrdKwYa/m2xoCMSTPc0/FuQ+VEDMGTH5OorWnk4Jm19sBe2a/anJa8TJq8QqkVKe9IS5EIhyOpZpMqO0+bb7A==}
     hasBin: true
     dependencies:
       '@babel/parser': 7.23.3
-      '@hackbg/logs': 2.0.8
+      '@hackbg/logs': 2.3.0
       acorn: 8.11.2
       acorn-walk: 8.3.0
       astring: 1.8.6
@@ -859,6 +859,7 @@ packages:
       mkdirp: 3.0.1
       node-fetch: 3.3.2
       recast: 0.23.4
+      resolve.exports: 2.0.2
       rimraf: 5.0.5
     dev: true
 
@@ -7341,6 +7342,11 @@ packages:
   /resolve-url@0.2.1:
     resolution: {integrity: sha512-ZuF55hVUQaaczgOIwqWzkEcEidmlD/xl44x1UZnhOXcYuFN2S6+rcxpG+C1N3So0wvNI3DmJICUFfu2SxhBmvg==}
     deprecated: https://github.com/lydell/resolve-url#deprecated
+    dev: true
+
+  /resolve.exports@2.0.2:
+    resolution: {integrity: sha512-X2UW6Nw3n/aMgDVy+0rSqgHlv39WZAlZrXCdnbyEiKm17DSqHX4MmQMaST3FbeWR5FTuRcUwYAziZajji0Y7mg==}
+    engines: {node: '>=10'}
     dev: true
 
   /resolve@1.1.7:
