@@ -49,8 +49,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0(typescript@5.3.3)
       '@hackbg/ubik':
-        specifier: ^4.0.0-rc.1
-        version: 4.0.0-rc.1
+        specifier: ^4.0.0-rc.2
+        version: 4.0.0-rc.2
       '@istanbuljs/nyc-config-typescript':
         specifier: ^1.0.2
         version: 1.0.2(nyc@15.1.0)
@@ -846,8 +846,8 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@hackbg/ubik@4.0.0-rc.1:
-    resolution: {integrity: sha512-lnrdKwYa/m2xoCMSTPc0/FuQ+VEDMGTH5OorWnk4Jm19sBe2a/anJa8TJq8QqkVKe9IS5EIhyOpZpMqO0+bb7A==}
+  /@hackbg/ubik@4.0.0-rc.2:
+    resolution: {integrity: sha512-2hJGIZ+nZezDNGPKg0IlO2psbRctWT+osoM38uCtXqPzsWbcfHzqY736AOfYlyGuUkg9U7dcllr/1gdtdj8AQQ==}
     hasBin: true
     dependencies:
       '@babel/parser': 7.23.3
