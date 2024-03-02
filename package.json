@@ -2,7 +2,7 @@
   "name": "@hackbg/cosmjs-esm",
   "type": "module",
   "description": "Cosmos/CosmWasm SDKs as a monolithic ESM package",
-  "version": "1.0.0-rc.42",
+  "version": "1.0.0-rc.43",
   "license": "AGPL-3.0",
   "main": "index.ts",
   "contributors": [
@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@hackbg/ganesha": "^4.2.0",
-    "@hackbg/ubik": "^4.0.0-rc.2",
+    "@hackbg/ubik": "workspace:4.0.0-rc.3",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@types/bn.js": "^5.1.5",
     "@types/eslint-plugin-prettier": "^3.1.3",
