@@ -353,7 +353,7 @@ export class CosmWasmClient {
    * their own query client to handle pagination together with the app's screens.
    */
   public async getCodes(): Promise<readonly Code[]> {
-    const allCodes = [];
+    const allCodes: CodeInfoResponse[] = [];
 
     let startAtKey: Uint8Array | undefined = undefined;
     do {
@@ -400,7 +400,7 @@ export class CosmWasmClient {
    * their own query client to handle pagination together with the app's screens.
    */
   public async getContracts(codeId: number): Promise<readonly string[]> {
-    const allContracts = [];
+    const allContracts: string[] = [];
     let startAtKey: Uint8Array | undefined = undefined;
     do {
       const { contracts, pagination }: QueryContractsByCodeResponse =
@@ -417,7 +417,7 @@ export class CosmWasmClient {
    * This just loops through all pagination pages.
    */
   public async getContractsByCreator(creator: string): Promise<string[]> {
-    const allContracts = [];
+    const allContracts: string[] = [];
     let startAtKey: Uint8Array | undefined = undefined;
     do {
       const { contractAddresses, pagination }: QueryContractsByCreatorResponse =

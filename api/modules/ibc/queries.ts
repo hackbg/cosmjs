@@ -50,8 +50,21 @@ import {
   ConsensusState as TendermintConsensusState,
 } from "../../../types/ibc/lightclients/tendermint/v1/tendermint";
 import Long from "long";
-
 import { createPagination, createProtobufRpcClient, QueryClient } from "../../queryclient/index";
+import type {
+  ConsensusStateWithHeight,
+  IdentifiedClientState
+} from "../../../types/ibc/core/client/v1/client";
+import type {
+  IdentifiedChannel,
+  PacketState,
+} from "../../../types/ibc/core/channel/v1/channel";
+import type {
+  IdentifiedConnection
+} from "../../../types/ibc/core/connection/v1/connection";
+import type {
+  DenomTrace
+} from "../../../types/ibc/applications/transfer/v1/transfer";
 
 function decodeTendermintClientStateAny(clientState: Any | undefined): TendermintClientState {
   if (clientState?.typeUrl !== "/ibc.lightclients.tendermint.v1.ClientState") {
@@ -208,7 +221,7 @@ export function setupIbcExtension(base: QueryClient): IbcExtension {
             pagination: createPagination(paginationKey),
           }),
         allChannels: async () => {
-          const channels = [];
+          const channels: IdentifiedChannel[] = [];
           let response: QueryChannelsResponse;
           let key: Uint8Array | undefined;
           do {
@@ -229,7 +242,7 @@ export function setupIbcExtension(base: QueryClient): IbcExtension {
             pagination: createPagination(paginationKey),
           }),
         allConnectionChannels: async (connection: string) => {
-          const channels = [];
+          const channels: IdentifiedChannel[] = [];
           let response: QueryConnectionChannelsResponse;
           let key: Uint8Array | undefined;
           do {
@@ -275,7 +288,7 @@ export function setupIbcExtension(base: QueryClient): IbcExtension {
             pagination: createPagination(paginationKey),
           }),
         allPacketCommitments: async (portId: string, channelId: string) => {
-          const commitments = [];
+          const commitments: PacketState[] = [];
           let response: QueryPacketCommitmentsResponse;
           let key: Uint8Array | undefined;
           do {
@@ -313,7 +326,7 @@ export function setupIbcExtension(base: QueryClient): IbcExtension {
           return channelQueryService.PacketAcknowledgements(request);
         },
         allPacketAcknowledgements: async (portId: string, channelId: string) => {
-          const acknowledgements = [];
+          const acknowledgements: PacketState[] = [];
           let response: QueryPacketAcknowledgementsResponse;
           let key: Uint8Array | undefined;
           do {
@@ -360,7 +373,7 @@ export function setupIbcExtension(base: QueryClient): IbcExtension {
             pagination: createPagination(paginationKey),
           }),
         allStates: async () => {
-          const clientStates = [];
+          const clientStates: IdentifiedClientState[] = [];
           let response: QueryClientStatesResponse;
           let key: Uint8Array | undefined;
           do {
@@ -389,7 +402,7 @@ export function setupIbcExtension(base: QueryClient): IbcExtension {
             pagination: createPagination(paginationKey),
           }),
         allConsensusStates: async (clientId: string) => {
-          const consensusStates = [];
+          const consensusStates: ConsensusStateWithHeight[] = [];
           let response: QueryConsensusStatesResponse;
           let key: Uint8Array | undefined;
           do {
@@ -416,7 +429,7 @@ export function setupIbcExtension(base: QueryClient): IbcExtension {
           return clientStates.map(({ clientState }) => decodeTendermintClientStateAny(clientState));
         },
         allStatesTm: async () => {
-          const clientStates = [];
+          const clientStates: IdentifiedClientState[] = [];
           let response: QueryClientStatesResponse;
           let key: Uint8Array | undefined;
           do {
@@ -450,7 +463,7 @@ export function setupIbcExtension(base: QueryClient): IbcExtension {
             pagination: createPagination(paginationKey),
           }),
         allConnections: async () => {
-          const connections = [];
+          const connections: IdentifiedConnection[] = [];
           let response: QueryConnectionsResponse;
           let key: Uint8Array | undefined;
           do {
@@ -488,7 +501,7 @@ export function setupIbcExtension(base: QueryClient): IbcExtension {
             pagination: createPagination(paginationKey),
           }),
         allDenomTraces: async () => {
-          const denomTraces = [];
+          const denomTraces: DenomTrace[] = [];
           let response: QueryDenomTracesResponse;
           let key: Uint8Array | undefined;
           do {

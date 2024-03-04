@@ -352,7 +352,7 @@ export class StargateClient {
   }
 
   public async getBalanceStaked(address: string): Promise<Coin | null> {
-    const allDelegations = [];
+    const allDelegations: DelegationResponse[] = [];
     let startAtKey: Uint8Array | undefined = undefined;
     do {
       const { delegationResponses, pagination }: QueryDelegatorDelegationsResponse =

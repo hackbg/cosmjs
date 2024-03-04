@@ -135,7 +135,7 @@ function decodeMultisigPubkey(data: Uint8Array): MultisigThresholdPubkey {
   reader.splice(0, thresholdBytesLength);
 
   // read participants pubkeys
-  const pubkeys = [];
+  const pubkeys: Pubkey[] = [];
   while (reader.length > 0) {
     // remove 0x12 threshold prefix;
     if (reader.shift() != 0x12) {
