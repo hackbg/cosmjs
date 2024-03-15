@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@hackbg/ganesha": "^4.2.0",
-    "@hackbg/ubik": "workspace:4.0.0",
+    "@hackbg/ubik": "workspace:4",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@types/bn.js": "^5.1.5",
     "@types/eslint-plugin-prettier": "^3.1.3",
